@@ -1,0 +1,56 @@
+{% macro imageBlock(title, desc, footer, content, buttonsText, img, imageGradient=true, imageHide=false, align, classes="", video) %}
+  <div class="image-block image-block--center {{ 'image-block--' + align if align }} {{ 'image-block--hide' if imageHide }} {{ classes }}">
+    <div class="grid-flex grid-flex--left">
+      <div class="image-block__start large-6 medium-12">
+        <div class="image-block__image {{ 'image-block__image--gradient' if imageGradient }}">
+          {{ content | safe }}
+
+          {% if img %}
+            <img
+              src="{{ img }}"
+              loading="lazy"
+              width="581"
+              height="374"
+              alt=""
+              aria-hidden="true"
+            >
+          {% endif %}
+          {% if video %}
+            {{ video | safe }}
+          {% endif %}
+        </div>
+        {% if footer %}
+          <div class="image-block__footer">
+            {{ footer | safe }}
+
+            {% if buttonsText %}
+              <div class="image-block__caption">
+                {{ buttonsText | safe }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="image-block__end large-6 medium-12">
+        <div class="image-block__content">
+          <h2 class="section-title h2-title image-block__title">{{ title | safe }}</h2>
+          <div class="image-block__desc h4-title">
+            {{ desc | safe }}
+          </div>
+
+          {% if footer %}
+            <div class="image-block__footer">
+              {{ footer | safe }}
+
+              {% if buttonsText %}
+                <div class="image-block__caption">
+                  {{ buttonsText | safe }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

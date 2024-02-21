@@ -1,0 +1,45 @@
+.feature-image-card {
+    padding: 16px 16px 22px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 20px 0 rgba(8, 34, 159, .12);
+
+    @include r(1068) {
+        padding: 20px;
+        min-width: 298px;
+    }
+
+    &__img {
+        display: flex;
+        margin-bottom: 24px;
+        overflow: hidden;
+        border-radius: 12px;
+
+        @include r(599) {
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: normal;
+        color: $gray-dark;
+
+        @include r(599) {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+    }
+
+    &__desc {
+        color: var(--gray-2, #4d545a);
+    }
+}

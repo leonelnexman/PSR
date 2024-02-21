@@ -1,0 +1,15 @@
+{% macro entryImg(width=100, height=100, caption='', align='', lock=false) %}
+<figure class="entry-image {{ 'entry-image--' + align if align }}">
+  <img
+    src="https://loremflickr.com/{{ width }}/{{ height }}/abstract?lock={{ lock if lock else (range(50, 150) | random )}}"
+    loading="lazy"
+    width="{{ width }}"
+    height="{{ height }}"
+    alt=""
+    aria-hidden="true"
+  >
+  {% if caption %}
+    <figcaption class="entry-image__caption">{{ caption | safe }}</figcaption>
+  {% endif %}
+</figure>
+{% endmacro %}

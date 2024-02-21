@@ -1,0 +1,47 @@
+.cookie {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    padding: 20px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 114%;
+    color: #fff;
+    background: rgba(0, 0, 0, .95);
+    border-top: 1px solid rgba(#fff, .2);
+    transform: translateY(100%);
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        background: rgba(0, 0, 0, .4);
+        backdrop-filter: blur(9px);
+    }
+
+    @include r(599) {
+        padding: 15px 0;
+        font-size: 15px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+
+    }
+
+    &__link {
+        font-weight: 600;
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .js-cookie-approve {
+        flex: 0 0 auto;
+        margin-left: 23px;
+        font-weight: 700;
+    }
+}

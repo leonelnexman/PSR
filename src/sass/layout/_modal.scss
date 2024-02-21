@@ -1,0 +1,488 @@
+.modal-close {
+    position: fixed;
+    top: 54px;
+    right: 54px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    background-color: $secondary;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .3s ease-in-out .3s, background-color .2s ease;
+
+    @include r(599) {
+        top: 11px;
+        right: 11px;
+        opacity: 1;
+    }
+
+    &:hover {
+        background-color: $secondary-hover;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        transition: fill .3s ease;
+        fill: #fff;
+    }
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    // -webkit-overflow-scrolling: touch;
+
+    overflow-y: auto;
+
+    // padding: 45px 83px;
+    // overflow: hidden;
+    // overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-overflow-scrolling: touch;
+
+    // display: none;
+
+    @include scrollbars;
+
+    &.is-active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(#000, .85);
+        cursor: pointer;
+    }
+
+    &__wrapper {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        // // min-height: 100%;
+        // height: 100%;
+        margin: auto;
+        padding: 5px 20px;
+
+        // @include css-lock(5, 83, 375, 1300, padding-left);
+        // @include css-lock(5, 83, 375, 1300, padding-right);
+        @include scrollbars;
+
+        @include r(599) {
+            padding: 15px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex: 0 0 auto;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100%;
+        margin: auto;
+    }
+
+    .modal-close {
+        display: block;
+
+        @include r(599) {
+            display: none;
+        }
+    }
+}
+
+.modal {
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 666px;
+    max-height: 686px;
+    margin: 5px 0;
+    padding: 32px 24px 48px;
+    overflow: hidden;
+    overflow: visible;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: $gray-dark;
+    background: #f5f5f5;
+    border-radius: 16px;
+
+    @include r(599) {
+        max-width: 668px;
+        margin: 5px 0;
+        padding: 78px 16px 112px;
+    }
+
+    ::selection {
+        color: #fff;
+        background-color: #000;
+    }
+
+    .modal-close {
+        top: 30px;
+        right: 24px;
+        z-index: 2;
+
+        @include r(599) {
+            top: 15px;
+            right: 15px;
+            display: block;
+        }
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 390px;
+        margin: 0 auto;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 110px;
+        height: 110px;
+        margin: 0 auto 27px;
+        background-color: $primary;
+        border-radius: 50%;
+
+        svg {
+            fill: #fff;
+        }
+    }
+
+    /* .form__row {
+        align-self: center;
+        width: 100%;
+        max-width: 570px;
+
+        @include r(899) {
+            max-width: 508px;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 55px;
+        margin-bottom: 25px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    } */
+
+    &__header {
+        position: relative;
+        margin-bottom: 36px;
+        padding-bottom: 36px;
+
+        @include r(599) {
+            display: block;
+            margin-bottom: 40px;
+            padding-top: 50px;
+            padding-bottom: 0;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            right: 11px;
+            bottom: 0;
+            left: 11px;
+            height: 1px;
+            background: linear-gradient(90deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%);
+
+            @include r(599) {
+                top: 0;
+                right: 0;
+                bottom: unset;
+                left: 0;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        line-height: 1.3;
+        text-align: center;
+
+        span {
+            color: $primary;
+        }
+    }
+
+    &__desc:not(:empty) {
+        max-width: 287px;
+        margin: 6px auto 0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.3;
+        text-align: center;
+
+        @include r(599) {
+            max-width: unset;
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+
+        @include r(599) {
+            position: relative;
+            padding-bottom: 50px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 1px;
+                background: linear-gradient(90deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%);
+            }
+        }
+    }
+
+    .button {
+        @include r(599) {
+            width: 100%;
+        }
+    }
+
+    .form {
+        position: relative;
+
+        .button {
+            width: 100%;
+        }
+    }
+
+    .form__row {
+        @include r(599) {
+            grid-gap: 20px;
+        }
+    }
+
+    .form__terms {
+        color: #858585;
+
+        @include r(599) {
+            position: relative;
+            margin-top: 30px;
+            padding-top: 24px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: 1px;
+                background: linear-gradient(90deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%);
+            }
+        }
+    }
+
+    .form__terms a {
+        color: $secondary;
+    }
+}
+
+.modal-product {
+    max-width: 899px;
+    max-height: unset;
+    padding: clamp(35px, 3.4vw, 50px) clamp(35px, 3.4vw, 50px) 60px;
+    overflow: hidden;
+    background-color: #fff;
+
+    @include r(599) {
+        padding-top: 36px;
+        padding-bottom: 65px;
+    }
+
+    .modal__content {
+        max-width: 100%;
+    }
+
+    .product-card {
+        padding: 0;
+    }
+}
+
+.modal-customer-reviews {
+    position: relative;
+    margin-top: 24px;
+    padding-top: 31px;
+
+    @include r(899) {
+        padding-top: 36px;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 2px;
+        background: linear-gradient(270deg, #29d9bb 0%, #3a0ca3 100.59%, #270082 157.01%);
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 24px;
+        color: #000;
+
+        @include r(899) {
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+    }
+
+    &__rate {
+        color: var(--gray-2, #4d545a);
+        cursor: pointer;
+
+        .product-rating {
+            margin-left: 24px;
+        }
+    }
+
+    &__rating {
+    }
+
+    .swiper-header {
+        margin-bottom: 33px;
+
+        @include r(899) {
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+    }
+
+    .swiper-arrows {
+        @include r(899) {
+            display: none;
+        }
+    }
+
+    .empty-space {
+        @include r(899) {
+            display: none;
+        }
+    }
+
+    .product-rating__number {
+        margin-right: 16px;
+    }
+
+    .product-rating__star {
+        font-size: 25px;
+    }
+
+    &__write {
+        margin-right: 20px;
+
+        @include r(899) {
+            justify-content: flex-start;
+            width: 100%;
+            margin-top: 16px;
+            text-align: start;
+        }
+    }
+}
+
+.modal-write-review {
+    max-width: 356px;
+    padding: 51px 16px;
+    color: #fff;
+    background-color: $secondary;
+
+    @include r(599) {
+        height: 90vh;
+        max-height: 100%;
+        padding: 30px 15px 35px;
+    }
+
+    .modal__content {
+        @include r(599) {
+            height: 100%;
+        }
+    }
+
+    .modal__form,
+    .form {
+        @include r(599) {
+            justify-content: flex-start;
+            height: 100%;
+        }
+    }
+
+    .modal-close {
+        top: 19px;
+        right: 16px;
+        z-index: 2;
+    }
+
+    .modal__title {
+        margin-bottom: 25px;
+        font-size: 20px;
+        text-align: start;
+    }
+
+    .form__row + .form__row {
+        margin-top: 12px;
+    }
+
+    .form__row.form__submit {
+        margin-top: 20px;
+
+        @include r(599) {
+            margin-top: auto;
+        }
+    }
+
+    .star-input {
+        margin-bottom: 30px;
+    }
+}

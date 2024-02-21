@@ -1,0 +1,33 @@
+{% from "partials/_button.html" import button %}
+
+{% macro addonCard(
+  title='Loyalty programs, Point & Credits',
+  desc='They are designed to encourage repeat business, offering people a reward for store/brand loyalty.',
+  price='5$<span>/per year</span>'
+  )
+%}
+  <div class="addon-card">
+    <div class="addon-card__img">
+      <img
+        src="img/addon-image.jpg"
+        loading="lazy"
+        width="370"
+        height="185"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+    <h2 class="addon-card__title">
+      {{ title | safe }}
+    </h2>
+    {% if desc  %}
+      <div class="addon-card__desc">{{ desc | safe }}</div>
+    {% endif %}
+    <div class="addon-card__price">
+      {{ price | safe }}
+    </div>
+    <div class="addon-card__button">
+      {{ button('Choose option', 'button--fill') }}
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,148 @@
+.wave-image-card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 0 25px;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: -13px;
+    margin-left: -13px;
+    padding: 60px 37px 60px 70px;
+    overflow: hidden;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 16px;
+    isolation: isolate;
+
+    @include r(1068) {
+        flex-direction: column;
+        gap: 0;
+        padding: 50px 40px;
+        text-align: center;
+    }
+
+    @include r(599) {
+        min-height: 249px;
+        padding: 48px 15px;
+    }
+
+    @include any-hover {
+        .wave-image-card__waves {
+            transform: scale(1.1);
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        line-height: 1;
+        color: #fff;
+
+        @include css-lock(32, 48, 768, 1300);
+
+        span {
+            color: #07c9a8;
+        }
+    }
+
+    &__desc {
+        max-width: 500px;
+        margin-top: 15px;
+        font-weight: 400;
+        font-size: 16px;
+
+        @include r(899) {
+            margin-top: 12px;
+            padding: 0 15px;
+        }
+
+        @include r(599) {
+            font-size: 14px;
+        }
+
+        span {
+            color: #07c9a8;
+        }
+    }
+
+    &__footer {
+        margin-top: 30px;
+        color: rgba(#fff, .5);
+
+        @include r(599) {
+            padding: 0 35px;
+        }
+
+        .button {
+            display: block;
+            margin-bottom: 20px;
+
+            @include r(1068) {
+                margin: 0 auto 24px;
+            }
+        }
+
+        a {
+            color: #fff;
+
+            @include any-hover {
+                color: $primary;
+            }
+        }
+    }
+
+    &__image {
+        display: flex;
+        flex: 0 1 auto;
+        justify-self: flex-end;
+        height: 375px;
+        overflow: hidden;
+        border-radius: 17px;
+        isolation: isolate;
+        aspect-ratio: 1.65;
+
+        @include r(1068) {
+            display: none;
+        }
+
+        &:after {
+            background: var(--liner, linear-gradient(0deg, rgba(132, 36, 255, 0.20) 0%, rgba(0, 226, 188, 0.20) 100%));
+            mix-blend-mode: hard-light;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__waves {
+        z-index: -1;
+        background-color: $secondary;
+        border-radius: inherit;
+    }
+
+    &__wave-left {
+        @include rmin(899.1) {
+            top: 40%;
+            left: 20%;
+            width: 60%;
+        }
+
+        @include r(599) {
+            transform: rotate(24deg) translate(-1px, 46px);
+        }
+    }
+
+    &__wave-right {
+        right: -40%;
+        display: none;
+        width: 50%;
+        height: 100%;
+
+        @include r(599) {
+            display: block;
+            transform: rotate(-10deg) translate(46px, 22px);
+        }
+    }
+}

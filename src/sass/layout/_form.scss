@@ -1,0 +1,160 @@
+.form {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    &__desc {
+        margin-top: 15px;
+        margin-bottom: 30px;
+
+        @include r(599) {
+            margin-top: 11px;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__row {
+        display: grid;
+        grid-gap: 10px 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        align-items: flex-start;
+    }
+
+    &__row + &__row {
+        margin-top: 20px;
+
+        @include r(899) {
+            margin-top: 15px;
+        }
+    }
+
+    &__field {
+    }
+
+    &__col {
+    }
+
+    &__optional {
+        font-size: 10px;
+        color: rgba(#fff, .4);
+    }
+
+    &__footer {
+        margin-top: 33px;
+
+        @include r(599) {
+            margin-top: 25px;
+        }
+    }
+
+    &__submit {
+        @include r(899) {
+            width: 100%;
+            max-width: 440px;
+        }
+
+        @include r(599) {
+            max-width: unset;
+        }
+    }
+
+    .button {
+        padding: 12px 20px;
+
+        @include r(899) {
+            width: 100%;
+        }
+    }
+
+    &__terms {
+        margin-top: 25px;
+        font-weight: 400;
+        font-size: 13px;
+        color: rgba(#fff, .5);
+
+        @include r(599) {
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: $primary !important;
+            }
+
+            @include r(599) {
+                display: block;
+            }
+        }
+    }
+
+    &__terms-link {
+        color: $secondary;
+        text-decoration: underline;
+    }
+}
+
+.form-result {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 13px;
+    background: rgba(#fff, .05);
+    border: 1px solid rgba(#fff, .1);
+
+    &.is-error {
+        color: $danger;
+        background: rgba($danger, .05);
+        border: 1px solid rgba($danger, .1);
+    }
+}
+
+.form-subscribe,
+.form-call {
+    width: 400px;
+
+    @include r(599) {
+        width: auto;
+    }
+
+    .form__row {
+        grid-template-columns: 1fr auto;
+
+        @include r(599) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .form__terms {
+        margin-top: 0;
+        text-align: center;
+
+        @include r(599) {
+            margin-top: 10px;
+        }
+    }
+}
+
+.form-call {
+    width: 450px;
+
+    .form__terms {
+        color: rgba(21, 21, 21, .5);
+
+        @include r(599) {
+            margin-top: -6px;
+            font-size: 12px;
+        }
+    }
+
+    .form__terms a {
+        color: $secondary;
+
+        @include r(599) {
+            display: inline-block;
+        }
+    }
+}

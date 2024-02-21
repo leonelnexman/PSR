@@ -1,0 +1,65 @@
+.gradient-button {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    min-width: 105px;
+    padding: 22px 10px 22px 25px;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    color: var(--secondary, #5317a6);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color .2s ease;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: linear-gradient(270deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%);
+        border-radius: inherit;
+        transform: scaleY(.02);
+        transform-origin: center bottom;
+        transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+        will-change: transform;
+
+        @include r(1068) {
+            background: linear-gradient(235deg, #29d9bb 0%, #5317a6 100%);
+            transform: scaleX(.01) scaleY(50%);
+            transform-origin: right center;
+        }
+    }
+
+    @include r(1068) {
+        justify-content: center;
+        min-height: 56px;
+        padding: 9px 15px;
+        font-size: 16px;
+    }
+
+    @include any-hover {
+        color: #fff;
+
+        &:before {
+            transform: scale(1);
+        }
+    }
+
+    &.is-active {
+        color: #fff;
+
+        &:before {
+            transform: scale(1) !important;
+        }
+
+        & + :hover:before {
+            transform: scale(1, .93);
+        }
+    }
+}

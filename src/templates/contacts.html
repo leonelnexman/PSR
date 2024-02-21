@@ -1,0 +1,225 @@
+---
+title: Contacts
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_quote.html" import quote %}
+
+{% block content %}
+
+  {# partial example #}
+  {% set headerGrey = true %}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+
+    <section class="section contacts-hero">
+      <div class="container">
+        <h1 class="section-title h1-title contacts-hero__title">
+          Contacts
+        </h1>
+        <div class="contacts-hero__wrapper">
+          <div class="contacts-hero__content">
+            <div class="contacts-hero__group">
+              <h2 class="contacts-hero__subtitle">Pulsar Information technology L.L.C</h2>
+              <div class="contacts-hero__group-row">
+                <div class="contacts-hero__label">Contacts</div>
+                <div class="contacts-hero__text contacts-hero__address">
+                  20 Aesha Al-Taymorya str.,Qasr EL-Nile, Garden City, Cairo, Egypt
+                </div>
+                <a
+                  href="{{ defaultsData.tel_link }}"
+                  class="contacts-hero__tel contacts-hero__link"
+                >
+                  {{  defaultsData.tel }}
+                </a>
+                <a
+                  href="{{ defaultsData.tel2_link }}"
+                  class="contacts-hero__tel contacts-hero__link"
+                >
+                  {{  defaultsData.tel2 }}
+                </a>
+                <a
+                  href="mailto:{{  defaultsData.email_support }}"
+                  class="contacts-hero__email contacts-hero__link"
+                >
+                  {{  defaultsData.email_support }}
+                </a>
+              </div>
+
+              <div class="contacts-hero__group-row">
+                <div class="contacts-hero__socials">
+                  <div class="contacts-hero__label">Chat with us</div>
+                  <div class="contacts-hero__socials-list">
+                    {% for index, social in defaultsData.socials.entries() %}
+                      {% if social.type === 'chat'  %}
+                        <a
+                          href="{{ social.link }}"
+                          class="social-link"
+                        >
+                          {{ mixins.icon(social.name) }}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+
+                <div class="contacts-hero__socials">
+                  <div class="contacts-hero__label">Follow us</div>
+                  <div class="contacts-hero__socials-list">
+                    {% for index, social in defaultsData.socials.entries() %}
+                      {% if social.type === 'follow'  %}
+                        <a
+                          href="{{ social.link }}"
+                          class="social-link"
+                        >
+                          {{ mixins.icon(social.name) }}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="contacts-hero__group-row">
+                <div class="contacts-hero__label">Working Hours</div>
+                <div class="contacts-hero__text contacts-hero__address">
+                  Monday - Friday: 9:00 AM - 5:00 PM<br>
+                  Saturday - Sunday: Closed
+                </div>
+              </div>
+
+            </div>
+            <div class="contacts-hero__group">
+              <h2 class="contacts-hero__subtitle">Company Details</h2>
+
+              <div class="contacts-hero__details">
+                <div class="contacts-hero__details-row">
+                  <div class="contacts-hero__details-label">Company Name:</div>
+                  <div class="contacts-hero__details-value">Your Company Name Registration</div>
+                </div>
+                <div class="contacts-hero__details-row">
+                  <div class="contacts-hero__details-label">Number:</div>
+                  <div class="contacts-hero__details-value">1234567890</div>
+                </div>
+                <div class="contacts-hero__details-row">
+                  <div class="contacts-hero__details-label">VAT Number:</div>
+                  <div class="contacts-hero__details-value">1234567890</div>
+                </div>
+              </div>
+            </div>
+            <div class="contacts-hero__footer">
+              <button
+                class="button button--fill"
+                data-modal="modal-request"
+                download
+              >
+                <span class="button__bg" data-text="Download company details"></span>
+                <span class="button__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M6 20H18M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="button__text">Download company details</span>
+              </button>
+            </div>
+
+          </div>
+          <div class="contacts-hero__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d151868.6376584464!2d31.121330592754667!3d30.031445321665984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2z0JrQsNC40YAsINCt0LvRjC3QmtCw0YXQuNGA0LAsINCV0LPQuNC_0LXRgg!5e0!3m2!1sru!2sru!4v1692393437627!5m2!1sru!2sru"
+              width="700"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-grey section-become-partner">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-become-partner__title">
+          Want to become a partner?
+        </h2>
+        <div class="section-desc section-desc--center section-become-partner__desc">
+          We are open to collaboration with various partners to enhance our services and solutions. We are actively
+          seeking partnerships with:
+        </div>
+        <div class="section-become-partner__list">
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/banks.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Banks
+            </div>
+            <div class="feature-card__desc">
+              Explore opportunities for payment acceptance and cooperation.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/security.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Service Providers
+            </div>
+            <div class="feature-card__desc">
+              Collaborate with operators, schools, and more to expand our offerings.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/dev.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Add-on Developers
+            </div>
+            <div class="feature-card__desc">
+              Welcome talented developers to create add-ons for our solution.
+            </div>
+          </div>
+        </div>
+        <div class="section-become-partner__button">
+          {{ button('Become a partner', 'button--fill', 'modal-request') }}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-android-exclusive-banner">
+      {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+      {% include "partials/sections/_section-question-form.html" %}
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

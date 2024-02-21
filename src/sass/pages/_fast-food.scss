@@ -1,0 +1,42 @@
+.section-food-quote {
+    padding-top: 30px;
+
+    @include r(599) {
+        padding-top: 0;
+        padding-bottom: 33px;
+    }
+}
+
+.section-quick-serve {
+    &__title {
+        @include r(599) {
+            text-align: start;
+        }
+    }
+
+    &__desc {
+        max-width: 640px;
+        margin: 20px auto 0;
+
+        @include r(599) {
+            text-align: start;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(298px, 1fr));
+        gap: 12px 30px;
+        margin-top: 50px;
+
+        @include r(1068) {
+            margin-top: 42px;
+        }
+    }
+}
+
+.section-mobile-shop-quote {
+    @include r(599) {
+        padding-top: 0;
+    }
+}

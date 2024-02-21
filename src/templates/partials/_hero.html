@@ -1,0 +1,70 @@
+{% macro hero(title, subtitle, desc, buttons, buttonsText, bg, align = false, image, theme, titleDesc) %}
+  <section class="hero {{ 'hero--' + align if align }} {{ 'hero--' + theme if theme }}">
+    {% if bg %}
+      <div class="hero__bg {{ 'hero__bg--video' if 'video' in bg }}">
+        {% if 'video' in bg %}
+          {{ bg | safe }}
+        {% else %}
+          <img
+            src="{{ bg }}"
+            width="1440"
+            height="692"
+            alt=""
+            aria-hidden="true"
+          >
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="container">
+      <div class="hero__wrapper">
+        {% if subtitle %}
+          <div class="hero__subtitle">
+            {{ subtitle | safe }}
+          </div>
+        {% endif %}
+
+        <div class="hero__start">
+          <h1 class="hero__title">
+            {{ title | safe }}
+          </h1>
+          {% if titleDesc %}
+            <div class="hero__title-desc">
+              {{ titleDesc | safe }}
+            </div>
+          {% endif %}
+          <div class="hero__footer">
+            {% if desc %}
+              <div class="hero__desc">
+                {{ desc | safe }}
+              </div>
+            {% endif %}
+
+            <div class="hero__buttons">
+              {{ buttons | safe }}
+
+              {% if buttonsText %}
+                <div class="hero__button-text">
+                  {{ buttonsText | safe }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% if image %}
+          <div class="hero__end">
+            <div class="hero__image gradient-figure">
+              <img
+                src="{{ image }}"
+                loading="lazy"
+                width="685"
+                height="467"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endmacro %}

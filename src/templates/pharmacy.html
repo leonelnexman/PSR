@@ -1,0 +1,223 @@
+---
+title: Pharmacy
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_wave-quote.html" import waveQuote %}
+{% from "partials/_quote.html" import quote %}
+
+{% block content %}
+
+  {# partial example #}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+    {{ hero(
+      title='Pharmacy',
+      subtitle='Try out our solutions for',
+      desc='Pulsar PSR enables users to sell online and offline simultaneously with a free online store builder and automatic inventory sync.',
+      buttons=button('Test for free', 'button--fill hero__button', 'modal-demo'),
+      buttonsText='No credit card needed for demo period',
+      bg='img/pharmacy-hero.jpg'
+    ) }}
+
+    <section class="section section-mobile-shop-quote">
+      <div class="container">
+        {{ quote(
+          quote='The tailored solutions for pharmacy operations have been a game-changer. From prescription management to personalized patient care, every aspect of my pharmacy has been streamlined and optimized.',
+          attachment='<img
+            src="img/quote-image-4.jpg"
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          >',
+          name='Jessica',
+          nameSubtitle='Pharmacy Owner',
+          avatar='avatar-11.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="section-pharmacy-banner">
+      <div class="container">
+        {{ waveCard(
+          '<span>Step into a world of innovation,<br> collaboration, and growth</span>',
+          'Connect with fellow industry leaders, share insights, and be part<br> of a community that\'s shaping the future of PSR POS.',
+          button('Try it now', 'button--fill')
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-grey section-pharmacy-convenience">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-pharmacy-convenience__title">
+          Pharmacy Convenience
+        </h2>
+        <div class="section-desc section-desc--center section-pharmacy-convenience__desc">
+          Experience Seamless Solutions for Your Pharmacy
+        </div>
+        <div class="section-pharmacy-convenience__list">
+          <div class="feature-card">
+            <div class="feature-card__header">
+              <div class="feature-card__icon">
+                <img
+                  src="img/db.svg"
+                  alt=""
+                  width="48"
+                  height="46"
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                E-invoicing (Egypt Tax Authority)
+              </div>
+            </div>
+            <div class="feature-card__content">
+              The system considers the emission and reception o&nbsp;e-invoices, debit notes, and credit notes.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__header">
+              <div class="feature-card__icon">
+                <img
+                  src="img/desctop-done.svg"
+                  alt=""
+                  width="48"
+                  height="46"
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Loyalty programs, Point & Credits
+              </div>
+            </div>
+            <div class="feature-card__content">
+              They are designed to encourage repeat business, offering people a reward for store/brand loyalty.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__header">
+              <div class="feature-card__icon">
+                <img
+                  src="img/table.svg"
+                  alt=""
+                  width="48"
+                  height="46"
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Analytics
+              </div>
+            </div>
+            <div class="feature-card__content">
+              Analytics involves developing understanding of the factors influencing managerial decisions.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__header">
+              <div class="feature-card__icon">
+                <img
+                  src="img/car.svg"
+                  alt=""
+                  width="48"
+                  height="46"
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Suppliers & Purchases
+              </div>
+            </div>
+            <div class="feature-card__content">
+              Systematic approach to governing costs as a way to ensure long-term value creation.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__header">
+              <div class="feature-card__icon">
+                <img
+                  src="img/spring.svg"
+                  alt=""
+                  width="48"
+                  height="46"
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Customer, Client management (CRM)
+              </div>
+            </div>
+            <div class="feature-card__content">
+              Your business needs client management software that can offer a complete picture of every client.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        {{ imageBlock(
+          title='Try It Free for 7 Days!',
+          desc='Experience the power of our solution firsthand. Start your 7-day free trial today and explore all the features and benefits our service has to offer. ',
+          footer= button('Start Free Trial', 'button--fill', 'modal-request'),
+          buttonsText='No credit card needed for demo period',
+          img='img/fast-food-block-1.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Sales Reports and&nbsp;Analytics',
+          desc='Monitor your sales trends, identify top-selling products, and make data-driven decisions to optimize your operations and boost profitability.',
+          footer= button('Try it now', 'button--fill', 'modal-request'),
+          img='img/pharmacy-block-1.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Inventory Optimization',
+          desc='Keep essential medications in stock with real-time inventory updates, ensuring availability when needed.',
+          footer= button('Try it free', 'button--fill', 'modal-request'),
+          img='img/fast-food-block-5.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Secure Payment Processing',
+          desc='Ensure safe transactions with advanced security measures for payment processing.',
+          footer= button('Start exploring', 'button--fill', 'modal-request'),
+          img='img/pharmacy-block-2.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Simplicity',
+          desc='Our solution offers a user-friendly interface that requires no special training, making it easy for your staff to adapt and navigate the system effortlessly. ',
+          footer= button('Get started', 'button--fill', 'modal-request'),
+          img='img/sweets-block-3.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Barcode Generation',
+          desc='Our system empowers you to generate and manage barcodes for your products, ensuring accurate inventory tracking and efficient checkout processes.',
+          footer= button('Join for free', 'button--fill', 'modal-request'),
+          img='img/block-image-2.jpg'
+        ) }}
+
+      </div>
+    </section>
+
+    <section class="">
+      <div class="container">
+        {% include "partials/_pricing.html" %}
+      </div>
+    </section>
+
+    {% include "partials/sections/_section-question-form.html" %}
+    <section class="section-android-exclusive-banner">
+      {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

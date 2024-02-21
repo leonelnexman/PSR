@@ -1,0 +1,30 @@
+$font: "Inter", sans-serif;
+
+$primary: #00aaab;
+// $primary-light: #abc8ee;
+$primary-lighten: #ebffff;
+$primary-hover: #02b7b9;
+$primary-pressed: darken($primary, 10%);
+
+$secondary: #5317a6;
+$secondary-light: #9747ff;
+$secondary-hover: #6800f0;
+$secondary-pressed: darken($secondary, 5%);
+
+$tertiary: #3579F6;
+$tertiary-hover: #6194f6;
+
+$gray-lighten: #e9edf0;
+$gray-light: #d7dbe0;
+$gray: #4b4c56;
+$gray-dark: #23262b;
+
+$danger: #d34d6d;
+$success: #21996e;
+
+$link-color: $secondary;
+$link-color-hover: $secondary-hover;
+$link-email-color: #4900f3;
+
+$scroll-color: #6f6f70; // auto
+$scroll-bg: rgba(255, 255, 255, 0);

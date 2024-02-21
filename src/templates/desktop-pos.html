@@ -1,0 +1,342 @@
+---
+title: Desktop POS
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_wave-quote.html" import waveQuote %}
+
+{% block content %}
+
+  {# partial example #}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+    {{ hero(
+      align='center',
+      title='Desktop POS',
+      subtitle='Achieve your business goals with',
+      buttons=button('Start Your Free Trial', 'button--fill hero__button', 'modal-demo'),
+      bg='img/dpos-hero.jpg'
+    ) }}
+
+    <section class="section section-grey section-desktop-pos-feature">
+      <div class="container">
+        <div class="section-desktop-pos-feature__wrapper">
+          <h2 class="section-title h2-title section-desktop-pos-feature__title">
+            Features that make our desktop POS stand out
+          </h2>
+          <div class="section-desktop-pos-feature__list">
+            <div class="feature-card feature-card--column">
+              <div class="feature-card__icon">
+                <img
+                  src="img/updown.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h5-title">
+                Integration with other business tools
+              </div>
+              <div class="feature-card__desc">
+                Our system integrates with a range of other business tools, such as accounting software and CRM systems,
+                to streamline your operations and improve efficiency.
+              </div>
+            </div>
+            <div class="feature-card feature-card--column">
+              <div class="feature-card__icon">
+                <img
+                  src="img/security.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h5-title">
+                Personalized support and&nbsp;training
+              </div>
+              <div class="feature-card__desc">
+                We provide personalized support and training to ensure that you get the most out of our desktop POS
+                system.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-contact-today">
+      <div class="container">
+        {{ waveCard(
+          'Contact us today <span>to learn more about how our desktop POS can benefit your business!</span>',
+          'To learn more about how our desktop POS can benefit your business!',
+          button('Ask a question', 'button--fill')
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-android-video">
+      <div class="container">
+        {{ imageBlock(
+          title='Effortless Transaction Management',
+          desc='Simplify sales, returns, and exchanges with our intuitive desktop POS system.',
+          content=video(
+            'https://www.youtube.com/watch?v=BBJa32lCaaY',
+            'img/video-preview.jpg'
+          ),
+          classes='image-block--video',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Multi-Payment Options',
+          desc='Accept various payment methods, from credit cards to mobile wallets, ensuring convenience for customers.',
+          content=video(
+            'https://www.youtube.com/watch?v=BBJa32lCaaY',
+            'img/video-preview.jpg'
+          ),
+          classes='image-block--video'
+        ) }}
+        <div class="section-android-video__quotes">
+          {{ waveQuote(
+            'We\'ve seen a significant boost in efficiency, and the customizable reports have given us valuable insights into our sales patterns. Our customers love the diverse payment options, and we\'re grateful for the excellent 24/7 support. This system truly understands the needs of businesses like ours.',
+            'Anna',
+            'Jenna\'s Boutique',
+            'avatar-5.jpg'
+          ) }}
+          {{ waveQuote(
+            'As a tech retailer, we needed a robust desktop POS system that could handle our diverse product range. This system\'s seamless integration with our existing tools has been a lifesaver. The responsive customer support has been exceptional, addressing our queries promptly. We\'re impressed with functionality.',
+            'Joe',
+            'Tech Haven Electronics',
+            'avatar-6.jpg',
+            align='right'
+          ) }}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-grey section-empower-business">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-empower-business__title">
+          Empower Your Business
+        </h2>
+        <div class="section-desc section-desc--center section-empower-business__desc">
+          Experience a revolution in business management with our desktop POS system.
+        </div>
+        <div class="section-empower-business__list">
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/scan.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Real-Time Inventory Control
+            </div>
+            <div class="feature-card__desc">
+              Avoid overstocking or stockouts, optimize reorder points, and never miss a sales opportunity.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/customer.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Customer Insights at Your Fingertips
+            </div>
+            <div class="feature-card__desc">
+              Tailor your marketing strategies for a personalized shopping experience that keeps customers coming back.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/desctop-done.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Comprehensive reporting
+            </div>
+            <div class="feature-card__desc">
+              Harness the power of data with customizable reports that offer deep insights into sales trends.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/wifi.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Integrated Loyalty Programs
+            </div>
+            <div class="feature-card__desc">
+              Foster customer loyalty and repeat business with integrated loyalty programs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-explore-power">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-explore-power__title">
+          Explore the power and&nbsp;functionality
+        </h2>
+        <div class="section-desc section-desc--center section-explore-power__desc">
+          We believe in transparency and want you to experience the value our system brings before making a commitment.
+        </div>
+        <div class="section-explore-power__wrapper">
+          <div class="section-explore-power__image">
+            <img
+              src="img/explore-power.jpg"
+              loading="lazy"
+              width="638"
+              height="358"
+              alt=""
+              aria-hidden="true"
+            >
+          </div>
+          <div class="section-explore-power__list">
+            <div class="capabilities-item">
+              <div class="capabilities-item__icon">
+                <img
+                  src="img/done.svg"
+                  loading="lazy"
+                  width="27"
+                  height="27"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="capabilities-item__content">
+                <div class="capabilities-item__title h5-title">
+                  Multi-Location Management
+                </div>
+                <div class="capabilities-item__desc">
+                  Witness how our system simplifies centralized management for businesses with multiple outlets.
+                </div>
+              </div>
+            </div>
+            <div class="capabilities-item">
+              <div class="capabilities-item__icon">
+                <img
+                  src="img/done.svg"
+                  loading="lazy"
+                  width="27"
+                  height="27"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="capabilities-item__content">
+                <div class="capabilities-item__title h5-title">
+                  Dashboard Overview
+                </div>
+                <div class="capabilities-item__desc">
+                  Navigate through the dashboard, where you can access key features, real-time data, and intuitive
+                  controls.
+                </div>
+              </div>
+            </div>
+            <div class="capabilities-item">
+              <div class="capabilities-item__icon">
+                <img
+                  src="img/done.svg"
+                  loading="lazy"
+                  width="27"
+                  height="27"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="capabilities-item__content">
+                <div class="capabilities-item__title h5-title">
+                  Offline Mode Resilience
+                </div>
+                <div class="capabilities-item__desc">
+                  Initiate transactions without an internet connection, and observe how the data syncs automatically
+                  once connectivity is restored.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-started-banner">
+      <div class="container">
+        {{ waveCard(
+          'Get Started Today!',
+          'Experience the power of our desktop POS system.<br> Sign up for a free demo now.',
+          button('Start exploring', 'button--fill')
+        ) }}
+      </div>
+    </section>
+
+    <section class="">
+      <div class="container">
+        {% include "partials/_pricing.html" %}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        {{ imageBlock(
+          title='Powerful Integrations',
+          desc='By connecting our desktop POS system with your preferred accounting, e-commerce, and analytics platforms, you unlock a world of possibilities.',
+          footer= button('Try for free', 'button--fill', 'modal-request') +
+          button('Learn more', 'button--outline', 'modal-request'),
+          img='img/powerful-int.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Your All-In-One Solution for Project Success',
+          desc='Discover the ultimate tool that covers all your project needs in one place. No more juggling between various software – we offer the comprehensive solution you\'ve been searching for.',
+          footer= button('Access for free', 'button--fill', 'modal-request') +
+          button('Learn more', 'button--outline', 'modal-request'),
+          img='img/solution.jpg'
+        ) }}
+      </div>
+    </section>
+
+    {% include "partials/sections/_section-question.html" %}
+    {% include "partials/sections/_section-blog.html" %}
+    <section class="section-android-exclusive-banner">
+      {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

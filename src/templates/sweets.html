@@ -1,0 +1,184 @@
+---
+title: Sweets
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_quote.html" import quote %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_wave-quote.html" import waveQuote %}
+{% from "partials/_wave-image-card.html" import waveImageCard %}
+
+{% block content %}
+
+  {# partial example #}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+    {{ hero(
+      title='Sweets',
+      subtitle='Try out our solutions for',
+      desc='Pulsar PSR enables users to sell online and offline simultaneously with a free online store builder and automatic inventory sync. ',
+      buttons=button('Test for free', 'button--fill hero__button', 'modal-demo'),
+      buttonsText='No credit card needed for demo period',
+      bg='img/sweets-hero.jpg'
+    ) }}
+
+    <section class="section section-sweets-quote">
+      <div class="container">
+        {{ waveQuote(
+          'The ease of use and comprehensive support have made managing my sweet empire a delightful experience. This service is a must-have for anyone in the sweets business.',
+          'Rick,',
+          'business owner',
+          avatar='avatar-9.jpg',
+          image='fast-food-block-1.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-grey section-become-partner section-useful-info">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-become-partner__title">
+          Solutions for Elevated Performance
+        </h2>
+        <div class="section-become-partner__desc"></div>
+        <div class="section-become-partner__list">
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/customer.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Customer Display POS software
+            </div>
+            <div class="feature-card__desc">
+              The cashier has a POS screen to add items to cart, record customer information.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/charts.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Charts
+            </div>
+            <div class="feature-card__desc">
+              Clear data visualization is one of the keys to project management success.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/star-bubble.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Flexible Pricing and Promotions
+            </div>
+            <div class="feature-card__desc">
+              Create and manage pricing strategies and&nbsp;promotional offers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sweets-banner">
+      <div class="container">
+        <div class="section-sweets-banner__desktop">
+          {{ waveCard(
+            '<span>Get hands-on with our product\'s<br> capabilities by exploring the demo version,</span>&nbsp;absolutely free.',
+            '',
+            button('Try it now', 'button--fill')
+          ) }}
+        </div>
+        <div class="section-sweets-banner__mobile">
+          {{ waveCard(
+            'Get hands-on with our product\'s capabilities',
+            'Explor the demo version, absolutely free.',
+            button('Test for free', 'button--fill')
+          ) }}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        {{ imageBlock(
+          title='Try It Free for 7 Days!',
+          desc='Experience the power of our solution firsthand. Start your 7-day free trial today and explore all the features and benefits our service has to offer. ',
+          footer= button('Start Free Trial', 'button--fill', 'modal-request'),
+          buttonsText='No credit card needed for demo period',
+          img='img/fast-food-block-1.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Customer Display POS software',
+          desc='Present dynamic order details, promotions, and branding on a clear, engaging screen, turning each transaction into a personalized interaction.',
+          footer= button('Try it now', 'button--fill', 'modal-request'),
+          img='img/fast-food-block-4.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Charts for Insights',
+          desc='Visualize sales trends, inventory performance, and customer behavior, gaining valuable insights to drive your business forward.',
+          footer= button('Get started', 'button--fill', 'modal-request'),
+          img='img/sweets-block-1.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Tailored Pricing and Promotions',
+          desc='Flexibility at its finest. Customize pricing and promotions effortlessly to match your business strategy. From discounts to loyalty rewards, cater to your customers\' needs with ease.',
+          footer= button('Start exploring', 'button--fill', 'modal-request'),
+          img='img/sweets-block-2.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Simplicity',
+          desc='Our solution offers a user-friendly interface that requires no special training, making it easy for your staff to adapt and navigate the system effortlessly. ',
+          footer= button('Get started', 'button--fill', 'modal-request'),
+          img='img/sweets-block-3.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Direct Tax Integration',
+          desc='Stay compliant effortlessly as your sales transactions are seamlessly recorded and submitted directly to the tax system.',
+          footer= button('Start exploring', 'button--fill', 'modal-request'),
+          img='img/sweets-block-4.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="">
+      <div class="container">
+        {% include "partials/_pricing.html" %}
+      </div>
+    </section>
+
+    {% include "partials/sections/_section-question-form.html" %}
+    <section class="section-android-exclusive-banner">
+      {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

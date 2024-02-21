@@ -1,0 +1,15 @@
+{% from "partials/_wave-image-card.html" import waveImageCard %}
+
+<section class="section section-question-wave">
+  <div class="container">
+    {{ waveImageCard(
+      'Any Questions?',
+      'We\'re here to help! If you have any questions or need assistance, our team is ready to provide you with the support you need.',
+      button('Ask a question', 'button--fill') +
+      'By sending your details you agree to <a href="/privacy">
+                 the privacy policy
+                </a>',
+      image='question-bg.jpg'
+    ) }}
+  </div>
+</section>

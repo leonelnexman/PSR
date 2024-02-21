@@ -1,0 +1,208 @@
+---
+title: Mobile Shop
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_wave-quote.html" import waveQuote %}
+{% from "partials/_quote.html" import quote %}
+
+{% block content %}
+
+  {# partial example #}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+    {{ hero(
+      title='Mobile Shop',
+      subtitle='Try out our solutions for',
+      desc='Pulsar PSR enables users to sell online and offline simultaneously with a free online store builder and automatic inventory sync. ',
+      buttons=button('Test for free', 'button--fill hero__button', 'modal-demo'),
+      buttonsText='No credit card needed for demo period',
+      bg='img/mobile-shop-hero.jpg'
+    ) }}
+
+    <section class="section section-grey section-mobile-shop-retail">
+      <div class="container">
+        <div class="section-mobile-shop-retail__wrapper">
+          <div class="section-mobile-shop-retail__content">
+            <h2 class="section-title h2-title section-mobile-shop-retail__title">
+              Elevating Retail Experience
+            </h2>
+            <div class="section-desc section-mobile-shop-retail__desc">
+              Discover tailored POS solutions for your mobile shop
+            </div>
+            <div class="section-mobile-shop-retail__button">
+              {{ button('Test for free', 'button--fill') }}
+            </div>
+          </div>
+
+          <div class="section-mobile-shop-retail__list">
+            <div class="feature-card feature-card--column">
+              <div class="feature-card__icon">
+                <img
+                  src="img/store.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h5-title">
+                Online Showcase / Integrated Online store
+              </div>
+              <div class="feature-card__desc">
+                Generate detailed POS sales and&nbsp;profit reports and monitor your retail sales.
+              </div>
+            </div>
+            <div class="feature-card feature-card--column">
+              <div class="feature-card__icon">
+                <img
+                  src="img/hrm.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h5-title">
+                Employee Performance Tracking
+              </div>
+              <div class="feature-card__desc">
+                Monitor staff performance and sales achievements, fostering healthy competition.
+              </div>
+            </div>
+            <div class="feature-card feature-card--column">
+              <div class="feature-card__icon">
+                <img
+                  src="img/desctop-done.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h5-title">
+                Data Security
+              </div>
+              <div class="feature-card__desc">
+                Ensure customer data and transactions are secure, complying with industry standards.
+              </div>
+            </div>
+            <div class="feature-card feature-card--column">
+              <div class="feature-card__icon">
+                <img
+                  src="img/db.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h5-title">
+                Mobile Payments
+              </div>
+              <div class="feature-card__desc">
+                Accept mobile payments, allowing customers to conveniently pay with their devices and preferred methods.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-mobile-shop-quote">
+      <div class="container">
+        {{ quote(
+          quote='I\'ve seen a significant growth in sales and customer satisfaction since implementing these solutions. Highly recommended for any mobile retailer looking to thrive in the competitive market.',
+          attachment='<img
+            src="img/quote-image-3.jpg"
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          >',
+          name='Alex',
+          nameSubtitle='business owner',
+          avatar='avatar-10.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="">
+      <div class="container">
+        {{ waveCard(
+          '<span>Explore how our solutions can transform your</span> Mobile Shop today',
+          '',
+          button('Try it now', 'button--fill')
+        ) }}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        {{ imageBlock(
+          title='Try It Free for 7 Days!',
+          desc='Experience the power of our solution firsthand. Start your 7-day free trial today and explore all the features and benefits our service has to offer. ',
+          footer= button('Start Free Trial', 'button--fill', 'modal-request'),
+          buttonsText='No credit card needed for demo period',
+          img='img/fast-food-block-1.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Responsive Customer Support',
+          desc='Get expert assistance whenever you need it to ensure smooth operations.',
+          footer= button('Try it now', 'button--fill', 'modal-request'),
+          img='img/resources-3.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Simplicity',
+          desc='Our solution offers a user-friendly interface that requires no special training, making it easy for your staff to adapt and navigate the system effortlessly. ',
+          footer= button('Get started', 'button--fill', 'modal-request'),
+          img='img/sweets-block-3.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Direct Tax Integration',
+          desc='Stay compliant effortlessly as your sales transactions are seamlessly recorded and submitted directly to the tax system.',
+          footer= button('Start exploring', 'button--fill', 'modal-request'),
+          img='img/sweets-block-4.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Efficient Inventory Management',
+          desc='Keep track of your mobile device stock levels, ensuring you\'re always well-stocked with the latest models.',
+          footer= button('Try it free', 'button--fill', 'modal-request'),
+          img='img/fast-food-block-5.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Employee Performance Tracking',
+          desc='Monitor staff achievements and incentivize healthy competition for improved sales.',
+          footer= button('Join for free', 'button--fill', 'modal-request'),
+          img='img/sweets-block-3.jpg'
+        ) }}
+
+      </div>
+    </section>
+
+    <section class="">
+      <div class="container">
+        {% include "partials/_pricing.html" %}
+      </div>
+    </section>
+
+    {% include "partials/sections/_section-question-form.html" %}
+    <section class="section-android-exclusive-banner">
+      {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

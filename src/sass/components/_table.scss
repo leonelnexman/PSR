@@ -1,0 +1,169 @@
+table {
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: -.02em;
+
+    @include css-lock(13, 16, 768, 1300);
+
+    @include r(699) {
+        display: flex;
+    }
+
+    thead {
+        font-size: 14px;
+        line-height: 1;
+        color: #838c95;
+        text-align: start;
+        border-bottom: 1pt solid rgba(#bdc0ca, .7);
+
+        @include r(899) {
+            font-size: 12px;
+        }
+
+        @include r(699) {
+            display: none;
+        }
+
+        th {
+            width: 180px;
+            padding-right: 20px;
+            font-weight: 500;
+            text-align: start;
+            vertical-align: middle;
+
+            @include r(899) {
+                vertical-align: bottom;
+            }
+
+            @include r(740) {
+                min-width: 0 !important;
+            }
+        }
+
+        th:nth-child(2) {
+            width: 224px;
+
+            @include r(899) {
+                min-width: 150px;
+            }
+        }
+
+        th:nth-child(5) {
+            width: 180px;
+
+            @include r(899) {
+                width: 95px;
+            }
+        }
+
+        th:last-child {
+            width: 192px;
+            padding-right: 0;
+
+            @include r(899) {
+                width: 118px;
+            }
+        }
+    }
+
+    tbody {
+        @include r(699) {
+            display: flex;
+            padding-right: 15px;
+            padding-left: 15px;
+            overflow-y: scroll;
+            scroll-snap-type: x mandatory;
+
+            @include scrollbars($size: "none");
+        }
+
+        tr {
+            border-bottom: 1pt solid rgba(#bdc0ca, .7);
+
+            @include r(699) {
+                display: flex;
+                flex-direction: column;
+                min-width: 253px;
+                margin-right: 8px;
+                padding: 20px;
+                border: 1px solid $gray-light;
+                border-radius: 20px;
+                scroll-snap-align: center;
+            }
+        }
+    }
+
+    td {
+        padding: 17px 17px 17px 0;
+        vertical-align: middle;
+
+        @include r(899) {
+            padding: 20px 20px 20px 0;
+            vertical-align: top;
+        }
+
+        @include r(699) {
+            padding: 0;
+
+            & + td {
+                margin-top: 15px;
+            }
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &:before {
+            @include r(699) {
+                content: attr(aria-label);
+                display: block;
+                margin-bottom: 3px;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 1;
+                color: #838c95;
+                letter-spacing: -.02em;
+            }
+        }
+    }
+
+    th {
+        padding: 0 0 15px;
+
+        @include r(699) {
+            padding: 10px 6px;
+        }
+    }
+
+    img {
+        max-width: 10vw;
+
+        @include r(699) {
+            max-width: 25vw;
+            margin-bottom: 5px;
+        }
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+
+        svg {
+            margin-left: 7px;
+        }
+    }
+
+    .is-desktop {
+        @include r(699) {
+            display: none;
+        }
+    }
+
+    .is-mobile {
+        @include rmin(699.1) {
+            display: none;
+        }
+    }
+}

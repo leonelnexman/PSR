@@ -1,0 +1,109 @@
+{% from "partials/_button.html" import button %}
+
+<div
+  id="modal-write-review"
+  class="modal-container"
+>
+  <div class="modal-container__overlay js-modal-close"></div>
+  <div class="modal-container__wrapper">
+    <div class="modal modal-write-review">
+      <div class="modal-close modal__close js-modal-close">
+        {{ mixins.icon('close') }}
+      </div>
+
+      <div class="modal__content">
+        <h2 class="modal__title">Сall you back</h2>
+
+        <div class="modal__form">
+          <form
+            id="form-review"
+            class="form form-review"
+            method="POST"
+            data-form-name="review"
+          >
+            <div class="star-input js-star-input">
+              <input
+                id="review-star"
+                name="reviewStar"
+                type="number"
+                max="5"
+                min="1"
+                value="1"
+                autocomplete="off"
+                class="star-input__input"
+              >
+              <div class="star-input__stars">
+                <svg class="is-active" xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
+                  <path d="M14.5 0L17.7555 10.0193L28.2903 10.0193L19.7674 16.2115L23.0229 26.2307L14.5 20.0385L5.97711 26.2307L9.23257 16.2115L0.709681 10.0193L11.2445 10.0193L14.5 0Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
+                  <path d="M14.5 0L17.7555 10.0193L28.2903 10.0193L19.7674 16.2115L23.0229 26.2307L14.5 20.0385L5.97711 26.2307L9.23257 16.2115L0.709681 10.0193L11.2445 10.0193L14.5 0Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
+                  <path d="M14.5 0L17.7555 10.0193L28.2903 10.0193L19.7674 16.2115L23.0229 26.2307L14.5 20.0385L5.97711 26.2307L9.23257 16.2115L0.709681 10.0193L11.2445 10.0193L14.5 0Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
+                  <path d="M14.5 0L17.7555 10.0193L28.2903 10.0193L19.7674 16.2115L23.0229 26.2307L14.5 20.0385L5.97711 26.2307L9.23257 16.2115L0.709681 10.0193L11.2445 10.0193L14.5 0Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
+                  <path d="M14.5 0L17.7555 10.0193L28.2903 10.0193L19.7674 16.2115L23.0229 26.2307L14.5 20.0385L5.97711 26.2307L9.23257 16.2115L0.709681 10.0193L11.2445 10.0193L14.5 0Z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <div class="input-field-container">
+                  <div class="input-field">
+                    <input
+                      id="headline"
+                      name="headline"
+                      type="text"
+                      class="input input-field__input"
+                    >
+                    <label
+                      class="floating-label"
+                      for="headline"
+                    >
+                      Headline
+                    </label>
+                  </div>
+                  <div class="input-field-helper-line">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <div class="input-field-container">
+                  <div class="input-field textarea-field">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="input input-field__input"
+                ></textarea>
+                    <div class="textarea-resize-icon"></div>
+                    <label
+                      class="floating-label"
+                      for="message"
+                    >
+                      Review
+                    </label>
+                  </div>
+                  <div class="input-field-helper-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row form__submit">
+              {{ button('Send', 'button--fill', submit = true) }}
+            </div>
+            <div
+              class="form__hidden"
+              data-modal="modal-accepted"
+            ></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

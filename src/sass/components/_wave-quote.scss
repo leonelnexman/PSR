@@ -1,0 +1,290 @@
+.wave-quote {
+    position: relative;
+    padding: 92px 40px 75px;
+    overflow: hidden;
+    color: #fff;
+    background: $secondary;
+    border-radius: 16px;
+    isolation: isolate;
+
+    @include r(1068) {
+        padding: 72px 41px 45px 68px;
+    }
+
+    @include any-hover {
+        .wave-quote__waves {
+            transform: scale(1.1);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 29vw;
+        margin: 0 auto;
+
+        @include r(1068) {
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+        position: relative;
+        font-size: 16px;
+
+        @include r(599) {
+            font-size: 14px;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 73px;
+            height: 78px;
+            background: url("../img/quote-2.svg") no-repeat;
+            background-position: bottom;
+            background-size: contain;
+
+            @include r(1068) {
+                width: 48px;
+            }
+        }
+
+        &:before {
+            right: 100%;
+            bottom: 100%;
+        }
+
+        &:after {
+            top: 100%;
+            left: 100%;
+            transform: rotate(180deg);
+
+            @include r(599) {
+                left: 90%;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        margin-top: 30px;
+        line-height: normal;
+    }
+
+    &__author {
+        font-weight: 500;
+        font-size: 24px;
+
+        @include r(599) {
+            font-size: 16px;
+        }
+    }
+
+    &__author-subtitle {
+        font-weight: 500;
+        font-size: 18px;
+
+        @include r(599) {
+            font-size: 14px;
+        }
+    }
+
+    &__avatar {
+        display: flex;
+        width: 60px;
+        height: 60px;
+        margin-right: 18px;
+        overflow: hidden;
+        border-radius: 50%;
+
+        @include r(599) {
+            width: 44px;
+            height: 44px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__image {
+        display: flex;
+        flex: 0 1 auto;
+        justify-self: flex-end;
+        width: 43vw;
+        height: 375px;
+        max-width: 619px;
+        isolation: isolate;
+        aspect-ratio: 1.65;
+
+        @include r(1068) {
+            display: none;
+        }
+    }
+
+    &__waves {
+        z-index: -1;
+        background-color: $secondary;
+        border-radius: inherit;
+    }
+
+    &__wave-left {
+        top: -80%;
+        left: -10%;
+        width: 60%;
+        height: 200%;
+
+        @include r(599) {
+            top: -90%;
+            left: -25%;
+            width: 100%;
+        }
+    }
+
+    &__wave-right {
+        top: -60%;
+        right: -80%;
+        width: 80%;
+        height: 200%;
+        opacity: .4;
+
+        @include r(599) {
+            top: -50%;
+            right: -100%;
+            width: 100%;
+        }
+    }
+
+    &--left {
+        .wave-quote__wave-right {
+            display: none;
+        }
+    }
+
+    &--right {
+        .wave-quote__wave-left {
+            display: none;
+        }
+    }
+
+    &--image {
+        @include rmin(1068.1) {
+            display: flex;
+            gap: 9vw;
+            align-items: center;
+            padding: 40px 40px 40px 55px;
+        }
+
+        @include r(1068) {
+            padding: 75px 20px 50px;
+        }
+
+        .wave-quote__wrapper {
+            max-width: 543px;
+            margin-left: 0;
+        }
+
+        .wave-quote__content {
+            display: flex;
+            font-weight: 500;
+            font-size: 22px;
+
+            @include r(1068) {
+                margin-left: 60px;
+            }
+
+            @include r(599) {
+                font-size: 14px;
+            }
+        }
+
+        .wave-quote__content:before {
+            background-image: url(../img/quote.svg);
+
+            @include rmin(1068.1) {
+                position: relative;
+                right: unset;
+                bottom: unset;
+                display: block;
+                flex: 0 0 auto;
+                margin-right: 32px;
+            }
+
+            @include r(1068) {
+                bottom: 80%;
+            }
+        }
+
+        .wave-quote__content:after {
+            display: none;
+        }
+
+        .wave-quote__footer {
+            display: flex;
+            align-items: center;
+
+            @include r(1068) {
+                position: relative;
+                padding-top: 13px;
+            }
+        }
+
+        .wave-quote__footer:before {
+            @include r(1068) {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #00e2bc 0%, #8424ff 100%);
+            }
+        }
+
+        .wave-quote__avatar {
+            flex: 0 0 auto;
+            width: 110px;
+            height: 110px;
+            margin-right: 26px;
+
+            @include r(1068) {
+                width: 59px;
+                height: 59px;
+                margin-right: 12px;
+            }
+        }
+
+        .wave-quote__author {
+            display: inline-block;
+            font-size: 22px;
+
+            @include r(599) {
+                font-size: 16px;
+            }
+        }
+
+        .wave-quote__author-subtitle {
+            display: inline-block;
+            font-size: 18px;
+            color: #d9d9d9;
+
+            @include r(599) {
+                font-size: 14px;
+            }
+        }
+
+        .wave-quote__wave-left {
+            @include r(1068) {
+                top: 50%;
+                left: 50%;
+                width: 200%;
+                height: 100%;
+                opacity: .5;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{% import "data/data.html" as menus %}
+
+{% macro nav(list='') %}
+  <nav class="nav">
+    {% for index, menu in menus.mainMenu.entries() %}
+      {{ navitem(menu) }}
+    {% endfor %}
+  </nav>
+{% endmacro %}
+
+{% macro navitem(menu, styled=true) %}
+  {% if menu.children %}
+    <div
+      class="nav__item  has-child {{ menu.addClass }}"
+    >
+      <div class="styled-link">
+        {{ menu.title }}
+      </div>
+
+      <div class="nav__child">
+        <div class="nav-child-groups">
+          {% for i, childrenMenu in menu.children.entries() %}
+            {% if childrenMenu.rows %}
+              <div class="nav-child-group">
+                {% for i, row in childrenMenu.rows.entries() %}
+                  <div class="nav-child-group">
+                    <div class="nav-child-group__title">{{ row.title }}</div>
+                    <div class="nav-child-group__list {{ 'nav-child-group__list--columns' if row.columns }}">
+                      {% for i, list in row.list.entries() %}
+                        {{ navitem(list, false) }}
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% else %}
+              <div class="nav-child-group {{ 'nav-child-group--continue' if not childrenMenu.title }} ">
+                <div class="nav-child-group__title">{{ childrenMenu.title }}</div>
+                <div class="nav-child-group__list {{ 'nav-child-group__list--columns' if childrenMenu.columns }}">
+                  {% for i, list in childrenMenu.list.entries() %}
+                    {{ navitem(list, false) }}
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <a
+      href="{{ menu.link }}"
+      class="nav__item {{ menu.addClass }}"
+    >
+      <span class="{{ 'styled-link' if styled }}">
+         {{ menu.title }}
+      </span>
+    </a>
+  {% endif %}
+{% endmacro %}

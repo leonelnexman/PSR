@@ -1,0 +1,44 @@
+.section-mobile-shop-retail {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    &__wrapper {
+        display: grid;
+        grid-gap: 32px 50px;
+        grid-template-columns: 40vw 1fr;
+
+        @include r(1068) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__title {
+        flex: 1 1 472px;
+    }
+
+    &__button {
+        margin-top: 30px;
+
+        @include r(1068) {
+            display: none;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        @include r(1068) {
+            gap: 12px;
+        }
+    }
+
+    .feature-card--column {
+        gap: 12px;
+    }
+
+    .feature-card__title {
+        color: $gray-dark;
+    }
+}

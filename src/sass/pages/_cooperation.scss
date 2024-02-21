@@ -1,0 +1,55 @@
+.section-partnerships {
+    &__grid {
+        display: grid;
+        gap: 15px;
+        max-width: 676px;
+    }
+}
+
+.section-trusted-partner-banner {
+    padding-bottom: 20px;
+
+    @include r(599) {
+        padding-bottom: 0;
+    }
+}
+
+.section-businesses-benefit {
+    &__title {
+        max-width: 683px;
+        margin: 0 auto 60px;
+
+        @include r(899) {
+            margin: 0 0 24px;
+            text-align: start;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+
+        @include r(1068) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__image {
+        @include r(1068) {
+            display: none;
+        }
+    }
+
+    .feature-card {
+        background: #f5f5f5;
+    }
+
+    .feature-card + .feature-card {
+        margin-top: 15px;
+    }
+}
+
+.section-payment-solutions {
+    padding-bottom: 60px;
+}

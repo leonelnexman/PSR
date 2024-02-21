@@ -1,0 +1,101 @@
+.checkbox-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.custom-checkbox + label {
+    display: inline-flex;
+    align-items: flex-start;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: normal;
+    cursor: pointer;
+    user-select: none;
+
+    a {
+        color: $primary;
+
+        &:hover {
+            color: $primary-hover;
+        }
+    }
+
+    span {
+    }
+}
+
+.custom-checkbox + label:before {
+    content: "";
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border: 2px solid #c3c3c3;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    transition: border .2s ease, background .2s ease;
+}
+
+.custom-checkbox--black + label:before {
+    border-color: rgba($gray, .5);
+}
+
+.custom-checkbox:not(:disabled):not(:checked) + label:hover:before {
+    border-color: $primary;
+}
+
+.custom-checkbox--black:not(:disabled):not(:checked) + label:hover:before {
+    border-color: $gray;
+}
+
+.custom-checkbox:not(:disabled):active + label:before {
+    background-image: url("../img/done-2.svg");
+    background-size: 15px 15px;
+    background-color: $primary;
+    opacity: .5;
+
+    @include r(599) {
+        background-size: 11px 9px;
+    }
+}
+
+.custom-checkbox:focus + label:before {
+    box-shadow: 0 0 0 .2rem rgba($primary-hover, .25);
+}
+
+.custom-checkbox:focus:not(:checked) + label:before {
+    border-color: $primary-hover;
+}
+
+.custom-checkbox:checked + label:before {
+    background-image: url("../img/done-2.svg");
+    background-size: 20px 20px;
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.custom-checkbox:checked + label {
+
+}
+
+.custom-checkbox--white:checked + label:before {
+    background-image: url("../img/done.svg");
+    background-size: 15px 10px;
+    border-color: #fff;
+}
+
+.custom-checkbox:disabled + label:before {
+    opacity: .3;
+}

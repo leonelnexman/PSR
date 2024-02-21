@@ -1,0 +1,131 @@
+.docs-search {
+    position: relative;
+    width: 100%;
+
+    &.is-active {
+        .docs-search__result {
+            display: block;
+        }
+    }
+
+    &__result {
+        position: absolute;
+        top: calc(100% + 4px);
+        right: 0;
+        left: 0;
+        z-index: 1;
+        display: none;
+
+        @include r(899) {
+            left: unset;
+            width: calc(100vw - 30px);
+        }
+    }
+
+    .input {
+        @include r(599) {
+            padding-left: 16px !important;
+        }
+    }
+
+    .floating-label {
+        @include r(599) {
+            left: 16px;
+        }
+    }
+}
+
+.result-search-list {
+    max-height: 50vh;
+    padding: 20px 20px 30px;
+    overflow: scroll;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 32px 0 rgba(0, 0, 0, .12);
+    transform: translateY(-16px);
+    opacity: 0;
+    transition: transform .2s ease, opacity .2s ease;
+
+    // visibility: hidden;
+    pointer-events: none;
+
+    @include scrollbars($thumb-color: $secondary, $size: 4px, $border-radius: 8px);
+
+    @include r(599) {
+        padding: 12px 12px 15px;
+    }
+
+    &.is-active {
+        transform: translateY(0);
+        opacity: 1;
+
+        // visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+.search-result-count {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $gray-dark;
+
+    @include r(599) {
+        font-size: 12px;
+    }
+}
+
+.search-result-group {
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__list {
+
+    }
+
+    @include r(899) {
+        margin-top: 20px;
+    }
+}
+
+.search-item {
+    position: relative;
+
+    & + .search-item {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #e7e7e7;
+
+        @include r(599) {
+            margin-top: 16px;
+        }
+    }
+
+    &__sub-title {
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #8b8b8b;
+
+        @include r(599) {
+            font-size: 12px;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        color: #7f7f7f;
+
+        @include r(599) {
+            font-size: 16px;
+        }
+    }
+
+    .is-highlight {
+        color: #6017c4;
+    }
+}

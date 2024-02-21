@@ -1,0 +1,26 @@
+{% from "partials/_form-call-modal.html" import formCallModal %}
+
+<div
+  id="modal-call"
+  class="modal-container"
+>
+  <div class="modal-container__overlay js-modal-close"></div>
+  <div class="modal-container__wrapper">
+    <div class="modal modal-call">
+      <div class="modal-close modal__close js-modal-close">
+        {{ mixins.icon('close') }}
+      </div>
+
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2 class="h4-title modal__title">Сall you back</h2>
+          <div class="modal__desc">Enter your phone number and we will call you back</div>
+        </div>
+
+        <div class="modal__form">
+          {{ formCallModal() }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

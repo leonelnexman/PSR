@@ -1,0 +1,39 @@
+$sprites: (
+  "facebook": (
+    normal: (
+    x: 0px,
+    y: 0px,
+    width: 10px,
+    height: 19px,
+    image: "../img/sprite.png",
+    total_width: 10px,
+    total_height: 19px,
+    )
+  ),
+);
+
+@function icon-attr($name, $attr, $size: normal) {
+  $icon: map-get($sprites, $name);
+  $iconSize: map-get($icon, $size);
+  @return map-get($iconSize, $attr);
+}
+
+@mixin sprite($name) {
+  display: inline-block;
+  vertical-align: middle;
+
+  width: icon-attr($name, width);
+  height: icon-attr($name, height);
+
+  $image: url("#{icon-attr($name, image)}");
+  $position: icon-attr($name, x) icon-attr($name, y);
+  $size: icon-attr($name, total_width) icon-attr($name, total_height);
+
+  background: $image $position / $size no-repeat;
+}
+
+@each $name in map-keys($sprites) {
+  .sprite-#{$name} {
+    @include sprite($name);
+  }
+}

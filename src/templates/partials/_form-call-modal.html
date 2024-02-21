@@ -1,0 +1,52 @@
+{% from "partials/_button.html" import button %}
+
+{% macro formCallModal() %}
+  <form
+    id="form-call-modal"
+    class="form form-subscribe"
+    method="POST"
+    data-form-name="call"
+  >
+    <div class="form__row">
+      <div class="form__col">
+        <div class="form__field">
+          <div class="input-field-container">
+            <div class="input-field">
+              <input
+                id="tel"
+                name="tel"
+                type="tel"
+                class="input input-field__input"
+              >
+              <label
+                class="floating-label"
+                for="tel"
+              >
+                Phone number
+              </label>
+            </div>
+            <div class="input-field-helper-line">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form__col">
+        <div class="form__submit">
+          {{ button('Send', 'button--fill', submit = true) }}
+        </div>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__terms">
+        By sending your details you agree to
+        <a href="/privacy">
+          the privacy policy
+        </a>
+      </div>
+    </div>
+    <div
+      class="form__hidden"
+      data-modal="modal-accepted"
+    ></div>
+  </form>
+{% endmacro %}

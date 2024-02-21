@@ -1,0 +1,235 @@
+.contacts-hero {
+    padding-top: 50px;
+    font-weight: 500;
+    line-height: normal;
+
+    @include r(599) {
+        padding-top: 25px;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+
+        @include r(599) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__content {
+    }
+
+    &__group {
+    }
+
+    &__group + &__group {
+        margin-top: 40px;
+
+        @include r(599) {
+            margin-top: 20px;
+        }
+    }
+
+    &__socials {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    &__socials + &__socials {
+        margin-left: 30px;
+
+        @include r(599) {
+            margin-left: 15px;
+        }
+    }
+
+    &__socials-list {
+        display: flex;
+        gap: 15px;
+
+        @include r(599) {
+            gap: 10px;
+        }
+    }
+
+    &__group-row {
+
+    }
+
+    &__group-row + &__group-row {
+        margin-top: 30px;
+    }
+
+    &__subtitle {
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 26px;
+        color: $secondary;
+        letter-spacing: -.52px;
+
+        @include r(599) {
+            font-size: 18px;
+            letter-spacing: -.18px;
+        }
+    }
+
+    &__label {
+        margin-bottom: 12px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: normal;
+        color: rgba($gray-dark, .7);
+    }
+
+    &__text {
+        line-height: 1.2;
+    }
+
+    &__address {
+        margin-bottom: 10px;
+
+        @include r(599) {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__tel {
+    }
+
+    &__email {
+        text-decoration-line: underline;
+    }
+
+    &__link {
+        display: block;
+        color: $gray-dark;
+    }
+
+    &__link + &__link {
+        margin-top: 10px;
+
+        @include r(599) {
+            margin-top: 8px;
+        }
+    }
+
+    &__details {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    &__details-row {
+        display: grid;
+        grid-template-columns: 145px 1fr;
+        gap: 20px;
+    }
+
+    &__details-row + &__details-row {
+        margin-top: 15px;
+    }
+
+    &__details-label {
+        color: var(--gray-2, #4d545a);
+    }
+
+    &__details-value {
+        color: $gray-dark;
+    }
+
+    &__footer {
+        position: relative;
+        margin-top: 30px;
+        padding-top: 30px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 1px;
+            background: linear-gradient(270deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%);
+        }
+
+        .button {
+            @include r(599) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__map {
+        flex: 1 1 49vw;
+        max-width: 705px;
+        max-height: 460px;
+        margin-left: 4.8vw;
+        aspect-ratio: 1.53;
+        background-color: #f5f5f5;
+
+        @include r(1180) {
+            flex: 1 1 100%;
+            max-width: unset;
+            margin: 40px 0 0;
+        }
+
+        @include r(899) {
+            width: auto;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.section-become-partner {
+    margin-bottom: 80px;
+    padding-top: 90px;
+    padding-bottom: 70px;
+
+    @include r(599) {
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        @include r(599) {
+            text-align: start;
+        }
+    }
+
+    &__desc {
+        max-width: 640px;
+        margin: 24px auto 40px;
+
+        @include r(599) {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: start;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 12px 30px;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        margin-top: 46px;
+
+        @include r(599) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,233 @@
+---
+title: Grocery store
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_quote.html" import quote %}
+
+{% block content %}
+
+  {# partial example #}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+    {{ hero(
+      title='Grocery store',
+      subtitle='Try out our solutions for',
+      desc='Pulsar PSR enables users to sell online and offline simultaneously with a free online store builder and automatic inventory sync. ',
+      buttons=button('Test for free', 'button--fill hero__button', 'modal-demo'),
+      buttonsText='No credit card needed for demo period',
+      bg='img/grocery-store-hero.jpg'
+    ) }}
+
+    <section class="section section-quote">
+      <div class="container">
+        {{ quote(
+          quote='One of the best POS solutions for small businesses on the market. You can manage your inventory and track customer relationships in one place.',
+          attachment='<img
+            src="img/quote-image.jpg"
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          >',
+          name='John',
+          nameSubtitle='business owner',
+          avatar='avatar-4.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="section-android-unlock-banner">
+      <div class="container">
+        {{ waveCard(
+          '<span>Discover</span> the advantages<br> <span>of&nbsp;our service!</span>',
+          desc='Become part of a dynamic community of grocery stores from<br> various cities who have already adopted our platform.',
+          content=button('Try it now', 'button--fill')
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-grey section-android-features section-convenience-grocery">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-convenience-grocery__title">
+          Convenience for Grocery Stores
+        </h2>
+        <div class="section-desc section-desc--center section-convenience-grocery__desc">
+          Discover the key advantages of our service tailored specifically for grocery stores.
+        </div>
+        <div class="section-android-features__wrapper section-convenience-grocery__wrapper">
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/list.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Tecards, weighing goods
+            </div>
+            <div class="feature-card__desc">
+              Recipe sheets serve as a guide and help you monitor the inventory of ingredients in the warehouse.
+            </div>
+          </div>
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/barcode.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Barcode Price Checker software
+            </div>
+            <div class="feature-card__desc">
+              Simply hold the product near the Barcode Scanner, and information will appear on the display.
+            </div>
+          </div>
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/customer.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Customer Display POS software
+            </div>
+            <div class="feature-card__desc">
+              The cashier can utilize the POS screen to add items to the cart and record customer information.
+            </div>
+          </div>
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/bag-2.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Online Ordering, Delivery System
+            </div>
+            <div class="feature-card__desc">
+              Take full control of your business with our centralized system.
+            </div>
+          </div>
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/scan.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Inventory Management
+            </div>
+            <div class="feature-card__desc">
+              Achieving optimal inventory management means ensuring the right products are available.
+            </div>
+          </div>
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/star-bubble.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Flexible Pricing and Promotions
+            </div>
+            <div class="feature-card__desc">
+              Create and manage pricing strategies and promotional offers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        {{ imageBlock(
+          title='Try It Free for 7 Days!',
+          desc='Experience the power of our solution firsthand. Start your 7-day free trial today and explore all the features and benefits our service has to offer.',
+          footer=button('Start Free Trial', 'button--fill', 'modal-request'),
+          buttonsText='No credit card needed for demo period',
+          img='img/grocery-1.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Sales Reports and&nbsp;Analytics',
+          desc='<span>Gain Insights with Comprehensive Sales Reports</span> Monitor your sales trends, identify top-selling products, and make data-driven decisions to optimize your operations and boost profitability.',
+          footer=button('Try it now', 'button--fill', 'modal-request'),
+          img='img/grocery-2.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Simplicity',
+          desc='<span>Streamline Your Operations with Ease</span> Our solution offers a user-friendly interface that requires no special training, making it easy for your staff to adapt and navigate the system effortlessly.',
+          footer=button('Get started', 'button--fill', 'modal-request'),
+          img='img/grocery-3.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Direct Tax Integration',
+          desc='<span>Simplify Tax Compliance Hassles</span> Stay compliant effortlessly as your sales transactions are seamlessly recorded and submitted directly to the tax system.',
+          footer=button('Start exploring', 'button--fill', 'modal-request'),
+          img='img/grocery-4.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Inventory Management',
+          desc='<span>Organize Your Products with&nbsp;Inventory Management</span> Create a logical structure for your inventory, allowing for quick access and efficient product search, enhancing your overall productivity.',
+          footer=button('Try it free', 'button--fill', 'modal-request'),
+          img='img/grocery-5.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Barcode Generation',
+          desc='<span>Efficient Product Management with&nbsp;Barcode Generation</span> Our system empowers you to generate and manage barcodes for your products, ensuring accurate inventory tracking and efficient checkout processes.',
+          footer=button('Join for free', 'button--fill', 'modal-request'),
+          img='img/grocery-6.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="section-grocery-prices">
+      <div class="container">
+        {% include "partials/_pricing.html" %}
+      </div>
+    </section>
+
+    {% include "partials/sections/_section-question-form.html" %}
+    <section class="section-android-exclusive-banner">
+      {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

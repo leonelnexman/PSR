@@ -1,0 +1,154 @@
+.hero-pricing {
+    margin-bottom: 30px;
+
+    @include r(599) {
+        margin-bottom: 40px;
+    }
+
+    .hero__bg {
+        overflow: hidden;
+        background: $secondary;
+    }
+
+    .hero__title {
+        color: #07c9a8;
+
+        @include r(599) {
+            margin-bottom: 0;
+        }
+    }
+
+    .hero__wrapper {
+        height: auto;
+        min-height: unset;
+        max-height: unset;
+        padding-top: 100px;
+        padding-bottom: 86px;
+
+        @include r(599) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    }
+
+    .hero__desc {
+        @include r(599) {
+            font-size: 14px;
+        }
+    }
+
+    .hero__footer {
+        margin-top: 50px;
+
+        @include r(599) {
+            margin-top: 24px;
+        }
+    }
+
+    .hero__button-text {
+        @include r(599) {
+            width: auto;
+            margin: 0 0 0 28px;
+            text-align: start;
+        }
+    }
+
+    .hero__buttons {
+        @include r(599) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .waves-bg__wave-left {
+        top: -40%;
+        left: -2%;
+
+        @include r(599) {
+            top: 45%;
+            opacity: .5;
+        }
+    }
+
+    .waves-bg__wave-right {
+        top: -60%;
+
+        @include r(599) {
+            top: 40%;
+            opacity: .5;
+        }
+    }
+}
+
+.section-addons {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    padding-top: 90px;
+    padding-bottom: 70px;
+
+    @include r(599) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        margin-bottom: 27px;
+
+        @include r(599) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__desc {
+        max-width: 780px;
+        margin: 0 auto 50px;
+
+        @include r(599) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(3, minmax(312px, 1fr));
+        margin-right: -15px;
+        margin-bottom: 50px;
+        margin-left: -15px;
+        padding-right: 15px;
+        padding-left: 15px;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
+        @include r(1068) {
+            display: flex;
+            gap: 0;
+        }
+
+        @include r(599) {
+            margin-bottom: 32px;
+        }
+    }
+
+    .addon-card {
+        @include r(1068) {
+            flex: 0 0 312px;
+        }
+    }
+
+    .addon-card + .addon-card {
+        @include r(1068) {
+            margin-left: 10px;
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+
+        .button {
+            @include r(599) {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,262 @@
+---
+title: Fast food
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_quote.html" import quote %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_wave-quote.html" import waveQuote %}
+
+{% block content %}
+
+  {# partial example #}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+    {{ hero(
+      title='Fast food',
+      subtitle='Try out our solutions for',
+      desc='Pulsar PSR enables users to sell online and offline simultaneously with a free online store builder and automatic inventory sync.',
+      buttons=button('Test for free', 'button--fill hero__button', 'modal-demo'),
+      bg='img/ff-hero.jpg'
+    ) }}
+
+    <section class="section section-grey section-sales">
+      <div class="container">
+        <div class="grid-flex">
+          <div class="large-6 medium-12">
+            <h2 class="section-title h1-title section-sales__title">
+              Elevate Your Quick Serve Business with PSR
+            </h2>
+            <div class="section-desc">
+              Experience Enhanced Efficiency and Customer Satisfaction.
+            </div>
+            <div class="section-sales__button">
+              {{ button('Try it free', 'button--fill', 'modal-request') }}
+            </div>
+          </div>
+          <div class="large-6 medium-12">
+            <div class="section-sales__list">
+              <div class="system-case-card">
+                <div class="system-case-card__icon">
+                  <img
+                    src="img/web.svg"
+                    loading="lazy"
+                    width="45"
+                    height="45"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="system-case-card__content">
+                  <div class="system-case-card__title">Easy Menu Updates</div>
+                  <div class="system-case-card__desc">
+                    Keep your menu fresh and up-to-date with instant changes, ensuring your customers are always in the
+                    know.
+                  </div>
+                </div>
+              </div>
+              <div class="system-case-card">
+                <div class="system-case-card__icon">
+                  <img
+                    src="img/db.svg"
+                    loading="lazy"
+                    width="45"
+                    height="45"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="system-case-card__content">
+                  <div class="system-case-card__title">Swift Order Processing</div>
+                  <div class="system-case-card__desc">
+                    Serve your customers with lightning speed, reducing wait times and&nbsp;enhancing their overall
+                    experience.
+                  </div>
+                </div>
+              </div>
+              <div class="system-case-card">
+                <div class="system-case-card__icon">
+                  <img
+                    src="img/bag.svg"
+                    loading="lazy"
+                    width="45"
+                    height="45"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="system-case-card__content">
+                  <div class="system-case-card__title">Customer Delight</div>
+                  <div class="system-case-card__desc">
+                    Provide quick and quality service, leaving a lasting impression that brings customers back for more.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        {{ waveCard(
+          '<span>Experience</span> more <span>than just<br> a service</span>',
+          'Step forward and be part of a movement that\'s shaping the future.',
+          button('Try it now', 'button--fill')
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-food-quote">
+      <div class="container">
+        {{ quote(
+          quote='As a fast food owner, speed and efficiency are everything. This service has been a true blessing for my quick serve business.',
+          attachment='<img
+            src="img/quote-image-2.jpg"
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          >',
+          name='Maria',
+          nameSubtitle='business owner',
+          avatar='avatar-8.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-grey section-quick-serve">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-quick-serve__title">
+          Efficiency for Quick Serve
+        </h2>
+        <div class="section-desc section-desc--center section-quick-serve__desc">
+          Explore the fundamental benefits of our tailored service designed exclusively for quick serve businesses.
+        </div>
+        <div class="section-quick-serve__list">
+          <div class="feature-card">
+            <div class="feature-card__header">
+              <div class="feature-card__icon">
+                <img
+                  src="img/kitchen.svg"
+                  alt=""
+                  width="48"
+                  height="46"
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Kitchen Display software
+              </div>
+            </div>
+            <div class="feature-card__content">
+              This software allows restaurants and kitchens to&nbsp;view orders and other kitchen communications.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__header">
+              <div class="feature-card__icon">
+                <img
+                  src="img/qr.svg"
+                  alt=""
+                  width="48"
+                  height="46"
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                QR menu
+              </div>
+            </div>
+            <div class="feature-card__content">
+              Guests only need to open the QR code on their phone instead of the paper menu and order.
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__header">
+              <div class="feature-card__icon">
+                <img
+                  src="img/bag-2.svg"
+                  alt=""
+                  width="48"
+                  height="46"
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Online Ordering, Delivery System
+              </div>
+            </div>
+            <div class="feature-card__content">
+              Our system centralizes all pick-up, delivery & dine in orders, so you can be in full control of business.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        {{ imageBlock(
+          title='Try It Free for 7 Days!',
+          desc='Experience the power of our solution firsthand. Start your 7-day free trial today and explore all the features and benefits our service has to offer. ',
+          footer= button('Start Free Trial', 'button--fill', 'modal-request'),
+          buttonsText='No credit card needed for demo period',
+          img='img/fast-food-block-1.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Online Ordering and Seamless Delivery',
+          desc='Efficiency meets convenience with our integrated online ordering and delivery system. Allow your customers to place orders from the comfort of their homes, while you ensure timely and hassle-free deliveries.',
+          footer= button('Try it now', 'button--fill', 'modal-request'),
+          img='img/fast-food-block-2.jpg'
+        ) }}
+        {{ imageBlock(
+          title='QR Menu Integration',
+          desc='Elevate the dining experience with QR menus. Guests can simply scan and access a digital menu, minimizing contact and enhancing safety.',
+          footer= button('Get started', 'button--fill', 'modal-request'),
+          img='img/fast-food-block-3.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Barcode Generation',
+          desc='Our system empowers you to generate and manage barcodes for your products, ensuring accurate inventory tracking and efficient checkout processes.',
+          footer= button('Join for free', 'button--fill', 'modal-request'),
+          img='img/fast-food-block-4.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Inventory Management',
+          desc='Create a logical structure for your inventory, allowing for quick access and efficient product search, enhancing your overall productivity.',
+          footer= button('Try it free', 'button--fill', 'modal-request'),
+          img='img/fast-food-block-5.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Streamlined Kitchen Display Software',
+          desc='Enhance kitchen operations with our cutting-edge display software. Orders are accurately communicated, reducing errors and speeding up preparation times.',
+          footer= button('Start exploring', 'button--fill', 'modal-request'),
+          img='img/fast-food-block-6.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="">
+      <div class="container">
+        {% include "partials/_pricing.html" %}
+      </div>
+    </section>
+
+    {% include "partials/sections/_section-question-form.html" %}
+    <section class="section-android-exclusive-banner">
+      {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% from "partials/_video.html" import video %}
+
+<section class="section section-slider section-reviews-slider">
+  <div class="container">
+    <h2 class="section-title section-title--center h2-title section-reviews-slider__title">
+      Customer reviews
+    </h2>
+    <div class="section-desc section-desc--center section-reviews-slider__desc">
+      Join the growing list of happy customers and&nbsp;see how our products can benefit your business too
+    </div>
+    <div class="swiper-default-wrapper section-reviews-slider__list">
+      <div class="swiper swiper-video-reviews">
+        <div class="swiper-wrapper js-gallery-videos">
+          <div class="swiper-slide swiper-slide-video-review">
+            <div class="video-review-card">
+              <div class="video-review-card__attachment">
+                {{ video(
+                  'https://www.youtube.com/watch?v=sDg7drQBRUQ',
+                  'img/review-slider-1.jpg',
+                  gallery=false
+                ) }}
+              </div>
+              <div class="video-review-card__content">
+                <div class="video-review-card__title h5-title">
+                  Fantastic service!
+                </div>
+                <div class="video-review-card__desc">
+                  Our business saw a significant boost in efficiency and sales after implementing their solutions. Highly recommended!
+                </div>
+                <div class="video-review-card__footer">
+                  <div class="video-review-card__author-title">
+                    John Anderson
+                  </div>
+                  <div class="video-review-card__author-subtitle">
+                    CEO of ABC Grocery Store
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-video-review">
+            <div class="video-review-card">
+              <div class="video-review-card__attachment">
+                {{ video(
+                  'https://www.youtube.com/watch?v=sDg7drQBRUQ',
+                  'img/review-slider-1.jpg',
+                  gallery=false
+                ) }}
+              </div>
+              <div class="video-review-card__content">
+                <div class="video-review-card__title h5-title">
+                  Fantastic service!
+                </div>
+                <div class="video-review-card__desc">
+                  Our business saw a significant boost in efficiency and sales after implementing their solutions. Highly recommended!
+                </div>
+                <div class="video-review-card__footer">
+                  <div class="video-review-card__author-title">
+                    John Anderson
+                  </div>
+                  <div class="video-review-card__author-subtitle">
+                    CEO of ABC Grocery Store
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="swiper-custom-button-prev button button--fill button--round">
+        {{ mixins.icon('right-arrow') }}
+      </button>
+      <button class="swiper-custom-button-next button button--fill button--round">
+        {{ mixins.icon('right-arrow') }}
+      </button>
+    </div>
+
+    <div class="section-reviews-slider__price">
+      {% include "partials/_pricing.html" %}
+    </div>
+  </div>
+</section>

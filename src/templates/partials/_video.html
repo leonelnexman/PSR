@@ -1,0 +1,27 @@
+{% import "partials/_mixins.html" as mixins %}
+
+{% macro video(url, preview, gallery=true, classes='') %}
+  <div class="video {{ 'js-gallery-videos' if gallery }} {{ classes }}">
+    {# data-src: youtube video or data-video self hosted #}
+    <div
+      class="video__preview js-gallery-video"
+      data-src="{{ url }}?mute=0"
+      {#                  data-lg-size="width-height"#}
+      {#                  data-video='{"source": [{"src":"url", "type":"video/mp4"}], "attributes": {"preload": false, "playsinline": true, "controls": true}}'#}
+      {#                  data-poster="img/video-preview.jpg"#}
+    >
+      <img
+        src="{{ preview }}"
+        loading="lazy"
+        width="685"
+        height="372"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+    <div class="video__play-btn">
+      Watch video • 4 min
+      {{ mixins.icon('play-video') }}
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,20 @@
+{% macro entryCard(title, desc, content, classes="", avatar) %}
+  <div class="entry-card">
+    <div class="entry-card__image">
+      <img
+        src="https://loremflickr.com/500/500/abstract?lock={{ range(10, 50) | random }}"
+        loading="lazy"
+        width="300"
+        height="300"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+    <div class="entry-card__category">Business</div>
+    <div class="entry-card__date">20.08.2023</div>
+    <div class="entry-card__title h4-title">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </div>
+    <a href="#" class="entry-card__link"></a>
+  </div>
+{% endmacro %}

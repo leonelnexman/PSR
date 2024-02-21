@@ -1,0 +1,33 @@
+.capabilities-item {
+    display: flex;
+
+    &__icon {
+        flex: 0 0 auto;
+        width: 27px;
+        height: 27px;
+        margin-right: 20px;
+
+        @include r(599) {
+            margin-right: 8px;
+        }
+    }
+
+    &__content {
+        @include rmin(899.1) {
+            max-width: 375px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 12px;
+        letter-spacing: -.24px;
+
+        @include r(599) {
+            font-size: 20px;
+        }
+    }
+
+    &__desc {
+        color: var(--gray-2, #4d545a);
+    }
+}

@@ -1,0 +1,30 @@
+{% import "partials/_mixins.html" as mixins %}
+{% from "data/data.html" import defaultsData  %}
+{% from "partials/_button.html" import button %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="profile" href="https://gmpg.org/xfn/11"/>
+    <link rel="icon" href="/icon/favicon.svg">
+
+    <link rel="stylesheet" media="all" href="css/app.css"/>
+    {# {% include "../partials/_media-tags.html" %} #}
+  </head>
+  <body>
+
+    <!-- Content -->
+    <div class="out">
+      {% block content %}{% endblock %}
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+
+  </body>
+</html>

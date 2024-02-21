@@ -1,0 +1,497 @@
+---
+title: Nam commodo purus id venenatis varius
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_entry-card.html" import entryCard %}
+{% from "partials/_entry-image.html" import entryImg %}
+
+{% block content %}
+
+  {# partial example #}
+  {% set headerGrey = true %}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+
+
+    <section class="section entry-page">
+      <div class="container">
+        <div class="entry-page__wrapper">
+          <div class="entry-page-content">
+            <div class="entry-page-content__header">
+              <div class="entry-page-content__category">Business</div>
+              <div class="entry-page-content__tags">
+                <div class="entry-tags">
+                  <a
+                    href="#"
+                    class="entry-tag"
+                  >#Law</a>
+                  <a
+                    href="#"
+                    class="entry-tag"
+                  >#Law</a>
+                  <a
+                    href="#"
+                    class="entry-tag"
+                  >#Taxes</a>
+                  <a
+                    href="#"
+                    class="entry-tag"
+                  >#Check</a>
+                  <a
+                    href="#"
+                    class="entry-tag"
+                  >#Check</a>
+                </div>
+              </div>
+              <h1 class="entry-page-content__title h2-title">
+                Nam commodo purus id venenatis varius
+              </h1>
+              <div class="entry-page-content__desc">
+                Sed et aliquam tellus. Integer fermentum non mi ac facilisis.
+              </div>
+              <div class="entry-page-content__date">20.08.2023</div>
+            </div>
+            <ol class="entry-page-content__anchors ol-list">
+              <li><a href="#1">Row Grouping</a></li>
+              <li><a href="#2">Enabling Default Row Grouping</a></li>
+              <li><a href="#3">Row Grouping Customisations</a></li>
+              <li><a href="#4">API Reference</a></li>
+              <li><a href="#5">Next Up</a></li>
+            </ol>
+            <div class="entry-page-content__content entry-content">
+              <div class="layout-default">
+                {{ entryImg(765, 354) }}
+              </div>
+              <div class="layout-default">
+                <p class="entry-text-small">
+                  Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis
+                  blandit,
+                  ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi.
+                </p>
+              </div>
+              <div class="layout-default">
+                {{ entryImg(100, 100) }}
+              </div>
+              <div class="layout-default">
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac
+                  velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+              </div>
+              <div class="layout-default">
+                <div class="entry-image-grid entry-image-grid--left">
+                  {{ entryImg(274, 354) }}
+                  {{ entryImg(455, 354) }}
+                </div>
+              </div>
+              <div class="layout-default">
+                <blockquote class="entry-quote">
+                  <div class="entry-quote__content">
+                    <p>
+                      The tailored solutions for pharmacy operations have been a game-changer. From prescription
+                      management to personalized patient care, every aspect of my pharmacy has been streamlined and
+                      optimized.
+                    </p>
+                  </div>
+                  <div class="entry-quote__footer">
+                    <div class="entry-quote__avatar">
+                      <img
+                        src="img/avatar-5.jpg"
+                        loading="lazy"
+                        width="60"
+                        height="60"
+                        alt=""
+                        aria-hidden="true"
+                      >
+                    </div>
+                    <div class="entry-quote__author-name">
+                      Jessica, <span>Pharmacy Owner</span>
+                    </div>
+                  </div>
+                </blockquote>
+              </div>
+              <div class="layout-full">
+                {{ entryImg(1368, 354) }}
+              </div>
+              <div class="layout-wide">
+                <div class="layout-wide__col">
+                  <p>
+                    Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                    Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis
+                    quis
+                    ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien
+                    aliquet
+                    nec.
+                  </p>
+                  <div class="layout-default">
+                    <blockquote class="entry-quote">
+                      <div class="entry-quote__content">
+                        <p>
+                          The tailored solutions for pharmacy operations have been a game-changer. From prescription
+                          management to personalized patient care, every aspect of my pharmacy has been streamlined and
+                          optimized.
+                        </p>
+                      </div>
+                      <div class="entry-quote__footer">
+                        <div class="entry-quote__avatar">
+                          <img
+                            src="img/avatar-5.jpg"
+                            loading="lazy"
+                            width="60"
+                            height="60"
+                            alt=""
+                            aria-hidden="true"
+                          >
+                        </div>
+                        <div class="entry-quote__author-name">
+                          Jessica, <span>Pharmacy Owner</span>
+                        </div>
+                      </div>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="layout-wide__outside">
+                  {{ entryImg(274, 354) }}
+                </div>
+              </div>
+
+              <div class="layout-full layout-delimiter">
+                <hr>
+              </div>
+              <div class="layout-default layout-heading">
+                <h2 id="1">Aliquam egestas est sit amet turpis scelerisque</h2>
+              </div>
+              <div class="layout-default">
+                <p>
+                  <strong>
+                    Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis
+                    velit.
+                  </strong>
+                </p>
+              </div>
+              <div class="layout-default layout-right-side">
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+              </div>
+              <div class="layout-default">
+                <div class="entry-image-grid entry-image-grid--left">
+                  {{ entryImg(455, 354, 'Integer sagittis') }}
+                  {{ entryImg(274, 354, 'Integer sagittis') }}
+                </div>
+              </div>
+              <div class="layout-default layout-heading">
+                <h2 id="2">Aliquam egestas est sit amet turpis scelerisque</h2>
+              </div>
+              <div class="layout-default">
+                <p>
+                  <strong>
+                    Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis
+                    velit.
+                  </strong>
+                </p>
+              </div>
+              <div class="layout-default layout-right-side layout-wide">
+                <div class="layout-wide__col">
+                  <p>
+                    Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                    Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis
+                    quis
+                    ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien
+                    aliquet
+                    nec.
+                  </p>
+                  <p>
+                    Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                    Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis
+                    quis
+                    ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien
+                    aliquet
+                    nec.
+                  </p>
+                </div>
+                <div class="layout-wide__outside">
+                  {{ entryImg(455, 425) }}
+                </div>
+              </div>
+              <div class="layout-default">
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+              </div>
+              <div class="layout-default">
+                {{ entryImg(252, 354, align='left') }}
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit.
+                </p>
+              </div>
+              <div class="layout-default">
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+              </div>
+              <div class="layout-full">
+                <div class="entry-image-grid">
+                  {{ entryImg(646, 354) }}
+                  {{ entryImg(707, 354) }}
+                </div>
+              </div>
+              <div class="layout-default layout-heading">
+                <h2 id="3">Aliquam egestas est sit amet turpis scelerisque</h2>
+              </div>
+              <div class="layout-default">
+                <p>
+                  <strong>
+                    Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis
+                    velit.
+                  </strong>
+                </p>
+              </div>
+              <div class="layout-default layout-right-side">
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+              </div>
+              <div class="layout-full">
+                <div class="entry-image-grid entry-image-grid--clown">
+                  {{ entryImg(320, 450) }}
+                  {{ entryImg(252, 354) }}
+                  {{ entryImg(323, 454) }}
+                </div>
+              </div>
+              <div class="layout-default">
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+              </div>
+              <div class="layout-full">
+                <div class="entry-image-grid entry-image-grid--clown-2">
+                  {{ entryImg(670, 450) }}
+                  {{ entryImg(380, 450) }}
+                </div>
+              </div>
+              <div class="layout-default">
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+              </div>
+              <div class="layout-full">
+                <div class="swiper-default-wrapper">
+                  <div class="swiper swiper-entry">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide swiper-entry-slide">
+                        {{ entryImg(380, 450) }}
+                      </div>
+                      <div class="swiper-slide swiper-entry-slide">
+                        {{ entryImg(380, 450) }}
+                      </div>
+                      <div class="swiper-slide swiper-entry-slide">
+                        {{ entryImg(380, 450) }}
+                      </div>
+                      <div class="swiper-slide swiper-entry-slide">
+                        {{ entryImg(380, 450) }}
+                      </div>
+                      <div class="swiper-slide swiper-entry-slide">
+                        {{ entryImg(380, 450) }}
+                      </div>
+                    </div>
+                  </div>
+                  <button class="swiper-custom-button-prev button button--fill button--round">
+                    {{ mixins.icon('right-arrow') }}
+                  </button>
+                  <button class="swiper-custom-button-next button button--fill button--round">
+                    {{ mixins.icon('right-arrow') }}
+                  </button>
+                </div>
+              </div>
+              <div class="layout-default">
+                <p>
+                  Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                  Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                  ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                  nec.
+                </p>
+              </div>
+              <div class="layout-full">
+                <div class="swiper-thumbnail-wrapper">
+                  <div class="swiper swiper-thumbnail-main">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide swiper-thumbnail-main__slide">
+                        {{ entryImg(927, 514, lock=10005, caption='Integer sagittis') }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail-main__slide">
+                        {{ entryImg(927, 514, lock=10001, caption='Integer sagittis') }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail-main__slide">
+                        {{ entryImg(927, 514, lock=10002, caption='Integer sagittis') }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail-main__slide">
+                        {{ entryImg(927, 514, lock=10003, caption='Integer sagittis') }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail-main__slide">
+                        {{ entryImg(927, 514, lock=100031, caption='Integer sagittis') }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail-main__slide">
+                        {{ entryImg(927, 514, lock=100032, caption='Integer sagittis') }}
+                      </div>
+                    </div>
+                  </div>
+                  <button class="swiper-custom-button-prev button button--fill button--round">
+                    {{ mixins.icon('right-arrow') }}
+                  </button>
+                  <button class="swiper-custom-button-next button button--fill button--round">
+                    {{ mixins.icon('right-arrow') }}
+                  </button>
+                </div>
+
+                <div class="swiper-thumbnail__wrapper">
+                  <div
+                    thumbsSlider=""
+                    class="swiper swiper-thumbnail"
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide swiper-thumbnail__slide">
+                        {{ entryImg(927, 514, lock=10005) }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail__slide">
+                        {{ entryImg(927, 514, lock=10001) }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail__slide">
+                        {{ entryImg(927, 514, lock=10002) }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail__slide">
+                        {{ entryImg(927, 514, lock=10003) }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail__slide">
+                        {{ entryImg(927, 514, lock=100031) }}
+                      </div>
+                      <div class="swiper-slide swiper-thumbnail__slide">
+                        {{ entryImg(927, 514, lock=100032) }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="layout-default layout-heading">
+                <h2 id="4">Aliquam egestas est sit amet turpis scelerisque</h2>
+              </div>
+              <div class="layout-full">
+                <div class="entry-image-grid entry-image-grid--default">
+                  {{ entryImg(432, 432) }}
+                  {{ entryImg(432, 432) }}
+                  {{ entryImg(432, 432) }}
+                  {{ entryImg(432, 432) }}
+                  {{ entryImg(432, 432) }}
+                  {{ entryImg(432, 432) }}
+                </div>
+              </div>
+              <div class="layout-default layout-heading">
+                <h2 id="5">Aliquam egestas est sit amet turpis scelerisque</h2>
+              </div>
+              <div class="layout-full">
+                <div class="entry-image-grid entry-image-grid--small">
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                </div>
+              </div>
+              <div class="layout-default layout-heading">
+                <h2>Aliquam egestas est sit amet turpis scelerisque</h2>
+              </div>
+              <div class="layout-full">
+                <div class="entry-image-grid entry-image-grid--large">
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                </div>
+              </div>
+              <div class="layout-default layout-heading">
+                <h2>Aliquam egestas est sit amet turpis scelerisque</h2>
+              </div>
+              <div class="layout-full">
+                <div class="entry-image-grid entry-image-grid--thumbnail">
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                </div>
+              </div>
+              <div class="layout-default layout-heading">
+                <h2>Aliquam egestas est sit amet turpis scelerisque</h2>
+              </div>
+              <div class="layout-full">
+                <div class="entry-image-grid entry-image-grid--thumbnail-right">
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                  {{ entryImg(432, 274) }}
+                </div>
+              </div>
+            </div>
+
+            <div class="entry-page-content__featured">
+              <div class="entry-featured">
+                <div class="entry-featured__title">You might also like</div>
+                <div class="entry-featured__list">
+                  {{ entryCard() }}
+                  {{ entryCard() }}
+                  {{ entryCard() }}
+                  {{ entryCard() }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="entry-page__sidebar">
+            {% include "partials/_entry-sidebar.html" %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class=" button button--fill button--round back-to-top js-back-to-top">
+      {{ mixins.icon('arrow-up') }}
+    </button>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

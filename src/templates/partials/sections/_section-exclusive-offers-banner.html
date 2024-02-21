@@ -1,0 +1,12 @@
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_form-subscribe.html" import formSubscribe %}
+
+<section class="section-exclusive-offers">
+  <div class="container">
+    {{ waveCard(
+      'Get exclusive offers',
+      'And an extended promotional period. Subscribe to our newsletter to stay up to date and receive<br> exclusive offers. Don\'t miss out on the chance to improve your business and save money today!',
+      formSubscribe()
+    ) }}
+  </div>
+</section>

@@ -1,0 +1,424 @@
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    padding: 14px 29px;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: $font;
+    line-height: 1.1875;
+    color: $gray;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition:
+        color .15s ease,
+        background .25s ease,
+        border .15s ease,
+        box-shadow .2s ease,
+        opacity .8s,
+        transform .12s ease;
+    user-select: none;
+
+    @include any-hover {
+        color: $primary-hover;
+        text-decoration: none;
+
+        svg {
+            fill: $primary-hover;
+        }
+
+        .button__bg:before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            transition: opacity .3s ease-out, transform .3s ease-out, border .15s ease;
+        }
+
+        .button__bg:after {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+
+        .button__text {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        color: $primary-pressed;
+        background: rgba($primary-pressed, .05);
+
+        svg {
+            fill: $primary-pressed;
+        }
+    }
+
+    &:focus-visible {
+        outline: 3px dashed $primary-pressed;
+    }
+
+    &:disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    &__text {
+        transition: opacity .2s ease-out, transform .3s ease-out;
+    }
+
+    &__bg {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        overflow: hidden;
+        border-radius: inherit;
+        isolation: isolate;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 110%;
+            height: 330%;
+            background: $primary-lighten;
+            border: inherit;
+            border-radius: 50%;
+            transform: translate(-50%, -75%) scale(.14);
+            opacity: 0;
+
+            // z-index: -1;
+            // scale(0.14)
+            transition: opacity .3s ease-out, transform .3s ease-out .3s, border .15s ease;
+            aspect-ratio: 1;
+        }
+
+        &:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: inherit;
+            transform: translate(-50%, -200%);
+            opacity: 0;
+            transition: opacity .3s ease-out, transform .3s ease-out;
+        }
+    }
+
+    &.is-active {
+        color: $primary;
+        background: rgba($primary, .025);
+    }
+
+    span {
+        white-space: nowrap;
+    }
+
+    span:not(.button__bg) + span {
+        margin-left: 10px;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        transition: fill .15s ease, transform .15s ease;
+        fill: $primary;
+    }
+
+    &--fill {
+        color: #fff;
+        background: $primary;
+
+        @include any-hover {
+            color: #000;
+            background: $primary-lighten;
+        }
+
+        @include pointer {
+            color: #000;
+            background: $primary-lighten;
+        }
+
+        &:focus-visible {
+            color: #000;
+            background: $primary-lighten;
+        }
+
+        svg {
+            fill: #fff !important;
+        }
+    }
+
+    &--outline {
+        color: $primary;
+        background: transparent;
+        border: 1px solid $primary;
+
+        .button__bg:before {
+            background-color: $primary;
+        }
+
+        &.is-active {
+            color: #fff;
+            background: $primary-hover;
+            border: 1px solid $primary-hover;
+        }
+
+        @include any-hover {
+            color: #fff;
+            background: $primary-hover;
+            border: 1px solid $primary-hover;
+
+            svg {
+                fill: $primary-hover;
+            }
+        }
+
+        @include pointer {
+            color: $primary;
+            background: rgba($primary-pressed, .025);
+            border: 1px solid $primary-pressed;
+
+            svg {
+                fill: $primary-hover;
+            }
+        }
+
+        &.button--disabled {
+            background-color: transparent !important;
+            border-color: rgba($primary, .05);
+        }
+
+        svg {
+            fill: $primary;
+        }
+    }
+
+    &--round {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        padding: 17px;
+        border-radius: 50%;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        width: 24px;
+        height: 20px;
+
+        + .button__text {
+            margin-left: 12px;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &--block {
+        display: flex;
+        flex: 0 0 auto;
+        min-width: 100% !important;
+    }
+
+    &--secondary {
+        color: #fff;
+        background: $secondary;
+
+        .button__bg:before {
+            background-color: $secondary-light;
+        }
+
+        @include any-hover {
+            color: #fff;
+            background: $secondary-light;
+        }
+
+        @include pointer {
+            color: #fff;
+            background: $secondary-pressed;
+        }
+
+        &.button--outline {
+            color: $secondary;
+            background: transparent;
+            border: 1px solid $secondary;
+
+            @include any-hover {
+                color: #fff;
+                background: $secondary-hover;
+                border: 1px solid $secondary-hover;
+
+                svg {
+                    fill: #fff;
+                }
+            }
+
+            @include pointer {
+                color: #fff;
+                background: $secondary-hover;
+                border: 1px solid $secondary-hover;
+            }
+
+            svg {
+                fill: $secondary;
+            }
+        }
+    }
+
+    &--white {
+        color: #fff;
+
+        .button__bg:before {
+            background-color: #fff;
+        }
+
+        &.button--outline {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #fff;
+
+            @include any-hover {
+                color: #000;
+                background: #fff;
+                border: 1px solid #fff;
+
+                .button__bg:before {
+                    background-color: #fff;
+                }
+
+                svg {
+                    fill: #000;
+                }
+            }
+
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+
+    /* &--green {
+        color: #fff;
+        background: $primary;
+    }
+
+    &--danger {
+        color: var(--theme-color, $danger) !important;
+    }
+
+    &--danger-hover {
+        @include any-hover {
+            color: var(--theme-color, $danger) !important;
+        }
+    }
+
+    &--success {
+        color: var(--theme-color, #28a745) !important;
+    }
+
+    &--disabled {
+        color: rgba(#fff, .2) !important;
+        background-color: rgba(#fff, .05) !important;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &--loading {
+        position: relative;
+        color: transparent;
+        pointer-events: none;
+    } */
+
+    &--small {
+        padding: 8px 14px;
+        font-weight: 400;
+        font-size: 10px;
+
+        .button__icon + .button__text {
+            margin-left: 9px;
+        }
+    }
+
+    &--medium {
+        padding: 13px 15px;
+        font-weight: 400;
+        font-size: 14px;
+
+        .button__icon + .button__text {
+            margin-left: 7px;
+        }
+    }
+
+    &--flat {
+        padding: 0;
+        color: $tertiary;
+
+        @include any-hover {
+            background-color: transparent;
+            color: $tertiary-hover;
+
+            svg {
+                fill: currentColor;
+            }
+        }
+
+        svg {
+            margin-left: 8px;
+            width: 12px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        &.button--primary {
+            color: $primary;
+
+            @include any-hover {
+                color: $primary-hover;
+            }
+        }
+    }
+}
+
+.button-tumbler {
+    display: inline-flex;
+    color: $primary;
+    text-align: center;
+    background-color: $primary;
+    border-radius: 4px;
+
+    &__item {
+        min-width: 80px;
+        padding: 9px 16px;
+        font-weight: 500;
+        background-color: #fff;
+        border: 1px solid $primary;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color .2s ease, margin .2s ease, color .2s ease;
+    }
+
+    &__item + &__item {
+        margin-left: -8px;
+    }
+
+    .is-active {
+        margin-left: 0;
+        color: #fff;
+        background-color: $primary;
+        pointer-events: none;
+
+        + .button-tumbler__item {
+            margin-left: 0;
+        }
+    }
+}

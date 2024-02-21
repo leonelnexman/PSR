@@ -1,0 +1,41 @@
+{% from "partials/_button.html" import button %}
+
+{% macro productCard(title, price, rating=0, installations='<strong>53</strong> installations', image='product-image.jpg', classes="", desc='', withModal=true) %}
+  {% set cardTag = 'a' if withModal else 'div' %}
+  <{{ cardTag }}
+    class="product-card {{ classes }}"
+    {{ 'data-modal=modal-product-1' if withModal }}
+    {{ "href=#" if withModal }}
+  >
+    <div class="product-card__image">
+      <img
+        src="img/{{ image }}"
+        loading="lazy"
+        width="163"
+        height="148"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+    <div class="product-card__content">
+      <div class="product-card__title">{{ title | safe }}</div>
+      <div class="product-card__price">{{ price | safe }}</div>
+      <div class="product-card__footer">
+        {{ button('Install', 'button--fill product-card__install') }}
+        <div class="product-card__rating">
+          <div class="product-rating" style="--rating:{{ rating }}">
+            <div class="product-rating__number">{{ rating }}</div>
+            <div class="product-rating__star"></div>
+          </div>
+          <div class="product-card__rating-text">reviews</div>
+        </div>
+        <div class="product-card__installations">{{ installations | safe }}</div>
+      </div>
+    </div>
+    {% if desc %}
+      <span class="product-card__desc">
+      {{ desc | safe }}
+    </span>
+    {% endif %}
+  </{{ cardTag }}>
+{% endmacro %}

@@ -1,0 +1,16 @@
+{% macro button(text, classes="", modal='', url='', disabled=false, tag='button', submit = false, download=false, dataset='') %}
+  {% set buttonTag = 'a' if url else tag %}
+
+  <{{ buttonTag }}
+    {{ 'href=' + url if url }}
+    {{ 'type=submit' if submit }}
+    class="button {{ classes }}"
+    {{ 'data-modal=' + modal if modal }}
+    {{ 'disabled' if disabled }}
+    {{ 'download' if download }}
+    {{ dataset }}
+  >
+    <span class="button__bg" data-text="{{ text }}"></span>
+    <span class="button__text">{{ text }}</span>
+  </{{ buttonTag }}>
+{% endmacro %}

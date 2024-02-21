@@ -1,0 +1,136 @@
+{% from "partials/_product-card.html" import productCard %}
+{% from "partials/_button.html" import button %}
+
+<div id="modal-product-1" class="modal-container">
+  <div class="modal-container__overlay js-modal-close"></div>
+  <div class="modal-container__wrapper">
+    <div class="modal modal-product">
+      <div class="modal-close modal__close js-modal-close">
+        {{ mixins.icon('close') }}
+      </div>
+
+      <div class="modal__content">
+        {{ productCard(
+          title='Loyalty programs, Point & Credits',
+          price='<del>6$</del> <ins>5$</ins>',
+          rating=4.8,
+          desc='They are designed to encourage repeat business, offering people a reward for store/brand loyalty.',
+          classes='product-card--large',
+          withModal=false
+        ) }}
+
+        <div class="modal-customer-reviews">
+          <div class="modal-customer-reviews__title">
+            Customer Reviews
+          </div>
+          <div class="swiper swiper-modal-reviews modal-customer-reviews__slider">
+            <div class="swiper-header">
+              <div
+                class="modal-customer-reviews__rate"
+                data-modal="modal-write-review"
+              >
+                Click to rate
+                <div class="product-rating modal-customer-reviews__rating" style="--rating:4.8">
+                  <div class="product-rating__number">4.8</div>
+                  <div class="product-rating__star"></div>
+                </div>
+              </div>
+              <div class="empty-space"></div>
+              <button
+                class="button button--flat button--primary modal-customer-reviews__write"
+                data-modal="modal-write-review"
+              >
+                <span>Write a review</span>
+              </button>
+              <div class="swiper-arrows">
+                <button class="swiper-custom-button-prev button button--fill button--round">
+                  {{ mixins.icon('right-arrow') }}
+                </button>
+                <button class="swiper-custom-button-next button button--fill button--round">
+                  {{ mixins.icon('right-arrow') }}
+                </button>
+              </div>
+            </div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide swiper-review-slide">
+                <div class="customer-review">
+                  <div class="customer-review__footer">
+                    <div class="customer-review__author">
+                      <div class="customer-review__avatar">
+                        <img
+                          src="img/avatar-1.jpg"
+                          loading="lazy"
+                          width="65"
+                          height="65"
+                          alt=""
+                          aria-hidden="true"
+                        >
+                      </div>
+                      <div class="customer-review__author-name">
+                        John123
+                      </div>
+                    </div>
+                    <div class="customer-review__desc">
+                      I have been using this solution for my business, and it has greatly improved our inventory management.
+                      The features are user-friendly, and the support team is always helpful. Highly recommended!
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide swiper-review-slide">
+                <div class="customer-review">
+                  <div class="customer-review__footer">
+                    <div class="customer-review__author">
+                      <div class="customer-review__avatar">
+                        <img
+                          src="img/avatar-1.jpg"
+                          loading="lazy"
+                          width="65"
+                          height="65"
+                          alt=""
+                          aria-hidden="true"
+                        >
+                      </div>
+                      <div class="customer-review__author-name">
+                        John123
+                      </div>
+                    </div>
+                    <div class="customer-review__desc">
+                      I have been using this solution for my business, and it has greatly improved our inventory management.
+                      The features are user-friendly, and the support team is always helpful. Highly recommended!
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide swiper-review-slide">
+                <div class="customer-review">
+                  <div class="customer-review__footer">
+                    <div class="customer-review__author">
+                      <div class="customer-review__avatar">
+                        <img
+                          src="img/avatar-1.jpg"
+                          loading="lazy"
+                          width="65"
+                          height="65"
+                          alt=""
+                          aria-hidden="true"
+                        >
+                      </div>
+                      <div class="customer-review__author-name">
+                        John123
+                      </div>
+                    </div>
+                    <div class="customer-review__desc">
+                      I have been using this solution for my business, and it has greatly improved our inventory management.
+                      The features are user-friendly, and the support team is always helpful. Highly recommended!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

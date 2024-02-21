@@ -1,0 +1,242 @@
+---
+title: Row Grouping
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_entry-card.html" import entryCard %}
+{% from "partials/_entry-image.html" import entryImg %}
+
+{% block content %}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  {# partial example #}
+  {% set headerGrey = true %}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+
+
+    <section class="section docs-page menu-page">
+      <div class="container">
+        <div class="docs-page__wrapper none">
+          <div class="docs-page__search menu-page__search docs-search js-search-documents">
+            <div class="docs-search__input">
+              <div class="input-field-container">
+                <div class="input-field input-field--large">
+                  <input
+                    id="search"
+                    name="search"
+                    type="text"
+                    class="input input--secondary input-field__input"
+                  >
+                  <div class="input-icon input-icon--secondary">
+                    {{ mixins.icon('search-2') }}
+                  </div>
+                  <label
+                    class="floating-label"
+                    for="search"
+                  >
+                    Search...
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="docs-search__result">
+              <div class="result-search-list">
+                <div class="search-result-count">450 results</div>
+                <div class="search-result-group">
+                  <div class="search-result-group__list">
+                    <div class="search-item">
+                      <div class="search-item__sub-title">JavaScript Data Grid</div>
+                      <div class="search-item__title"><span class="is-highlight">R</span>ow Grouping</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-page__breackpints">
+            <button class="docs-sidebar__hamburger docs-sidebar-hamburger js-docs-nav-trigger">
+                <span class="docs-sidebar-hamburger__icon">
+                  <span class="docs-sidebar-hamburger__line"></span>
+                  <span class="docs-sidebar-hamburger__line"></span>
+                  <span class="docs-sidebar-hamburger__line"></span>
+                </span>
+                <span class="docs-sidebar-hamburger__text">Menu</span>
+              </button>
+                <div class="docs-page__breackpints-item">
+                    <a href="">JavaScript Data Grid</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="docs-page__breackpints-item">
+                    <a href="">JavaScript Data Grid</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="docs-page__breackpints-item">
+                    <a href="">Initiating the custom domain setup</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+          </div>
+          <div class="docs-page__inner">
+            <div class="docs-page__sidebar">
+                {% include "partials/_menu-sidebar.html" %}
+              </div>
+              <div class="docs-page__content entry-page-content">
+                <div class="entry-page-content__header">
+                  <div class="entry-page-content__hsh">
+                        <a href="#">#Law</a>
+                        <a href="#">#Law</a>
+                        <a href="#">#Taxes</a>
+                        <a href="#">#Check</a>
+                        <a href="#">#Check</a>
+                  </div>
+                  <h1 class="entry-page-content__title h2-title">
+                    Initiating the custom domain setup
+                  </h1>
+                </div>
+                <div class="entry-page-content__content entry-content">
+                  <div class="layout-default">
+                    <p>
+                      <strong>
+                        Row Grouping allows rows to be grouped by columns with the grid performing a 'group by' operation on
+                        the rows supplied to the grid. This section introduces Row Grouping and provides links to
+                        subsections that cover the various ways Row Grouping can be configured and customised.
+                      </strong>
+                    </p>
+                  </div>
+                  <div class="layout-default">
+                    <p>
+                      Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                      Pellentesque sit amet viverra nibh, et imperdiet elit. Ut ut mi laoreet neque sagittis venenatis quis
+                      ac velit. Duis commodo est in sem viverra sodales. Nulla porta maximus nibh, ac viverra sapien aliquet
+                      nec.
+                    </p>
+                  </div>
+                  <div class="layout-default">
+                    <p class="entry-text-small">
+                        Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi. Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi.
+                    </p>
+                  </div>
+                  <div class="layout-default">
+                    {{ entryImg(984, 467) }}
+                  </div>
+                  <div class="layout-default layout-heading">
+                    <h2 id="1">1. Nam commodo purus id venenatis varius</h2>
+                  </div>
+                  <div class="layout-default">
+                    <p>
+                      Integer sagittis, nunc at congue feugiat, mi urna <code>molestie</code> mauris, ut iaculis ex lacus
+                      quis velit.
+                    </p>
+                  </div>
+                  <div class="layout-code">
+                    <pre><code class="language-js">const gridOptions = {
+    columnDefs: [
+            { field: 'country', rowGroup: true, hide: true },
+            { field: 'year', rowGroup: true, hide: true },
+            { field: 'sport' },
+            { field: 'total' }
+        ],
+        // other grid options ...
+    }</code></pre>
+                  </div>
+                  <div class="layout-default">
+                    {{ entryImg(623, 296, align='left') }}
+                    <p>
+                      Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                    </p>
+                    <ul>
+                      <li>Duis commodo est in sem viverra sodales.</li>
+                      <li>Nulla porta maximus nibh, ac viverra sapien aliquet nec.</li>
+                    </ul>
+                  </div>
+                  <div class="layout-default layout-heading">
+                    <h2 id="2">2. Nam commodo purus id venenatis varius</h2>
+                  </div>
+                  <div class="layout-default">
+                    <p>
+                      Integer sagittis, nunc at congue feugiat, mi urna molestie mauris, ut iaculis ex lacus quis velit.
+                    </p>
+                  </div>
+                  <div class="layout-default">
+                    <div class="param-table">
+                      <div class="param-table__start">
+                        <div class="param-table__title"><code>groupDisplayType</code></div>
+                        <div class="param-table__type">Type</div>
+                        <div class="param-table__type-value">
+                          <code>RowGroupingDisplayType</code>
+                        </div>
+                      </div>
+                      <div class="param-table__end">
+                        <div class="param-table__content">
+                          <p>Specifies how the results of row grouping should be displayed. The options are:</p>
+                          <ul>
+                            <li><code>'singleColumn'</code>: single group column automatically added by the grid.</li>
+                            <li><code>'multipleColumns'</code>: a group column per row group is added automatically.</li>
+                            <li><code>'groupRows'</code>: group rows are automatically added instead of group columns.</li>
+                            <li><code>'custom'</code>: informs the grid that group columns will be provided.</li>
+                            <li><code>'custom'</code>: informs the grid that group columns will be provided.</li>
+                            <li><code>'custom'</code>: informs the grid that group columns will be provided.</li>
+                            <li><code>'custom'</code>: informs the grid that group columns will be provided.</li>
+                          </ul>
+                        </div>
+                        <div class="param-table__footer">
+                          <button
+                            class="button button--flat param-table__more js-param-table-more"
+                            data-text-more="More details"
+                            data-text-less="Less details"
+                          >
+                            <span>More details</span>
+                            {{ mixins.icon('arrow-down') }}
+                          </button>
+                          <div class="param-table__see">
+                            See: <a href="#">Row Grouping - Display Types</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layout-default layout-heading">
+                    <h2 id="3">3. Next Up</h2>
+                  </div>
+                  <div class="layout-default">
+                    <p>
+                      Continue to the next section to learn about the different Row Grouping <a href="#">Display Types</a>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-page__nav">
+                <div class="menu-page__nav-inner">
+                    <div class="menu-page__nav-title">На странице</div>
+                    <div class="menu-page__nav-list">
+                        <a href="#1" class="menu-page__link active">Initiating the custom domain setup</>
+                        <a href="#2" class="menu-page__link">Nam commodo purus id venenatis varius</a>
+                        <a href="#3" class="menu-page__link">Row Grouping Customisations</a>
+                        <a href="#4" class="menu-page__link">API Reference</a>
+                        <a href="#5" class="menu-page__link">Next Up</a>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class=" button button--fill button--round back-to-top js-back-to-top">
+      {{ mixins.icon('arrow-up') }}
+    </button>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

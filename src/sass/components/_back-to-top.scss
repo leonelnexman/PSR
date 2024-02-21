@@ -1,0 +1,29 @@
+.back-to-top {
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity .2s ease;
+    pointer-events: none;
+
+    @include r(599) {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    @include any-hover {
+        background-color: $primary-hover;
+    }
+
+    &.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        fill: #fff;
+    }
+}

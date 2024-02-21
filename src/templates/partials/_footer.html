@@ -1,0 +1,190 @@
+{% include "partials/_modal-request.html" %}
+{% include "partials/_modal-call.html" %}
+{% include "partials/_modal-accepted.html" %}
+{% include "partials/_modal-product.html" %}
+{% include "partials/_modal-write-review.html" %}
+
+<footer class="footer section-grey">
+  <div class="container">
+    <div class="footer__wrap">
+      <div class="footer__header">
+        <div class="footer__logo">
+          <a
+            href="/"
+            class="logo"
+          >
+            <img
+              src="img/logo-with-icon.svg"
+              loading="lazy"
+              alt="Pulsar PSR логотип"
+            >
+          </a>
+        </div>
+        <div class="footer__socials is-desktop">
+          {% for index, social in defaultsData.socials.entries() %}
+            <a
+              href="{{ social.link }}"
+              class="social-link"
+            >
+              {{ mixins.icon(social.name) }}
+            </a>
+          {% endfor %}
+        </div>
+        <a
+          href="mailto:{{  defaultsData.email }}"
+          class="footer__email is-mobile"
+        >
+          {{  defaultsData.email }}
+        </a>
+      </div>
+      <div class="footer__col footer__footer-nav">
+        <div class="footer-nav">
+          <div class="footer-nav__header">
+            Cash register
+          </div>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Advantages
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Features
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Pricing
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Start to work
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Consultation
+          </a>
+        </div>
+      </div>
+      <div class="footer__col footer__footer-nav">
+        <div class="footer-nav">
+          <div class="footer-nav__header">
+            Other
+          </div>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            About us
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Blog
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Documentation
+          </a>
+        </div>
+
+        <div class="footer__socials is-mobile">
+          {% for index, social in defaultsData.socials.entries() %}
+            <a
+              href="{{ social.link }}"
+              class="social-link"
+            >
+              {{ mixins.icon(social.name) }}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="footer__col footer__footer-nav">
+        <div class="footer-nav">
+          <div class="footer-nav__header">
+            Information
+          </div>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Assortment management
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Getting started
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Offer
+          </a>
+          <a
+            href="/"
+            class="footer-nav__item"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+      <div class="footer__col footer__contact">
+        <a
+          href="{{ defaultsData.tel_link }}"
+          class="footer__tel"
+        >
+          {{  defaultsData.tel }}
+        </a>
+        <a
+          href="{{ defaultsData.tel2_link }}"
+          class="footer__tel"
+        >
+          {{  defaultsData.tel2 }}
+        </a>
+        {{ button('Call us', 'button--fill button--secondary footer__call-me', 'modal-call') }}
+        <a
+          href="mailto:{{  defaultsData.email }}"
+          class="footer__email is-desktop"
+        >
+          {{  defaultsData.email }}
+        </a>
+        <div class="footer__nxmn is-desktop">
+          Design by <a href="https://nexman.org/" target="_blank" rel="noreferrer">NEXMAN</a>
+        </div>
+        <a
+          href="/privacy"
+          class="footer__privacy is-desktop"
+        >
+          Privacy Policy
+        </a>
+      </div>
+      <div class="footer__test">
+        <div class="footer__nxmn is-mobile">
+          Design by <a href="https://nexman.org/" target="_blank" rel="noreferrer">NEXMAN</a>
+        </div>
+        <a
+          href="/privacy"
+          class="footer__privacy is-mobile"
+        >
+          Privacy Policy
+        </a>
+        <div class="footer__copy">
+          © Pulsar for Information technology L.L.C, 2023
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

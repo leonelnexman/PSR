@@ -1,0 +1,35 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+
+{% block content %}
+
+	{# partial example #}
+	{% include "partials/_header.html" %}
+
+	<div class="main">
+    {{ hero(
+      title='Streamline Your <span>Business</span> Operations',
+      desc='Master your inventory management with our software supplements – take&nbsp;control of stock, optimize sales,&nbsp;and
+          maximize profits seamlessly.',
+      buttons=button('Test for free', 'button--fill hero__button', 'modal-request') + button('Try a demo', 'button--outline button--white hero__button', 'modal-demo'),
+      bg='<video autoplay loop muted playsinline src="img/hero.mp4"></video>'
+    ) }}
+    {% include "partials/sections/_section-features.html" %}
+    {% include "partials/sections/_section-capabilities.html" %}
+    {% include "partials/sections/_section-purchases.html" %}
+    {% include "partials/sections/_section-grow.html" %}
+    {% include "partials/sections/_section-system-for.html" %}
+    {% include "partials/sections/_section-control.html" %}
+    {% include "partials/sections/_section-sales.html" %}
+    {% include "partials/sections/_section-faq.html" %}
+    {% include "partials/sections/_section-blog.html" %}
+    {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+    {% include "partials/sections/_section-question-form.html" %}
+	</div>
+
+	{% include "partials/_footer.html" %}
+
+{% endblock %}

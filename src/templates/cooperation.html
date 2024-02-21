@@ -1,0 +1,252 @@
+---
+title: Cooperation
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-image-card.html" import waveImageCard %}
+{% from "partials/_wave-card.html" import waveCard %}
+
+{% block content %}
+
+  {# partial example #}
+  {% set headerGrey = true %}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+    {{ hero(
+      align='left',
+      title='Ready for Partnership&nbsp;and Collaboration!',
+      desc='We welcome the opportunity to collaborate with banks, service operators, schools, and many other organizations.',
+      buttons=button('Free demo', 'button--fill hero__button', 'modal-demo'),
+      image='img/cooperation.jpg',
+      theme='white'
+    ) }}
+
+    <section
+      id="features"
+      class="section section-features section-partnerships section-grey"
+    >
+      <div class="container">
+        <div class="section-features__header grid-flex">
+          <div class="large-offset-4 large-12 medium-offset-0">
+            <h2 class="section-title h2-title section-features__title">
+              Industries Where We Seek Partnerships
+            </h2>
+            <div class="section-desc section-features__desc">
+              We actively seek partners in various industries and verticals to&nbsp;reach new heights together and
+              establish mutually beneficial partnerships.
+            </div>
+          </div>
+        </div>
+        <div class="section-features__list grid-flex tabs">
+          <div class="large-3 medium-12">
+            <div class="tabs__nav-wrapper section-features__nav-wrapper">
+              <div
+                class="gradient-button is-active js-tab-trigger"
+                role="tab"
+                data-tab="0"
+              >
+                Retail
+              </div>
+              <div
+                class="gradient-button js-tab-trigger"
+                role="tab"
+                data-tab="1"
+              >
+                Restaurants and Hospitality
+              </div>
+              <div
+                class="gradient-button js-tab-trigger"
+                role="tab"
+                data-tab="2"
+              >
+                Banks and Financial Institutions
+              </div>
+              <div
+                class="gradient-button js-tab-trigger"
+                role="tab"
+                data-tab="3"
+              >
+                Education
+              </div>
+            </div>
+          </div>
+          <div class="large-8 large-offset-1 medium-12 medium-offset-0">
+            <div class="tabs__content">
+              <div
+                class="tab-content js-tab-content"
+                data-tab="0"
+              >
+                <div class="section-partnerships__grid">
+                  <div class="control-item control-item--white">
+                    <div class="control-item__icon">
+                      <img
+                        src="img/done.svg"
+                        loading="lazy"
+                        width="27"
+                        height="27"
+                        alt=""
+                        aria-hidden="true"
+                      >
+                    </div>
+                    <div class="control-item__content">
+                      <div class="control-item__title h5-title">
+                        Enhanced Sales Management
+                      </div>
+                      <div class="control-item__desc">
+                        Gain access to real-time sales data, advanced inventory management, and seamless checkout
+                        experiences for your customers.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-item control-item--white">
+                    <div class="control-item__icon">
+                      <img
+                        src="img/done.svg"
+                        loading="lazy"
+                        width="27"
+                        height="27"
+                        alt=""
+                        aria-hidden="true"
+                      >
+                    </div>
+                    <div class="control-item__content">
+                      <div class="control-item__title h5-title">
+                        Inventory Optimization
+                      </div>
+                      <div class="control-item__desc">
+                        Track stock movement, automate reordering processes, and gain insights into your top-selling
+                        products.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-item control-item--white">
+                    <div class="control-item__icon">
+                      <img
+                        src="img/done.svg"
+                        loading="lazy"
+                        width="27"
+                        height="27"
+                        alt=""
+                        aria-hidden="true"
+                      >
+                    </div>
+                    <div class="control-item__content">
+                      <div class="control-item__title h5-title">
+                        Data-driven Insights
+                      </div>
+                      <div class="control-item__desc">
+                        Leverage powerful analytics to gain deep insights into customer behavior, product performance,
+                        and sales trends.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-trusted-partner-banner">
+      <div class="container">
+        {{ waveImageCard(
+          'Part of PSR<br>Your Trusted Partner',
+          'By being a part of PSR, we have the advantage of being backed by a trusted brand in the payment industry.',
+          button('Become a partner', 'button--fill'),
+          image='trusted-partner.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-businesses-benefit">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-businesses-benefit__title">
+          With PSR, businesses can benefit from
+        </h2>
+        <div class="section-businesses-benefit__wrapper">
+          <div class="section-businesses-benefit__image gradient-figure">
+            <img
+              src="img/businesses-benefit-img.jpg"
+              loading="lazy"
+              width="663"
+              height="498"
+              alt=""
+              aria-hidden="true"
+            >
+          </div>
+          <div class="section-businesses-benefit__list">
+            <div class="feature-card feature-card--two-col">
+              <div class="feature-card__icon">
+                <img
+                  src="img/secure.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Secure and Reliable Payment&nbsp;Processing
+              </div>
+              <div class="feature-card__desc">
+                Our robust infrastructure and advanced technologies provide businesses with peace of mind when it comes
+                to payment processing.
+              </div>
+            </div>
+            <div class="feature-card feature-card--two-col">
+              <div class="feature-card__icon">
+                <img
+                  src="img/payment.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Diverse Payment Options
+              </div>
+              <div class="feature-card__desc">
+                We offer a wide range of payment options to cater to the needs of businesses and their customers.
+              </div>
+            </div>
+            <div class="feature-card feature-card--two-col">
+              <div class="feature-card__icon">
+                <img
+                  src="img/tools.svg"
+                  loading="lazy"
+                  width="44"
+                  height="44"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+              <div class="feature-card__title h4-title">
+                Advanced Financial<br>Management Tools
+              </div>
+              <div class="feature-card__desc">
+                Our tools empower businesses to make data-driven decisions and gain valuable insights into their
+                financial performance.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-payment-solutions">
+      <div class="container">
+        {{ waveCard(
+          '<span>Learn more about PSR and explore our<br>wide range of</span> payment solutions',
+          content=button('Try it now', 'button--fill')
+        ) }}
+      </div>
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

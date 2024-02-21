@@ -1,0 +1,141 @@
+.radio-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+
+    @include r(1300) {
+        align-items: center;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    @include r(599) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 25px;
+    }
+
+    .label {
+        margin-bottom: 14px;
+
+        @include r(899) {
+            margin-bottom: 20px;
+        }
+
+        @include r(599) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.radio-field {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    vertical-align: middle;
+    user-select: none;
+
+    .radio {
+        width: 100%;
+    }
+}
+
+.radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 35px;
+
+    @include r(899) {
+        gap: 10px 15px;
+    }
+
+    @include r(599) {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+.radio {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    margin: 5px 0;
+    cursor: pointer;
+
+    &__native {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        padding: 0;
+        cursor: inherit;
+        opacity: 0;
+
+        &:checked + .radio__background {
+            background-color: $secondary;
+
+            .radio__inner-circle {
+                background-position: 100px;
+                transform: scale(.3333);
+                opacity: 1;
+            }
+
+            .radio__outer-circle {
+                border-color: $secondary;
+            }
+
+            & + label {
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__background {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: background-color .5s ease;
+    }
+
+    &__outer-circle,
+    &__inner-circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border-style: solid;
+        border-radius: 50%;
+    }
+
+    &__outer-circle {
+        border-color: #fff;
+        border-width: 1px;
+        transition: border-color .2s ease;
+    }
+
+    &__inner-circle {
+        background: #fff;
+        transform: scale(.9);
+        opacity: 0;
+        transition: transform .4s ease, opacity .2s ease;
+    }
+
+    label {
+        padding-left: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        cursor: pointer;
+    }
+}

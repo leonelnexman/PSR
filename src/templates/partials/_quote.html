@@ -1,0 +1,40 @@
+{% import "partials/_mixins.html" as mixins %}
+
+{% macro quote(quote, attachment, name, nameSubtitle, classes="", avatar) %}
+  <div class="quote-block">
+    <div class="quote-block__attachment gradient-figure">
+      {{ attachment | safe }}
+    </div>
+    <div class="quote-block__content">
+      <div class="quote-block__desc">
+        <img
+          src="img/quote.svg"
+          class="quote-block__symbol"
+          loading="lazy"
+          width="75"
+          height="85"
+          alt=""
+          aria-hidden="true"
+        >
+        <div>
+          {{ quote | safe }}
+        </div>
+      </div>
+      <div class="quote-block__footer">
+        <div class="quote-block__author-avatar">
+          <img
+            src="img/{{ avatar }}"
+            loading="lazy"
+            width="110"
+            height="110"
+            alt=""
+            aria-hidden="true"
+          >
+        </div>
+        <div class="quote-block__author-title">
+          {{ name | safe }}, <span>{{ nameSubtitle }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

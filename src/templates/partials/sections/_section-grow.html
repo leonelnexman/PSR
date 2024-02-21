@@ -1,0 +1,44 @@
+{% from "partials/_image-block.html" import imageBlock %}
+
+<section class="section section-grow">
+  <div class="container">
+    {{ imageBlock(
+      title='Grow your business with&nbsp;PSR',
+      desc='Try it now and start managing your business with our intuitive inventory system',
+      footer= button('Test for free', 'button--fill', 'modal-request'),
+      buttonsText='No credit card needed for demo period',
+      video='<video
+              autoplay
+              loop
+              muted
+              playsinline
+              poster="img/block-image-1.jpg"
+              src="img/reception.mp4"
+            ></video>',
+      imageHide=true,
+      align='left'
+    ) }}
+
+    {{ imageBlock(
+      title='Optimise your inventory with&nbsp;our system',
+      desc='Our system helps you optimise your inventory, reduce the risk of loss and increase your business profits' +
+      '<ul class="ul-stylized">
+                <li>Accurate inventory management</li>
+                <li>User-friendly interface</li>
+                <li>Data analysis</li>
+                <li>Greater efficiency</li>
+              </ul>',
+      footer= button('Start it free', 'button--fill', 'modal-request'),
+      buttonsText='It’s free. No credit card needed.',
+      video='<video
+              autoplay
+              loop
+              muted
+              playsinline
+              poster="img/block-image-2.jpg"
+              src="img/terminal.mp4"
+            ></video>',
+      imageHide=true
+    ) }}
+  </div>
+</section>

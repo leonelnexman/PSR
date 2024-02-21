@@ -1,0 +1,369 @@
+---
+title: Marketplace
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_quote.html" import quote %}
+{% from "partials/_product-card.html" import productCard %}
+
+{% block content %}
+
+  {# partial example #}
+  {% set headerGrey = true %}
+  {% include "partials/_header.html" %}
+
+  <div class="main marketplace-page">
+
+    {{ hero(
+      align='left',
+      title='Marketplace',
+      titleDesc='Discover a Wide Range of Solutions and Applications',
+      desc='Find the tools to optimize your operations and improve the customer&nbsp;experience.',
+      buttons=button('About the Marketplace', 'button--fill hero__button')
+      + button('For developers', 'button--outline button--white hero__button', 'modal-demo'),
+      image='img/marketplace-hero.jpg',
+      theme='secondary'
+    ) }}
+
+    <section class="section section-market">
+      <div class="container">
+        <div class="section-market__wrapper">
+          <div class="section-market__filters">
+            <div class="checkbox-wrapper">
+              <input
+                class="custom-checkbox js-products-category-filter"
+                type="checkbox"
+                id="0"
+                value="Sales and CRM"
+                name="products-category-filters"
+              >
+              <label for="0">
+                <span>Sales and CRM</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input
+                class="custom-checkbox js-products-category-filter"
+                type="checkbox"
+                id="1"
+                value="Inventory Management"
+                name="products-category-filters"
+              >
+              <label for="1">
+                <span>Inventory Management</span>
+              </label>
+            </div>
+          </div>
+          <div class="section-market__products">
+            <div class="section-market__products-group market-products-group">
+              <div class="market-products-group__header">
+                <div class="market-products-group__search">
+                  <div class="input-field-container">
+                    <div class="input-field input-field--large">
+                      <input
+                        id="search"
+                        name="search"
+                        type="text"
+                        class="input input--primary input-field__input js-search-products"
+                      >
+                      <div class="input-icon">
+                        {{ mixins.icon('search') }}
+                      </div>
+                      <label
+                        class="floating-label"
+                        for="search"
+                      >
+                        Search
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="market-products-group__sort">
+                  <div class="select">
+                    <select
+                      name="services"
+                      class="select__native js-selectNative"
+                    >
+                      <option
+                        value="services"
+                        disabled=""
+                        selected=""
+                      >
+                        Sort by:
+                      </option>
+                      <option
+                        value="type"
+                        selected
+                      >
+                        Type
+                      </option>
+                      <option value="name">Name</option>
+                    </select>
+                    <div
+                      class="select-control js-selectCustom"
+                      aria-hidden="true"
+                    >
+                      <div class="select-control__trigger">
+                        <div class="select__placeholder">
+                        <span>
+                          Sort by:
+                        </span>
+                          <div class="select__val">Type</div>
+                        </div>
+                        <span class="select__arrow input-icon">
+                    {{ mixins.icon('arrow-down') }}
+                  </span>
+                      </div>
+                      <div class="select-control__options">
+                        <div
+                          class="select-control__option isActive"
+                          data-value="type"
+                        >Type
+                        </div>
+                        <div
+                          class="select-control__option "
+                          data-value="name"
+                        >Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="market-products-group__title">New Releases</h2>
+              <div class="market-products-group__list">
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+              </div>
+              <div class="market-products-group__footer">
+                {{ button(
+                  'Load more',
+                  'button--fill market-products-group__load-more js-products-load-more',
+                  dataset='data-products-group="new"') }}
+              </div>
+            </div>
+
+            <div class="section-market__products-group market-products-group">
+              <h2 class="market-products-group__title">Top Paid Solutions</h2>
+              <div class="market-products-group__list">
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='<del>6$</del> <ins>5$</ins>',
+                  rating=5
+                ) }}
+              </div>
+              <div class="market-products-group__footer">
+                {{ button(
+                  'Load more',
+                  'button--fill market-products-group__load-more js-products-load-more',
+                  dataset='data-products-group="top-paid"') }}
+              </div>
+            </div>
+
+            <div class="section-market__products-group market-products-group">
+              <h2 class="market-products-group__title">Top Free Solutions</h2>
+              <div class="market-products-group__list">
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='free',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='free',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='free',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='free',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='free',
+                  rating=5
+                ) }}
+                {{ productCard(
+                  title='Loyalty programs, Point & Credits',
+                  price='free',
+                  rating=5
+                ) }}
+              </div>
+              <div class="market-products-group__footer">
+                {{ button(
+                  'Load more',
+                  'button--fill market-products-group__load-more js-products-load-more',
+                  dataset='data-products-group="top-free"') }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-customer-reviews">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-customer-reviews__title">
+          Customer Reviews
+        </h2>
+        <div class="section-customer-reviews__list">
+          <div class="customer-review">
+            <div class="customer-review__header">
+              {{ productCard(
+                title='Loyalty programs, Point & Credits',
+                price='<del>6$</del> <ins>5$</ins>',
+                rating=5
+              ) }}
+            </div>
+            <div class="customer-review__footer">
+              <div class="customer-review__author">
+                <div class="customer-review__avatar">
+                  <img
+                    src="img/avatar-1.jpg"
+                    loading="lazy"
+                    width="65"
+                    height="65"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="customer-review__author-name">
+                  John123
+                </div>
+              </div>
+              <div class="customer-review__desc">
+                I have been using this solution for my business, and it has greatly improved our inventory management.
+                The features are user-friendly, and the support team is always helpful. Highly recommended!
+              </div>
+            </div>
+          </div>
+          <div class="customer-review">
+            <div class="customer-review__header">
+              {{ productCard(
+                title='Loyalty programs, Point & Credits',
+                price='<del>6$</del> <ins>5$</ins>',
+                rating=5
+              ) }}
+            </div>
+            <div class="customer-review__footer">
+              <div class="customer-review__author">
+                <div class="customer-review__avatar">
+                  <img
+                    src="img/avatar-1.jpg"
+                    loading="lazy"
+                    width="65"
+                    height="65"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="customer-review__author-name">
+                  John123
+                </div>
+              </div>
+              <div class="customer-review__desc">
+                I have been using this solution for my business, and it has greatly improved our inventory management.
+                The features are user-friendly, and the support team is always helpful. Highly recommended!
+              </div>
+            </div>
+          </div>
+          <div class="customer-review">
+            <div class="customer-review__header">
+              {{ productCard(
+                title='Loyalty programs, Point & Credits',
+                price='<del>6$</del> <ins>5$</ins>',
+                rating=5
+              ) }}
+            </div>
+            <div class="customer-review__footer">
+              <div class="customer-review__author">
+                <div class="customer-review__avatar">
+                  <img
+                    src="img/avatar-1.jpg"
+                    loading="lazy"
+                    width="65"
+                    height="65"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="customer-review__author-name">
+                  John123
+                </div>
+              </div>
+              <div class="customer-review__desc">
+                I have been using this solution for my business, and it has greatly improved our inventory management.
+                The features are user-friendly, and the support team is always helpful. Highly recommended!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

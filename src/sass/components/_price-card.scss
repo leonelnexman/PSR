@@ -1,0 +1,167 @@
+.price-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    color: #fff;
+    background: $secondary;
+    border-radius: 16px;
+    transition: background-color .2s ease;
+
+    @include r(599) {
+        padding: 25px;
+    }
+
+    @include any-hover {
+        background: #3d0d7e;
+
+        .price-card__waves {
+            transform: translate(-20px, -20px);
+        }
+    }
+
+    &__waves-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        border-radius: inherit;
+        isolation: isolate;
+    }
+
+    &__waves {
+        z-index: 0;
+        transition: transform .4s ease-out;
+
+        @include r(599) {
+            display: none;
+        }
+    }
+
+    &__wave-right {
+        top: 90%;
+        right: -100%;
+        width: 100%;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 42px;
+        color: #29d9bb;
+
+        @include r(599) {
+            margin-bottom: 10px;
+            font-size: 32px;
+            text-align: center;
+        }
+    }
+
+    &__price {
+        @include r(599) {
+            text-align: center;
+        }
+
+        span {
+            font-weight: 500;
+            font-size: 22px;
+        }
+    }
+
+    &__features {
+        position: relative;
+        margin-top: 40px;
+        margin-bottom: auto;
+
+        @include r(599) {
+            margin-top: 25px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 1px;
+            background: rgba(#29d9bb, .6);
+        }
+    }
+
+    &__feature {
+        position: relative;
+        padding: 12px 0 12px 36px;
+        line-height: 1.5;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: $primary;
+            background-image: url(../img/done-2.svg);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            left: 0;
+            height: 1px;
+            background: rgba(#29d9bb, .6);
+        }
+
+        &:after {
+            bottom: 0;
+        }
+    }
+
+    &__footer {
+        margin-top: 35px;
+
+        @include r(599) {
+            margin-top: 25px;
+        }
+    }
+
+    .button {
+        @include r(599) {
+            width: 100%;
+        }
+    }
+
+    &.is-select {
+        &:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+            background: rgba(140, 41, 217, .3);
+            border-radius: 21px;
+            z-index: -1;
+
+            @include r(899) {
+                top: -8px;
+                right: -8px;
+                bottom: -8px;
+                left: -8px;
+            }
+        }
+
+        .price-card__wave-right {
+            top: 95%;
+            right: -90%;
+        }
+    }
+}

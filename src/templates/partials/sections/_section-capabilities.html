@@ -1,0 +1,154 @@
+{% from "partials/_wave-card.html" import waveCard %}
+<section
+  id="capabilities"
+  class="section section-capabilities"
+>
+  <div class="container">
+    <div class="grid-flex">
+      <div class="large-3 medium-12">
+        <div class="section-capabilities__image">
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            poster="img/team.jpg"
+            src="img/capabilities.mp4"
+          ></video>
+        </div>
+      </div>
+      <div class="large-8 large-offset-1 medium-12 medium-offset-0">
+        <h2 class="section-title h2-title section-capabilities__title">
+          Capabilities
+        </h2>
+        <div class="section-capabilities__list">
+          <div class="capabilities-item">
+            <div class="capabilities-item__icon">
+              <img
+                src="img/done.svg"
+                loading="lazy"
+                width="27"
+                height="27"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="capabilities-item__content">
+              <div class="capabilities-item__title h5-title">
+                Integration with government agencies
+              </div>
+              <div class="capabilities-item__desc">
+                To comply with the law, state the name, price and&nbsp;quantity of the goods on the receipt.
+              </div>
+            </div>
+          </div>
+          <div class="capabilities-item">
+            <div class="capabilities-item__icon">
+              <img
+                src="img/done.svg"
+                loading="lazy"
+                width="27"
+                height="27"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="capabilities-item__content">
+              <div class="capabilities-item__title h5-title">
+                Easy entry of new items into&nbsp;the&nbsp;system
+              </div>
+              <div class="capabilities-item__desc">
+                Simplify the process of adding products and&nbsp;managing inventory by&nbsp;scanning barcodes.
+              </div>
+            </div>
+          </div>
+          <div class="capabilities-item">
+            <div class="capabilities-item__icon">
+              <img
+                src="img/done.svg"
+                loading="lazy"
+                width="27"
+                height="27"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="capabilities-item__content">
+              <div class="capabilities-item__title h5-title">
+                Card payments, QR, p2p, wallets,&nbsp;bill payments
+              </div>
+              <div class="capabilities-item__desc">
+                Easily integrate with popular e-commerce platforms and payment gateways for&nbsp;a&nbsp;streamlined workflow.
+              </div>
+            </div>
+          </div>
+          <div class="capabilities-item">
+            <div class="capabilities-item__icon">
+              <img
+                src="img/done.svg"
+                loading="lazy"
+                width="27"
+                height="27"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="capabilities-item__content">
+              <div class="capabilities-item__title h5-title">
+                Inventory accounting
+              </div>
+              <div class="capabilities-item__desc">
+                Gain valuable insights into your sales performance, customer behavior to&nbsp;make data-driven decisions.
+              </div>
+            </div>
+          </div>
+          <div class="capabilities-item">
+            <div class="capabilities-item__icon">
+              <img
+                src="img/done.svg"
+                loading="lazy"
+                width="27"
+                height="27"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="capabilities-item__content">
+              <div class="capabilities-item__title h5-title">
+                Offline work of the<br>application
+              </div>
+              <div class="capabilities-item__desc">
+                Access your inventory and sales data on the go with&nbsp;our mobile-friendly interface.
+              </div>
+            </div>
+          </div>
+          <div class="quote-card">
+            <div class="quote-card__title h5-title">Game-changer</div>
+            <div class="quote-card__content">
+              Effortlessly manage inventory, track sales, maximize profits.
+            </div>
+            <div class="quote-card__author">
+              George, business owner
+            </div>
+            <div class="quote-card__avatar">
+              <img
+                src="img/avatar-1.jpg"
+                loading="lazy"
+                width="91"
+                height="91"
+                alt="George, business owner"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-capabilities__wave">
+      {{ waveCard(
+        'More than 93%',
+        'of companies use our solution after the<br> demo period. You should try it <span>free!</span>',
+        button('Try for free', 'button--fill')
+      ) }}
+    </div>
+  </div>
+</section>

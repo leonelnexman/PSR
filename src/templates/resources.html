@@ -1,0 +1,121 @@
+---
+title: Resources
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_image-block.html" import imageBlock %}
+{% from "partials/_quote.html" import quote %}
+
+{% block content %}
+
+  {# partial example #}
+  {% set headerGrey = true %}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+
+    {{ hero(
+      align='left',
+      title='Resources',
+      desc='On the Resources page, you will find a wealth of information to support your business.',
+      buttons=button('About the marketplace', 'button--fill hero__button', url='/marketplace')
+      + button('For developers', 'button--outline hero__button', 'modal-demo'),
+      image='img/resources-hero.jpg',
+      theme='white'
+    ) }}
+
+    <section class="section section-grey section-become-partner section-useful-info">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-become-partner__title">
+          Find useful information
+        </h2>
+        <div class="section-become-partner__desc"></div>
+        <div class="section-become-partner__list">
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/question.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Instructions
+            </div>
+            <div class="feature-card__desc">
+              Recipe sheets serve as a guide and help you monitor the inventory of ingredients in the warehouse.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/blog.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Blog
+            </div>
+            <div class="feature-card__desc">
+              Simply hold the product near the Barcode Scanner, and information will appear on the display.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--column-center">
+            <div class="feature-card__icon">
+              <img
+                src="img/message.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              FAQ
+            </div>
+            <div class="feature-card__desc">
+              The cashier can utilize the POS screen to add items to the cart and record customer information.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        {{ imageBlock(
+          title='Instructions: Master our Software with Step-by-Step Guides',
+          desc='Learn how to maximize productivity, leverage key features, and troubleshoot common issues. ',
+          footer=button('Learn more', 'button--fill', 'modal-request'),
+          img='img/resources-1.jpg'
+        ) }}
+        {{ imageBlock(
+          title='Blog: Stay Informed with Industry Insights and Best Practices',
+          desc='Delve into a wide range of topics, including industry trends, expert advice, case studies, and success stories.',
+          footer=button('Discover more', 'button--fill', 'modal-request'),
+          img='img/resources-2.jpg',
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='FAQ: Get Answers to Your Queries',
+          desc='Find answers to commonly asked questions about our software, services, pricing, and more. ',
+          footer=button('Discover more', 'button--fill', 'modal-request'),
+          img='img/resources-3.jpg'
+        ) }}
+      </div>
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}

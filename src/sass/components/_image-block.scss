@@ -1,0 +1,254 @@
+.image-block {
+    &__content {
+        margin-left: 7%;
+
+        @include r(1068) {
+            margin-left: 0;
+        }
+
+        .image-block__footer {
+            @include r(1068) {
+                display: none;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 24px;
+
+        @include r(599) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__desc {
+        max-width: 573px;
+        line-height: 1.3;
+
+        @include r(1068) {
+            max-width: 100%;
+        }
+
+        @include r(599) {
+            font-size: 14px;
+        }
+
+        ul,
+        ol {
+            margin-top: 36px;
+        }
+
+        span {
+            display: block;
+            max-width: 402px;
+            color: $secondary;
+
+            @include r(599) {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    &__footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 536px;
+        margin-top: 31px;
+        padding-top: 20px;
+
+        @include r(599) {
+            margin-top: 16px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 1px;
+            background: linear-gradient(270deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%);
+        }
+    }
+
+    &__button-text {
+        margin-left: 22px;
+        font-weight: 400;
+        font-size: 18px;
+
+        @include r(599) {
+            margin-top: auto;
+            margin-left: 0;
+            font-size: 12px;
+        }
+    }
+
+    .button {
+        @include r(599) {
+            flex: 1 1 50%;
+        }
+    }
+
+    .button + .button {
+        margin-left: 22px;
+    }
+
+    &__caption {
+        margin-left: 22px;
+        font-size: 18px;
+
+        @include r(599) {
+            font-size: 12px;
+        }
+    }
+
+    &__image {
+        margin-right: 7%;
+
+        @include r(1068) {
+            margin-right: 0;
+        }
+
+        @include r(599) {
+            border-radius: 8px;
+        }
+
+        img,
+        video {
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__image--gradient {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        aspect-ratio: 1.84;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(1deg, rgba(73, 0, 227, .4) 0%, rgba(41, 217, 187, .4) 100%);
+            opacity: .6;
+            pointer-events: none;
+        }
+    }
+
+    &__start {
+        @include r(1068) {
+            margin-top: 25px;
+        }
+
+        .image-block__footer {
+            padding: 0;
+
+            @include rmin(1068.1) {
+                display: none;
+            }
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    &__end {
+        @include r(1068) {
+            order: -1;
+        }
+    }
+
+    &--hide {
+        padding-top: 0 !important;
+
+        &:before {
+            display: none;
+        }
+
+        .image-block__start {
+            @include r(1068) {
+                display: none;
+            }
+        }
+
+        .image-block__content .image-block__footer {
+            @include r(1068) {
+                display: flex;
+            }
+        }
+    }
+
+    &--left {
+        .image-block__end {
+            order: -1;
+        }
+
+        .image-block__content {
+            max-width: 536px;
+            margin-right: 7%;
+            margin-left: 0;
+
+            @include r(1068) {
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+
+        .image-block__image {
+            margin-right: 0;
+            margin-left: 7%;
+
+            @include r(1068) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &--center {
+        .image-block__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+    }
+
+    &--video {
+        .image-block__title {
+            @include css-lock(26, 80, 768, 1300);
+        }
+
+        .image-block__content {
+            max-width: unset;
+        }
+    }
+
+    & + .image-block {
+        position: relative;
+        margin-top: 100px;
+
+        @include r(1068) {
+            margin-top: 30px;
+            padding-top: 30px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: 1px;
+                background: linear-gradient(270deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%);
+            }
+        }
+    }
+}

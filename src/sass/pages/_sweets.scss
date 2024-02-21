@@ -1,0 +1,26 @@
+.section-sweets-quote {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.section-sweets-banner {
+    padding-top: 90px;
+    padding-bottom: 0;
+
+    @include r(599) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &__desktop {
+        @include r(599) {
+            display: none;
+        }
+    }
+
+    &__mobile {
+        @include rmin(599.1) {
+            display: none;
+        }
+    }
+}

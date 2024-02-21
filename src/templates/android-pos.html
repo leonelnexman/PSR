@@ -1,0 +1,602 @@
+---
+title: Android POS Device
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_hero.html" import hero %}
+{% from "partials/_wave-card.html" import waveCard %}
+{% from "partials/_video.html" import video %}
+{% from "partials/_image-block.html" import imageBlock %}
+
+{% block content %}
+
+  {# partial example #}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+    {{ hero(
+      align='center',
+      title='Android POS Device',
+      subtitle='Android payment device',
+      buttons=button('Try for free', 'button--fill hero__button', 'modal-demo'),
+      bg='<video autoplay loop muted playsinline src="img/hero.mp4"></video>'
+    ) }}
+
+    <section class="section section-grey section-android-features">
+      <div class="container">
+        <div class="section-android-features__wrapper">
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/unparalleled-mobility.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Unparalleled mobility
+            </div>
+            <div class="feature-card__desc">
+              Accept payments anywhere, from retail stores to on-the-go events, with our Android POS Device.
+            </div>
+          </div>
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/card-hand.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Versatile functionality
+            </div>
+            <div class="feature-card__desc">
+              Streamline operations with inventory management integrated into our Android POS Device.
+            </div>
+          </div>
+          <div class="feature-card feature-card--two-col">
+            <div class="feature-card__icon">
+              <img
+                src="img/security.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Robust security
+            </div>
+            <div class="feature-card__desc">
+              Industry-leading security standards implemented in our Android POS Device.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-android-test-banner">
+      <div class="container">
+        {{ waveCard(
+          'Tailored for 50+ industries',
+          'Discover how Pulsar PSR empowers your business growth and management.',
+          button('Test for free', 'button--fill'),
+          classes='wave-card--left'
+        ) }}
+      </div>
+    </section>
+
+    <section
+      id="seamless"
+      class="section section-grey section-seamless"
+    >
+      <div class="container">
+        <div class="grid-flex">
+          <div class="large-3 medium-12">
+            <div class="section-seamless__image gradient-figure">
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                poster="img/team.jpg"
+                src="img/capabilities.mp4"
+              ></video>
+            </div>
+          </div>
+          <div class="large-8 large-offset-1 medium-12 medium-offset-0 section-seamless__content">
+            <h2 class="section-title h2-title section-seamless__title">
+              Seamless Solutions for Streamlined Operations
+            </h2>
+            <div class="section-desc section-seamless__desc">
+              Unlock the Potential of Your Business with the Android POS Device.
+            </div>
+            <div class="section-seamless__list">
+              <div class="feature-card feature-card--column">
+                <div class="feature-card__icon">
+                  <img
+                    src="img/cart.svg"
+                    loading="lazy"
+                    width="44"
+                    height="44"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-card__title h5-title">
+                  Simplified Checkout Process
+                </div>
+                <div class="feature-card__desc">
+                  Enhance transactions with Android POS Device's user-friendly interface, enabling quick checkouts,
+                  minimizing wait times, and streamlining payments for satisfied customers.
+                </div>
+              </div>
+              <div class="feature-card feature-card--column">
+                <div class="feature-card__icon">
+                  <img
+                    src="img/updown.svg"
+                    loading="lazy"
+                    width="44"
+                    height="44"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-card__title h5-title">
+                  Real-time Data Insights
+                </div>
+                <div class="feature-card__desc">
+                  Leverage Android POS Device's powerful reporting and analytics for
+                  data-driven decisions, trend identification, and operational optimization, boosting profitability.
+                </div>
+              </div>
+              <div class="feature-card feature-card--column">
+                <div class="feature-card__icon">
+                  <img
+                    src="img/wifi.svg"
+                    loading="lazy"
+                    width="44"
+                    height="44"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-card__title h5-title">
+                  Scalability and Integration
+                </div>
+                <div class="feature-card__desc">
+                  Stay adaptable with Android POS Device's scalability and integration, seamlessly integrating with
+                  business tools, payment processors, and apps for future growth and efficiency.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-android-wave-quote">
+      <div class="container">
+        {{ waveCard(
+          'Unlock the Potential of&nbsp;Your Business',
+          'Our team of experts is here to guide you through our innovative solution and showcase how it can transform your operations.',
+          button('Start it free', 'button--fill'),
+          classes='wave-card--quote',
+          avatar='avatar-3.jpg'
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-android-video">
+      <div class="container">
+        {{ imageBlock(
+          title='Your All-in-One Solution',
+          desc='POS Sector\'s Android POS System offers effortless payment acceptance. Swipe and tap to&nbsp;ring up sales
+                  faster. Embrace the convenience!',
+          content=video(
+            'https://www.youtube.com/watch?v=LiVjWolaR4k',
+            'img/video-preview.jpg'
+          ),
+          classes='image-block--video',
+          align='left'
+        ) }}
+      </div>
+    </section>
+
+    <section class="section section-system-for section-system-for--round">
+      <div class="waves-bg section-system-for__waves">
+        <svg
+          class="waves-bg__wave-left section-system-for__wave-left"
+          width="444"
+          height="291"
+          viewBox="0 0 444 291"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="path-system-3"
+            d="M-164.631 125.685C-164.94 69.8262 -117.71 0.583266 -50.7772 42.5419C-4.24981 71.7093 22.5896 35.0592 74.8769 43.0074C104.903 47.5723 118.991 65.6262 125.444 86.6119C136.723 123.28 110.051 141.443 117.323 178.917C122.083 203.45 143.82 223.897 169.019 229.61C194.218 235.32 221.597 226.912 239.755 209.629C251.113 198.82 259.19 184.845 271.916 175.553C293.139 160.061 324.967 161.195 347.474 175.818C369.982 190.441 383.05 216.654 384.019 242.594C384.989 268.535 374.791 293.929 358.786 314.444C349.628 326.182 338.627 336.486 329.616 348.33C320.605 360.173 313.499 374.154 313.796 388.998C313.985 398.421 317.137 407.613 318.15 417.004C319.163 426.394 317.502 436.885 310.076 442.853L-18.7425 347.251L-35.5322 344.361C-35.5322 344.361 -144.054 334.831 -181.33 250.836C-198.906 211.231 -164.17 209.187 -164.632 125.688L-164.631 125.685Z"
+            fill="url(#paint0_linear_41_464)"
+          />
+          <g
+            id="Group_2"
+            opacity="0.8"
+          >
+            <path
+              id="path-system-1"
+              d="M293.367 421.277C294.18 399.572 304.058 379.305 314.727 360.37C325.396 341.431 337.21 322.701 342.54 301.642C347.87 280.583 345.547 256.155 330.592 240.333C317.248 226.216 296.327 221.496 276.907 222.756C257.485 224.015 238.847 230.432 220.048 235.448C201.25 240.464 181.391 244.114 162.42 239.771C134.809 233.451 112.338 209.003 108.453 181.065C106.524 167.188 107.835 153.077 108.693 139.094C111.91 86.7958 58.4741 60.9067 0.345877 81.4209C-29.2489 91.8651 -62.4141 112.289 -87.7116 147.957C-95.779 159.333 -134.915 245.653 -133.808 259.541C-130.425 301.91 -7.82677 327.873 -7.82677 327.873L293.365 421.276L293.367 421.277Z"
+              fill="url(#paint1_linear_41_464)"
+            />
+          </g>
+          <g
+            id="Group_3"
+            opacity="0.3"
+          >
+            <path
+              id="path-system-2"
+              d="M-12.7068 371.4C82.6065 405.381 179.776 434.191 278.227 457.658C300.228 462.902 325.086 467.449 344.102 455.27C360.233 444.935 367.441 425.356 372.176 406.845C377.88 384.55 381.542 361.733 383.1 338.773C383.949 326.251 384.12 313.334 379.761 301.555C375.404 289.775 365.614 279.254 353.16 277.315C331.881 273.999 312.773 295.656 291.444 292.662C272.968 290.067 262.273 270.476 257.339 252.556C252.404 234.636 249.483 214.641 235.809 201.993C217.597 185.145 188.802 188.829 164.922 195.662C141.042 202.496 115.085 211.343 92.2049 201.667C73.7174 193.849 61.7253 175.103 56.9786 155.673C56.4872 153.656 56.0584 151.631 55.693 149.597C50.592 121.325 23.1541 102.761 -5.04691 108.757L-22.7139 112.513C-108.624 130.774 -179.848 190.217 -212.907 271.25L-230.932 315.425L-12.706 371.397L-12.7068 371.4Z"
+              fill="url(#paint2_linear_41_464)"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_41_464"
+              x1="375.257"
+              y1="291.507"
+              x2="-173.537"
+              y2="144.028"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#271959" />
+              <stop
+                offset="1"
+                stop-color="#5317A6"
+              />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_41_464"
+              x1="155.436"
+              y1="104.242"
+              x2="81.1937"
+              y2="359.612"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#29D9BB" />
+              <stop
+                offset="1"
+                stop-color="#29D9BB"
+                stop-opacity="0.5"
+              />
+            </linearGradient>
+            <linearGradient
+              id="paint2_linear_41_464"
+              x1="134.5"
+              y1="143.026"
+              x2="59.7928"
+              y2="399.966"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#29D9BB" />
+              <stop
+                offset="1"
+                stop-color="#29D9BB"
+                stop-opacity="0.5"
+              />
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg
+          class="waves-bg__wave-right section-system-for__wave-right"
+          width="452"
+          height="320"
+          viewBox="0 0 452 320"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="Group">
+            <path
+              id="path-system-1"
+              d="M73.3873 286.644C73.3873 286.644 81.982 195.293 200.12 199.343C318.258 203.398 266.184 107.697 369.769 44.5125C395.664 28.7177 424.017 25.4923 451.394 30.9421C562.883 53.1392 590.584 200.575 496.966 265.066L288.171 408.893C254.256 432.256 211.278 438.279 172.315 424.969C121.858 407.732 64.7906 369.802 73.3873 286.644Z"
+              fill="url(#paint0_linear_41_477)"
+            />
+            <path
+              id="path-system-2"
+              opacity="0.5"
+              d="M276.484 435.563C240.484 460.362 189.667 447.613 172.074 407.629C161.839 384.373 162.941 352.896 192.659 311.698C275.291 197.139 228.29 129.234 311.252 66.165C394.214 3.0959 485.213 40.5017 527.012 109.712C543.245 136.588 553.103 161.416 559.084 181.729C567.741 211.109 556.454 242.707 531.212 260.093L276.484 435.563Z"
+              fill="url(#paint1_linear_41_477)"
+            />
+            <path
+              id="path-system-3"
+              opacity="0.5"
+              d="M466.869 294.76C486.297 255.62 466.426 207.179 424.31 195.479C399.814 188.673 368.792 194.251 332.227 229.516C230.54 327.582 156.575 290.776 105.934 381.823C55.2919 472.869 105.32 557.538 179.838 589.01C208.777 601.233 234.772 607.439 255.747 610.463C286.084 614.834 315.77 599.164 329.395 571.718L466.873 294.759L466.869 294.76Z"
+              fill="url(#paint2_linear_41_477)"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_41_477"
+              x1="101.592"
+              y1="383.157"
+              x2="532.826"
+              y2="85.7383"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#271959" />
+              <stop
+                offset="1"
+                stop-color="#5317A6"
+              />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_41_477"
+              x1="137.012"
+              y1="358.791"
+              x2="518.024"
+              y2="96.0097"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#29D9BB" />
+              <stop
+                offset="1"
+                stop-color="#29D9BB"
+                stop-opacity="0.5"
+              />
+            </linearGradient>
+            <linearGradient
+              id="paint2_linear_41_477"
+              x1="371.097"
+              y1="167.925"
+              x2="165.672"
+              y2="582.499"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#29D9BB" />
+              <stop
+                offset="1"
+                stop-color="#29D9BB"
+                stop-opacity="0.5"
+              />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="grid-flex">
+          <div class="medium-12 section-system-for__content">
+            <h2 class="section-title h2-title section-system-for__title">
+              Discover capabilities
+            </h2>
+            <div class="section-desc section-system-for__desc">
+              Designed to revolutionize your business operations.
+            </div>
+            <div class="section-system-for__list">
+              <div class="feature-image-card">
+                <div class="feature-image-card__image">
+                  <img
+                    src="img/inventory-easy.jpg"
+                    loading="lazy"
+                    width="280"
+                    height="185"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-image-card__title">
+                  Inventory Management Made Easy
+                </div>
+                <div class="feature-image-card__desc">
+                  Effortlessly manage inventory with advanced tools for real-time tracking, alerts, and stock
+                  monitoring.
+                </div>
+              </div>
+              <div class="feature-image-card">
+                <div class="feature-image-card__image">
+                  <img
+                    src="img/seamless-pay.jpg"
+                    loading="lazy"
+                    width="280"
+                    height="185"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-image-card__title">
+                  Seamless Payment Processing
+                </div>
+                <div class="feature-image-card__desc">
+                  Enjoy swift and secure payments, supporting various methods for customer convenience.
+                </div>
+              </div>
+              <div class="feature-image-card">
+                <div class="feature-image-card__image">
+                  <img
+                    src="img/robust.jpg"
+                    loading="lazy"
+                    width="280"
+                    height="185"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-image-card__title">
+                  Robust Reporting and Analytics
+                </div>
+                <div class="feature-image-card__desc">
+                  Track sales trends, monitor products & make data-driven decisions for growth.
+                </div>
+              </div>
+              <div class="feature-image-card">
+                <div class="feature-image-card__image">
+                  <img
+                    src="img/customizable-feature.jpg"
+                    loading="lazy"
+                    width="280"
+                    height="185"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-image-card__title">
+                  Customizable and User-Friendly Interface
+                </div>
+                <div class="feature-image-card__desc">
+                  Customize the interface for a seamless user experience, matching your brand and workflow.
+                </div>
+              </div>
+              <div class="feature-image-card">
+                <div class="feature-image-card__image">
+                  <img
+                    src="img/customer.jpg"
+                    loading="lazy"
+                    width="280"
+                    height="185"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-image-card__title">
+                  Enhanced Customer Engagement
+                </div>
+                <div class="feature-image-card__desc">
+                  Foster loyalty with personalized offers, promotions, and loyalty programs.
+                </div>
+              </div>
+              <div class="feature-image-card">
+                <div class="feature-image-card__image">
+                  <img
+                    src="img/scalability.jpg"
+                    loading="lazy"
+                    width="280"
+                    height="185"
+                    alt=""
+                    aria-hidden="true"
+                  >
+                </div>
+                <div class="feature-image-card__title">
+                  Integrations and Scalability
+                </div>
+                <div class="feature-image-card__desc">
+                  Easily integrate our Android POS Device with accounting, CRM, and eCommerce tools.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-android-unlock-banner">
+      <div class="container">
+        {{ waveCard(
+          '<span>Unlock the power of our</span> <br>Android POS&nbsp;Device',
+          content=button('Try it now', 'button--fill')
+        ) }}
+      </div>
+    </section>
+
+    {% include "partials/_reviews-slider.html" %}
+
+    <section class="section section-grey section-android-explore-features">
+      <div class="container">
+        <h2 class="section-title section-title--center h2-title section-android-explore-features__title">
+          Explore the exceptional features
+        </h2>
+        <div class="section-android-explore-features__list">
+          <div class="feature-card feature-card--column feature-card--line">
+            <div class="feature-card__icon">
+              <img
+                src="img/cart.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Enhanced Customer Engagement
+            </div>
+            <div class="feature-card__desc">
+              Foster customer loyalty with personalized offers, promotions, and&nbsp;loyalty programs.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--line">
+            <div class="feature-card__icon">
+              <img
+                src="img/pay.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Seamless Payment Processing
+            </div>
+            <div class="feature-card__desc">
+              Swift and secure payment processing, accommodating various methods to cater to customer preferences.
+            </div>
+          </div>
+          <div class="feature-card feature-card--column feature-card--line">
+            <div class="feature-card__icon">
+              <img
+                src="img/scan.svg"
+                loading="lazy"
+                width="44"
+                height="44"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
+            <div class="feature-card__title h5-title">
+              Inventory Management Made Easy
+            </div>
+            <div class="feature-card__desc">
+              Effortlessly manage inventory with advanced tools for real-time tracking and&nbsp;alerts.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        {{ imageBlock(
+          title='Enhanced Reporting and Analytics',
+          desc='Harness powerful reporting & analytics for valuable insights into sales, product performance & customer behavior. Track key metrics, identify growth opportunities & make data-driven decisions to propel your business forward.',
+          footer= button('Test for free', 'button--fill', 'modal-request') +
+            button('Learn more', 'button--outline', 'modal-request'),
+          img='img/ench-reporting.jpg',
+          imageGradient=false,
+          align='left'
+        ) }}
+        {{ imageBlock(
+          title='Advanced Sales Management',
+          desc='Maximize revenue with our powerful tool streamlining sales processes. Gain deep insights, identify trends, and optimize strategies for better results. Achieve your business goals with unparalleled sales management!',
+          footer= button('Test for free', 'button--fill', 'modal-request') +
+            button('Learn more', 'button--outline', 'modal-request'),
+          img='img/sale-management.jpg',
+          imageGradient=false
+        ) }}
+      </div>
+    </section>
+
+    {% include "partials/sections/_section-question.html" %}
+    {% include "partials/sections/_section-blog.html" %}
+    <section class="section-android-exclusive-banner">
+      {% include "partials/sections/_section-exclusive-offers-banner.html" %}
+    </section>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}
