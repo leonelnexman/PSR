@@ -46,9 +46,9 @@
         margin-bottom: 3rem;
         gap: 0.3rem 0.5rem;
         flex-wrap: wrap;
-        @include r(599) {
+        @include r(1024) {
             display: inline-flex;
-            margin-bottom: 1.375rem;
+            margin-bottom: 0rem;
         }
     }
     &__breackpints-item{
@@ -151,6 +151,7 @@
         &.is-active {
             max-height: 100%;
             transition: all 0.3s;
+            margin-top: 1rem;
             .docs-sidebar__list{
                 position: static;
                 width: 100%;
@@ -730,12 +731,16 @@
         height: 24.75rem;
         @media (max-width: 962px){
             width: 100%;
+            height: 45.25rem;
+        }
+        @media (max-width: 600px){
+            width: 100%;
             height: 30.25rem;
         }
         img{
             width: 100%;
             height: 100%;
-            
+            object-fit: cover;
             border-radius: 1rem;
         }
     }
@@ -824,13 +829,19 @@
         }
     }
     &__download{
-        padding: 0.969rem 1.875rem;
+        padding: 0;
         background-color: #00AAAB;
         color: #fff;
         border-radius: 0.3rem;
         font-size: 1.3rem;
+        width: auto;
+        display: inline;
+        position: relative;
         @media (max-width: 962px){
             width: 100%;
+            button{
+                min-width: 100%;
+            }
         }
     }
 }
@@ -931,7 +942,7 @@
         margin-bottom: 3.688rem;
         .docs-page__block-img{
             width: 23rem;
-            height: 23rem;
+            height: auto;
             img{
                 object-fit: cover;
             }
@@ -1012,7 +1023,10 @@
         .docs-page__block-img{
             width: 100%;
             margin-bottom: 1.25rem;
-            height: 12.188rem;
+            height: 30rem;
+            @include r(600) {
+                height: 13rem;
+            }
         }
         .docs-page__block-name{
             font-size: 1.6rem;
@@ -1041,6 +1055,36 @@
 @media only screen and (max-width: 599px){
     .container {
         padding: 0 0.938rem;
+    }
+}
+
+.plugin__text a:hover{
+    svg path{
+        transition: all 0.3s;
+        fill: #6800F0;
+    }
+    color: #6800F0;
+    transition: all 0.3s;
+}
+
+.plugin__text a{
+    svg path{
+        transition: all 0.3s;
+    }
+}
+
+.plugin__block-item a:hover{
+    svg path{
+        transition: all 0.3s;
+        fill: #6800F0;
+    }
+    color: #6800F0;
+    transition: all 0.3s;
+}
+
+.plugin__block-item a{
+    svg{
+        margin-bottom: -0.3rem;
     }
 }
 

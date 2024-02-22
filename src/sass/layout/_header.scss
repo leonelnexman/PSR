@@ -199,7 +199,7 @@
     &__button {
         margin-left: 19px;
 
-        @include r(962) {
+        @include r(500) {
             display: none;
         }
     }
