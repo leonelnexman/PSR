@@ -1,0 +1,177 @@
+---
+title: Row Grouping
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_entry-card.html" import entryCard %}
+{% from "partials/_entry-image.html" import entryImg %}
+
+{% block content %}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  {# partial example #}
+  {% set headerGrey = true %}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+
+
+    <section class="section docs-page menu-page menu-page--none">
+      <div class="container">
+        <div class="docs-page__wrapper none">
+          <div class="docs-page__search menu-page__search docs-search js-search-documents">
+            <div class="docs-search__input">
+              <div class="input-field-container">
+                <div class="input-field input-field--large">
+                  <input
+                    id="search"
+                    name="search"
+                    type="text"
+                    class="input input--secondary input-field__input"
+                  >
+                  <div class="input-icon input-icon--secondary">
+                    {{ mixins.icon('search-2') }}
+                  </div>
+                  <label
+                    class="floating-label"
+                    for="search"
+                  >
+                    Search...
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="docs-search__result">
+              <div class="result-search-list">
+                <div class="search-result-count">450 results</div>
+                <div class="search-result-group">
+                  <div class="search-result-group__list">
+                    <div class="search-item">
+                      <div class="search-item__sub-title">JavaScript Data Grid</div>
+                      <div class="search-item__title"><span class="is-highlight">R</span>ow Grouping</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-page__breackpints">
+            <button class="docs-sidebar__hamburger docs-sidebar-hamburger js-docs-nav-trigger">
+                <span class="docs-sidebar-hamburger__icon">
+                  <span class="docs-sidebar-hamburger__line"></span>
+                  <span class="docs-sidebar-hamburger__line"></span>
+                  <span class="docs-sidebar-hamburger__line"></span>
+                </span>
+                <span class="docs-sidebar-hamburger__text">Menu</span>
+              </button>
+                <div class="docs-page__breackpints-item">
+                    <a href="">JavaScript Data Grid</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="docs-page__breackpints-item">
+                    <a href="">JavaScript Data Grid</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="docs-page__breackpints-item">
+                    <a href="">Initiating the custom domain setup</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+          </div>
+          <div class="docs-page__inner">
+            <div class="docs-page__sidebar">
+                {% include "partials/_menu-sidebar.html" %}
+              </div>
+              <div class="docs-page__content entry-page-content">
+                <div class="plugin">
+                  <div class="plugin__wrapper">
+                      <div class="plugin__img">
+                        <img src="./img/plugin.jpg" alt="">
+                      </div>
+                      <div class="plugin__content">
+                        <div class="plugin__title">The plugin</div>
+                        <div class="plugin__text">
+                          The plugin is required to sign invoices before sending them to ETA.
+                        </div>
+                        <div class="plugin__text">
+                          For more details <a href=""><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1339_1570)">
+                              <path d="M8.07373 10.3689L5.77866 12.664L5.7786 12.664L5.77855 12.6641C4.82947 13.6132 3.2851 13.6133 2.33591 12.6641C1.87609 12.2043 1.62291 11.5929 1.62291 10.9427C1.62291 10.2926 1.87609 9.68134 2.33575 9.22152L2.33591 9.22136L4.63099 6.92623C4.94783 6.60933 4.94783 6.09552 4.63093 5.77867C4.31408 5.46182 3.80027 5.46182 3.48337 5.77867L1.1883 8.07379L1.18781 8.07434C0.421849 8.84057 0 9.85927 0 10.9427C0 12.0265 0.422012 13.0453 1.18835 13.8117C1.97936 14.6026 3.0183 14.9981 4.05729 14.9981C5.09627 14.9981 6.13526 14.6026 6.92616 13.8117L6.92622 13.8116L9.22129 11.5164C9.53814 11.1996 9.53814 10.6858 9.22124 10.3689C8.90444 10.052 8.39068 10.052 8.07373 10.3689ZM15 4.0573C15 2.97357 14.5779 1.9547 13.8116 1.18836C12.2296 -0.393544 9.65564 -0.39349 8.07378 1.18836L8.07357 1.18863L5.77855 3.4836C5.46165 3.80044 5.46165 4.31431 5.77855 4.63116C5.85381 4.70663 5.94325 4.76649 6.04173 4.80728C6.1402 4.84808 6.24577 4.869 6.35236 4.86886C6.55998 4.86886 6.76771 4.78961 6.92611 4.63116L9.22113 2.3362L9.2214 2.33593C10.1705 1.38685 11.7148 1.38679 12.664 2.33593C13.1238 2.79575 13.3771 3.4071 13.3771 4.0573C13.3771 4.70744 13.1239 5.31868 12.6642 5.77851L12.664 5.77867L10.369 8.07379C10.0521 8.39064 10.0521 8.90446 10.369 9.22136C10.4443 9.29682 10.5337 9.35667 10.6322 9.39746C10.7306 9.43825 10.8362 9.45919 10.9428 9.45906C11.1504 9.45906 11.3581 9.37981 11.5166 9.22136L13.8116 6.92623L13.8121 6.92569C14.5781 6.15946 15 5.14076 15 4.0573Z" fill="#00AAAB" />
+                              <path d="M4.63025 10.3689C4.70552 10.4443 4.79495 10.5042 4.89341 10.545C4.99188 10.5858 5.09743 10.6067 5.20401 10.6066C5.41169 10.6066 5.61937 10.5273 5.77782 10.3689L10.3681 5.77863C10.685 5.46178 10.685 4.94797 10.3681 4.63107C10.0512 4.31422 9.53741 4.31422 9.2205 4.63107L4.63025 9.22126C4.31335 9.53822 4.31335 10.052 4.63025 10.3689Z" fill="#00AAAB" />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_1339_1570">
+                                <rect width="15" height="15" fill="white" />
+                              </clipPath>
+                            </defs>
+                          </svg>about sending data to ETA.</a>
+                        </div>
+                        <div class="plugin__block">
+                          <div class="plugin__block-title">To send invoices to ETA, you will need:</div>
+                          <div class="plugin__block-wrapper">
+                            <div class="plugin__block-item">
+                              A digital signature. For more details <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1339_1570)">
+                                  <path d="M8.07373 10.3689L5.77866 12.664L5.7786 12.664L5.77855 12.6641C4.82947 13.6132 3.2851 13.6133 2.33591 12.6641C1.87609 12.2043 1.62291 11.5929 1.62291 10.9427C1.62291 10.2926 1.87609 9.68134 2.33575 9.22152L2.33591 9.22136L4.63099 6.92623C4.94783 6.60933 4.94783 6.09552 4.63093 5.77867C4.31408 5.46182 3.80027 5.46182 3.48337 5.77867L1.1883 8.07379L1.18781 8.07434C0.421849 8.84057 0 9.85927 0 10.9427C0 12.0265 0.422012 13.0453 1.18835 13.8117C1.97936 14.6026 3.0183 14.9981 4.05729 14.9981C5.09627 14.9981 6.13526 14.6026 6.92616 13.8117L6.92622 13.8116L9.22129 11.5164C9.53814 11.1996 9.53814 10.6858 9.22124 10.3689C8.90444 10.052 8.39068 10.052 8.07373 10.3689ZM15 4.0573C15 2.97357 14.5779 1.9547 13.8116 1.18836C12.2296 -0.393544 9.65564 -0.39349 8.07378 1.18836L8.07357 1.18863L5.77855 3.4836C5.46165 3.80044 5.46165 4.31431 5.77855 4.63116C5.85381 4.70663 5.94325 4.76649 6.04173 4.80728C6.1402 4.84808 6.24577 4.869 6.35236 4.86886C6.55998 4.86886 6.76771 4.78961 6.92611 4.63116L9.22113 2.3362L9.2214 2.33593C10.1705 1.38685 11.7148 1.38679 12.664 2.33593C13.1238 2.79575 13.3771 3.4071 13.3771 4.0573C13.3771 4.70744 13.1239 5.31868 12.6642 5.77851L12.664 5.77867L10.369 8.07379C10.0521 8.39064 10.0521 8.90446 10.369 9.22136C10.4443 9.29682 10.5337 9.35667 10.6322 9.39746C10.7306 9.43825 10.8362 9.45919 10.9428 9.45906C11.1504 9.45906 11.3581 9.37981 11.5166 9.22136L13.8116 6.92623L13.8121 6.92569C14.5781 6.15946 15 5.14076 15 4.0573Z" fill="#00AAAB" />
+                                  <path d="M4.63025 10.3689C4.70552 10.4443 4.79495 10.5042 4.89341 10.545C4.99188 10.5858 5.09743 10.6067 5.20401 10.6066C5.41169 10.6066 5.61937 10.5273 5.77782 10.3689L10.3681 5.77863C10.685 5.46178 10.685 4.94797 10.3681 4.63107C10.0512 4.31422 9.53741 4.31422 9.2205 4.63107L4.63025 9.22126C4.31335 9.53822 4.31335 10.052 4.63025 10.3689Z" fill="#00AAAB" />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_1339_1570">
+                                    <rect width="15" height="15" fill="white" />
+                                  </clipPath>
+                                </defs>
+                              </svg> <a href="">about the signature.</a>
+                          </div>
+                              <div class="plugin__block-item">
+                                A plugin <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_1339_1570)">
+                                    <path d="M8.07373 10.3689L5.77866 12.664L5.7786 12.664L5.77855 12.6641C4.82947 13.6132 3.2851 13.6133 2.33591 12.6641C1.87609 12.2043 1.62291 11.5929 1.62291 10.9427C1.62291 10.2926 1.87609 9.68134 2.33575 9.22152L2.33591 9.22136L4.63099 6.92623C4.94783 6.60933 4.94783 6.09552 4.63093 5.77867C4.31408 5.46182 3.80027 5.46182 3.48337 5.77867L1.1883 8.07379L1.18781 8.07434C0.421849 8.84057 0 9.85927 0 10.9427C0 12.0265 0.422012 13.0453 1.18835 13.8117C1.97936 14.6026 3.0183 14.9981 4.05729 14.9981C5.09627 14.9981 6.13526 14.6026 6.92616 13.8117L6.92622 13.8116L9.22129 11.5164C9.53814 11.1996 9.53814 10.6858 9.22124 10.3689C8.90444 10.052 8.39068 10.052 8.07373 10.3689ZM15 4.0573C15 2.97357 14.5779 1.9547 13.8116 1.18836C12.2296 -0.393544 9.65564 -0.39349 8.07378 1.18836L8.07357 1.18863L5.77855 3.4836C5.46165 3.80044 5.46165 4.31431 5.77855 4.63116C5.85381 4.70663 5.94325 4.76649 6.04173 4.80728C6.1402 4.84808 6.24577 4.869 6.35236 4.86886C6.55998 4.86886 6.76771 4.78961 6.92611 4.63116L9.22113 2.3362L9.2214 2.33593C10.1705 1.38685 11.7148 1.38679 12.664 2.33593C13.1238 2.79575 13.3771 3.4071 13.3771 4.0573C13.3771 4.70744 13.1239 5.31868 12.6642 5.77851L12.664 5.77867L10.369 8.07379C10.0521 8.39064 10.0521 8.90446 10.369 9.22136C10.4443 9.29682 10.5337 9.35667 10.6322 9.39746C10.7306 9.43825 10.8362 9.45919 10.9428 9.45906C11.1504 9.45906 11.3581 9.37981 11.5166 9.22136L13.8116 6.92623L13.8121 6.92569C14.5781 6.15946 15 5.14076 15 4.0573Z" fill="#00AAAB" />
+                                    <path d="M4.63025 10.3689C4.70552 10.4443 4.79495 10.5042 4.89341 10.545C4.99188 10.5858 5.09743 10.6067 5.20401 10.6066C5.41169 10.6066 5.61937 10.5273 5.77782 10.3689L10.3681 5.77863C10.685 5.46178 10.685 4.94797 10.3681 4.63107C10.0512 4.31422 9.53741 4.31422 9.2205 4.63107L4.63025 9.22126C4.31335 9.53822 4.31335 10.052 4.63025 10.3689Z" fill="#00AAAB" />
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_1339_1570">
+                                      <rect width="15" height="15" fill="white" />
+                                    </clipPath>
+                                  </defs>
+                                </svg> <a href="">The instructions</a> for learning how to install a plugin. 
+                            </div>
+                          </div>
+                          <button class="plugin__download">Download plugin</button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+              <div class="menu-page__nav">
+                <div class="menu-page__nav-inner">
+                    <div class="menu-page__nav-title">На странице</div>
+                    <div class="menu-page__nav-list">
+                        <a href="#1" class="menu-page__link active">Initiating the custom domain setup</>
+                        <a href="#2" class="menu-page__link">Nam commodo purus id venenatis varius</a>
+                        <a href="#3" class="menu-page__link">Row Grouping Customisations</a>
+                        <a href="#4" class="menu-page__link">API Reference</a>
+                        <a href="#5" class="menu-page__link">Next Up</a>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class=" button button--fill button--round back-to-top js-back-to-top">
+      {{ mixins.icon('arrow-up') }}
+    </button>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}
