@@ -1,0 +1,174 @@
+---
+title: Row Grouping
+---
+{% extends "layouts/_layout.html" %}
+{% from "partials/_entry-card.html" import entryCard %}
+{% from "partials/_entry-image.html" import entryImg %}
+
+{% block content %}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  {# partial example #}
+  {% set headerGrey = true %}
+  {% include "partials/_header.html" %}
+
+  <div class="main">
+
+
+    <section class="section docs-page menu-page">
+      <div class="container">
+        <div class="docs-page__wrapper none">
+          <div class="docs-page__search menu-page__search docs-search js-search-documents">
+            <div class="docs-search__input">
+              <div class="input-field-container">
+                <div class="input-field input-field--large">
+                  <input
+                    id="search"
+                    name="search"
+                    type="text"
+                    class="input input--secondary input-field__input"
+                  >
+                  <div class="input-icon input-icon--secondary">
+                    {{ mixins.icon('search-2') }}
+                  </div>
+                  <label
+                    class="floating-label"
+                    for="search"
+                  >
+                    Search...
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="docs-search__result">
+              <div class="result-search-list">
+                <div class="search-result-count">450 results</div>
+                <div class="search-result-group">
+                  <div class="search-result-group__list">
+                    <div class="search-item">
+                      <div class="search-item__sub-title">JavaScript Data Grid</div>
+                      <div class="search-item__title"><span class="is-highlight">R</span>ow Grouping</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-page__breackpints">
+            <button class="docs-sidebar__hamburger docs-sidebar-hamburger js-docs-nav-trigger">
+                <span class="docs-sidebar-hamburger__icon">
+                  <span class="docs-sidebar-hamburger__line"></span>
+                  <span class="docs-sidebar-hamburger__line"></span>
+                  <span class="docs-sidebar-hamburger__line"></span>
+                </span>
+                <span class="docs-sidebar-hamburger__text">Menu</span>
+              </button>
+                <div class="docs-page__breackpints-item">
+                    <a href="">JavaScript Data Grid</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="docs-page__breackpints-item">
+                    <a href="">JavaScript Data Grid</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="docs-page__breackpints-item">
+                    <a href="">Initiating the custom domain setup</a>
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12.5L7 6.5L0.999999 0.5" stroke="#5317A6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+          </div>
+          <div class="docs-page__inner">
+            <div class="docs-page__sidebar">
+                {% include "partials/_menu-sidebar.html" %}
+              </div>
+              <div class="docs-page__content entry-page-content">
+                    <div class="docs-page__block textimg">
+                        <div class="docs-page__block-title">5. Двухколоночный блок картинка + текст + опциональная кнопка узнать больше</div>
+                        <div class="cols__blocks">
+                            <div class="cols__block">
+                                <div class="cols__block-img">
+                                  <img src="./img/imagetext.jpg" alt="">
+                                </div>
+                                <div class="cols__block-name">Заголовок</div>
+                                <p class="cols__block-text">Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi. Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi.</p>
+                                <a href="#" class="cols__block-link">
+                                  Узнать больше <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.58564 6.99992L0.99985 2.41414C0.609325 2.02361 0.609325 1.39045 0.999849 0.999925C1.39037 0.609401 2.02354 0.609401 2.41406 0.999925L8.41406 6.99992L2.41406 12.9999C2.02354 13.3904 1.39037 13.3904 0.999849 12.9999C0.609325 12.6094 0.609325 11.9762 0.999849 11.5857L5.58564 6.99992Z" fill="#00AAAB" />
+                                  </svg>
+                                </a>
+                            </div>
+                            <div class="cols__block">
+                              <div class="cols__block-img">
+                                <img src="./img/imagetext.jpg" alt="">
+                              </div>
+                              <div class="cols__block-name">Двухколоночный блок картинка + текст + опциональная кнопка узнать больше</div>
+                              <p class="cols__block-text">Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi. Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi.</p>
+                              <a href="#" class="cols__block-link">
+                                Узнать больше <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.58564 6.99992L0.99985 2.41414C0.609325 2.02361 0.609325 1.39045 0.999849 0.999925C1.39037 0.609401 2.02354 0.609401 2.41406 0.999925L8.41406 6.99992L2.41406 12.9999C2.02354 13.3904 1.39037 13.3904 0.999849 12.9999C0.609325 12.6094 0.609325 11.9762 0.999849 11.5857L5.58564 6.99992Z" fill="#00AAAB" />
+                                </svg>
+                              </a>
+                          </div>
+                        </div>
+                        <div class="cols__blocks img-none">
+                          <div class="cols__block">
+                              <div class="cols__block-img">
+                                <img src="./img/imagetext.jpg" alt="">
+                              </div>
+                              <div class="cols__block-name">Заголовок</div>
+                              <p class="cols__block-text">Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi. Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi.</p>
+                              <a href="#" class="cols__block-link">
+                                Узнать больше <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.58564 6.99992L0.99985 2.41414C0.609325 2.02361 0.609325 1.39045 0.999849 0.999925C1.39037 0.609401 2.02354 0.609401 2.41406 0.999925L8.41406 6.99992L2.41406 12.9999C2.02354 13.3904 1.39037 13.3904 0.999849 12.9999C0.609325 12.6094 0.609325 11.9762 0.999849 11.5857L5.58564 6.99992Z" fill="#00AAAB" />
+                                </svg>
+                              </a>
+                          </div>
+                          <div class="cols__block">
+                            <div class="cols__block-img">
+                              <img src="./img/imagetext.jpg" alt="">
+                            </div>
+                            <div class="cols__block-name">Двухколоночный блок картинка + текст + опциональная кнопка узнать больше</div>
+                            <p class="cols__block-text">Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi. Proin bibendum eget nisi eu facilisis. Sed et ante pretium, sodales justo a, tempus erat. Duis blandit, ipsum a fringilla tincidunt, erat lacus facilisis urna, nec cursus risus magna ac mi.</p>
+                            <a href="#" class="cols__block-link">
+                              Узнать больше <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.58564 6.99992L0.99985 2.41414C0.609325 2.02361 0.609325 1.39045 0.999849 0.999925C1.39037 0.609401 2.02354 0.609401 2.41406 0.999925L8.41406 6.99992L2.41406 12.9999C2.02354 13.3904 1.39037 13.3904 0.999849 12.9999C0.609325 12.6094 0.609325 11.9762 0.999849 11.5857L5.58564 6.99992Z" fill="#00AAAB" />
+                              </svg>
+                            </a>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="menu-page__nav">
+                <div class="menu-page__nav-inner">
+                    <div class="menu-page__nav-title">На странице</div>
+                    <div class="menu-page__nav-list">
+                        <a href="#1" class="menu-page__link active">Initiating the custom domain setup</>
+                        <a href="#2" class="menu-page__link">Nam commodo purus id venenatis varius</a>
+                        <a href="#3" class="menu-page__link">Row Grouping Customisations</a>
+                        <a href="#4" class="menu-page__link">API Reference</a>
+                        <a href="#5" class="menu-page__link">Next Up</a>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class=" button button--fill button--round back-to-top js-back-to-top">
+      {{ mixins.icon('arrow-up') }}
+    </button>
+  </div>
+
+  {% include "partials/_footer.html" %}
+
+{% endblock %}
