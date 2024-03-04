@@ -24,7 +24,7 @@ const swiperrec = new Swiper('.recommendations__slider', {
 })
 
 
-const swipersl2 = new Swiper('.slider-slidetwo', {
+const initializeSwiperSlideTwo = element => new Swiper(element, {
   slidesPerView: 2,
   spaceBetween: 30,
   centeredSlides: false,
@@ -39,8 +39,8 @@ const swipersl2 = new Swiper('.slider-slidetwo', {
     sticky: true
   },
   navigation: {
-    nextEl: '.slider-slidetwo__next',
-    prevEl: '.slider-slidetwo__prev',
+    nextEl: element.querySelector('.slider-slidetwo__next'),
+    prevEl: element.querySelector('.slider-slidetwo__prev'),
   },
   breakpoints: {
     200: {
@@ -51,9 +51,13 @@ const swipersl2 = new Swiper('.slider-slidetwo', {
       slidesPerView: 2,
     }
   }
-})
+});
 
-const swipersl1 = new Swiper('.slider-sliderone', {
+document.querySelectorAll('.slider-slidetwo').forEach(element => {
+initializeSwiperSlideTwo(element);
+});
+
+const initializeSwiperSlideOne = element => new Swiper(element, {
   slidesPerView: 1,
   spaceBetween: 30,
   centeredSlides: false,
@@ -68,10 +72,14 @@ const swipersl1 = new Swiper('.slider-sliderone', {
     sticky: true
   },
   navigation: {
-    nextEl: '.slider-sliderone__next',
-    prevEl: '.slider-sliderone__prev',
+    nextEl: element.querySelector('.slider-sliderone__next'),
+    prevEl: element.querySelector('.slider-sliderone__prev'),
   },
-})
+});
+
+document.querySelectorAll('.slider-sliderone').forEach(element => {
+initializeSwiperSlideOne(element);
+});
 
 let allowSlideChange = false;
 

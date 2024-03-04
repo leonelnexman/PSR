@@ -24,6 +24,7 @@ import "./components/docs-page-nav"
 import "./components/search"
 import "./components/slider-modal-reviews"
 import "./components/star-input"
+import "./components/sectionactive"
 
 // document.querySelector('.loader-overlay').classList.remove('is-visible')
 
@@ -58,3 +59,4 @@ if (cookie) {
     cookie.remove()
   }
 }
+
