@@ -112,9 +112,9 @@
 
     &.isActive {
         .select-control__trigger {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
             border: 1px solid $primary-hover;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
         }
 
         .select-control__options {
@@ -194,8 +194,8 @@
     background: #fff;
     border: 1px solid $primary;
     border-radius: 12px;
-    transition: border .2s ease, outline .2s ease, border-radius .05s ease;
     outline: 4px solid transparent;
+    transition: border .2s ease, outline .2s ease, border-radius .05s ease;
 }
 
 @media (hover: hover) {

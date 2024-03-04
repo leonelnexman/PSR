@@ -15,9 +15,9 @@
     svg {
         width: 29px;
         height: 29px;
-        fill: rgba(#fff, .7);
         cursor: pointer;
         transition: fill .2s ease;
+        fill: rgba(#fff, .7);
 
         @include any-hover {
             fill: #ffc700;

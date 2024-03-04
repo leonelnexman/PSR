@@ -1,23 +1,23 @@
 .post-card {
     position: relative;
-    max-width: 600px;
     height: 100%;
+    max-width: 600px;
     padding: 16px;
-    border-radius: 16px;
     overflow: hidden;
     background-color: transparent;
+    border-radius: 16px;
     transition: background-color .2s ease, box-shadow .2s ease;
 
     @include r(599) {
         max-width: 246px;
         padding: 0;
-        box-shadow: unset !important;
         overflow: visible;
+        box-shadow: unset !important;
     }
 
     @include any-hover {
         background-color: #fff;
-        box-shadow: 0 10px 25px 0 rgba(37, 0, 86, 0.1);
+        box-shadow: 0 10px 25px 0 rgba(37, 0, 86, .1);
     }
 
     &__image {

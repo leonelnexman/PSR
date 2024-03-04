@@ -24,54 +24,62 @@ const swiperrec = new Swiper('.recommendations__slider', {
 })
 
 
-const swipersl2 = new Swiper('.slider-slidetwo', {
-  slidesPerView: 2,
-  spaceBetween: 30,
-  centeredSlides: false,
-  speed: 450,
-  preloadImages: false,
-  watchOverflow: true,
-  slideToClickedSlide: true,
-  initialSlide: 0,
-  centerInsufficientSlides: true,
-  freeMode: {
-    enabled: true,
-    sticky: true
-  },
-  navigation: {
-    nextEl: '.slider-slidetwo__next',
-    prevEl: '.slider-slidetwo__prev',
-  },
-  breakpoints: {
-    200: {
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-    },
-    1024: {
-      slidesPerView: 2,
-    }
-  }
-})
+const slidertwo = document.querySelectorAll('.slider-slidetwo');
 
-const swipersl1 = new Swiper('.slider-sliderone', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  centeredSlides: false,
-  speed: 450,
-  preloadImages: false,
-  watchOverflow: true,
-  slideToClickedSlide: true,
-  initialSlide: 0,
-  centerInsufficientSlides: true,
-  freeMode: {
-    enabled: true,
-    sticky: true
-  },
-  navigation: {
-    nextEl: '.slider-sliderone__next',
-    prevEl: '.slider-sliderone__prev',
-  },
-})
+slidertwo.forEach((slider) => {
+  new Swiper(slider, {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    centeredSlides: false,
+    speed: 450,
+    preloadImages: false,
+    watchOverflow: true,
+    slideToClickedSlide: true,
+    initialSlide: 0,
+    centerInsufficientSlides: true,
+    freeMode: {
+      enabled: true,
+      sticky: true
+    },
+    navigation: {
+      nextEl: slider.querySelector('.slider-slidetwo__next'),
+      prevEl: slider.querySelector('.slider-slidetwo__prev'),
+    },
+    breakpoints: {
+      200: {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 2,
+      }
+    }
+  });
+});
+
+const SliderOnes = document.querySelectorAll('.slider-sliderone');
+
+SliderOnes.forEach((slider) => {
+  new Swiper(slider, {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    centeredSlides: false,
+    speed: 450,
+    preloadImages: false,
+    watchOverflow: true,
+    slideToClickedSlide: true,
+    initialSlide: 0,
+    centerInsufficientSlides: true,
+    freeMode: {
+      enabled: true,
+      sticky: true
+    },
+    navigation: {
+      nextEl: slider.querySelector('.slider-sliderone__next'),
+      prevEl: slider.querySelector('.slider-sliderone__prev'),
+    }
+  });
+});
 
 let allowSlideChange = false;
 

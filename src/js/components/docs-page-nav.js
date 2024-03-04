@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const screenWidth = window.innerWidth;
-  if (screenWidth < 1024) {
+  if (screenWidth < 1050) {
       closeItems();
   } else {
       itemTops.forEach((item) => {
