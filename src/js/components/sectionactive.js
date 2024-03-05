@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isInViewport(section)) {
                     setActiveLink(sectionId);
                 } else if (link.classList.contains('active') && window.innerWidth <= 962) {
-                    link.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    link.scrollIntoView({ behavior: 'auto', block: 'center' });
                 }
             }
         });
