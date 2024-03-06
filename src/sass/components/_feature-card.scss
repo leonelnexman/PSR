@@ -134,8 +134,8 @@
 
     &--column {
         display: grid;
-        grid-template-columns: 1fr;
         grid-auto-rows: max-content;
+        grid-template-columns: 1fr;
         gap: 24px;
         padding: 24px;
 
@@ -153,8 +153,8 @@
         justify-items: center;
 
         .feature-card__title {
-            text-align: center;
             padding: 0;
+            text-align: center;
         }
 
         .feature-card__desc {

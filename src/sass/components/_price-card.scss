@@ -147,9 +147,9 @@
             right: -10px;
             bottom: -10px;
             left: -10px;
+            z-index: -1;
             background: rgba(140, 41, 217, .3);
             border-radius: 21px;
-            z-index: -1;
 
             @include r(899) {
                 top: -8px;

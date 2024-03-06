@@ -1,7 +1,7 @@
 :root {
     --gray-1: #{$gray-dark};
     --gray-2: #4d545a;
-    --liner: linear-gradient(0deg, rgba(132, 36, 255, 0.20) 0%, rgba(0, 226, 188, 0.20) 100%);
+    --liner: linear-gradient(0deg, rgba(132, 36, 255, .2) 0%, rgba(0, 226, 188, .2) 100%);
 }
 
 html {
@@ -23,12 +23,12 @@ html {
 }
 
 body {
+    min-height: 100vh;
     font-size: 16px;
     font-family: $font;
     line-height: 1.4;
-    color: var(--gray-1, #23262B);
+    color: var(--gray-1, #23262b);
     background: #fff;
-    min-height: 100vh;
 }
 
 .out {
@@ -97,8 +97,8 @@ a {
     .icon {
         width: 20px;
         height: 20px;
-        fill: $link-color;
         transition: fill .3s ease;
+        fill: $link-color;
 
         @include r(899) {
             width: 17px;
@@ -111,26 +111,26 @@ a {
     position: relative;
 
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: calc(100% + 4px);
-        left: 0;
         right: 0;
+        left: 0;
         height: 1.5px;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity .2s cubic-bezier(.645, .045, .355, 1), transform .2s ease, background .2s cubic-bezier(.645, .045, .355, 1);
+        background: linear-gradient(270deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%) 0;
+        background-size: 200%;
         transform: translateX(-2px) scaleX(.8);
         transform-origin: left center;
-        background-size: 200%;
-        background: linear-gradient(270deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%) 0px;
+        opacity: 0;
+        transition: opacity .2s cubic-bezier(.645, .045, .355, 1), transform .2s ease, background .2s cubic-bezier(.645, .045, .355, 1);
+        pointer-events: none;
     }
 
     @include any-hover {
         &:before {
-            opacity: 1;
-            transform: translateX(0);
             background-position: 100%;
+            transform: translateX(0);
+            opacity: 1;
         }
     }
 }
@@ -233,7 +233,7 @@ a {
         line-height: 1.68;
 
         &:before {
-            content: '';
+            content: "";
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -251,8 +251,8 @@ a {
 }
 
 .ol-list {
-    list-style-type: decimal;
     list-style-position: inside;
+    list-style-type: decimal;
 
     li + li {
         margin-top: 5px;
@@ -295,15 +295,15 @@ a {
 
 .section-desc {
     margin-top: 19px;
-    color: var(--gray-1, #23262B);
+    font-weight: 500;
     font-size: 22px;
     font-style: normal;
-    font-weight: 500;
     line-height: 130%;
+    color: var(--gray-1, #23262b);
 
     @include r(599) {
-        font-size: 16px;
         margin-top: 16px;
+        font-size: 16px;
     }
 
     &--center {
@@ -338,19 +338,19 @@ a {
 .h2-title {
     font-weight: 500;
     line-height: 105.023%;
-    letter-spacing: -0.0675rem;
+    letter-spacing: -.0675rem;
 
     @include css-lock(32, 54, 768, 1300);
 
     @include r(599) {
-        letter-spacing: -0.04rem;
+        letter-spacing: -.04rem;
     }
 }
 
 .h3-title {
     font-weight: 500;
     line-height: 1;
-    letter-spacing: -0.96px;
+    letter-spacing: -.96px;
 
     @include css-lock(32, 48, 375, 899);
 
@@ -383,19 +383,19 @@ a {
     position: relative;
     display: flex;
     height: 100%;
-    border-radius: 16px;
     overflow: hidden;
+    border-radius: 16px;
     isolation: isolate;
 
     &:after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+        background: linear-gradient(1deg, rgba(50, 0, 155, .4) 0%, rgba(41, 217, 187, .4) 100%);
         opacity: .5;
-        background: linear-gradient(1deg, rgba(50, 0, 155, 0.40) 0%, rgba(41, 217, 187, 0.40) 100%);
         pointer-events: none;
     }
 
@@ -410,9 +410,9 @@ a {
 }
 
 .social-link {
+    display: flex;
     width: 42px;
     height: 42px;
-    display: flex;
 
     @include r(599) {
         width: 35px;

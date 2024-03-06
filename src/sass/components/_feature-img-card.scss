@@ -5,8 +5,8 @@
     box-shadow: 0 0 20px 0 rgba(8, 34, 159, .12);
 
     @include r(1068) {
-        padding: 20px;
         min-width: 298px;
+        padding: 20px;
     }
 
     &__img {

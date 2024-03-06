@@ -4,10 +4,12 @@
     padding-bottom: 45px;
     font-size: 14px;
     color: var(--gray-2, #4d545a);
+
     @include r(899) {
         position: relative;
         z-index: 7777;
     }
+
     &__wrap {
         display: grid;
         grid-template-columns: 30% .4fr .4fr .4fr .7fr;

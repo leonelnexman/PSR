@@ -364,19 +364,19 @@
         color: $tertiary;
 
         @include any-hover {
-            background-color: transparent;
             color: $tertiary-hover;
+            background-color: transparent;
 
             svg {
-                fill: currentColor;
+                fill: currentcolor;
             }
         }
 
         svg {
-            margin-left: 8px;
             width: 12px;
             height: 16px;
-            fill: currentColor;
+            margin-left: 8px;
+            fill: currentcolor;
         }
 
         &.button--primary {
