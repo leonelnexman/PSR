@@ -60,4 +60,24 @@ if ($dynamicGallery) {
 }
 
 
-// lightGallery(document.getElementById('lightgallery'));
+const $galleries = document.querySelectorAll('.lightgallery');
+
+if ($galleries) {
+    $galleries.forEach(gallery => {
+        const lightGalleryInstance = lightGallery(gallery, {
+            pager: false,
+            addClass: "lg-common",
+            zoomFromOrigin: false,
+            mobileSettings: {
+                controls: true,
+                showCloseIcon: true,
+                rotate: false
+            },
+            download: false,
+            counter: false,
+        });
+    });
+}
+
+
+

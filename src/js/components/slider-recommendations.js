@@ -81,20 +81,12 @@ document.querySelectorAll('.slider-one-slide').forEach(element => {
 initializeSwiperSlideOne(element);
 });
 
-let allowSlideChange = false;
-
-const slideViews = document.querySelectorAll('.swiper-slide__view');
-
-slideViews.forEach((slideView, index) => {
-  slideView.addEventListener('click', function() {
-    this.classList.add('opacity');
-    allowSlideChange = true; // Разрешаем изменение слайдов после добавления класса opacity
-  });
-});
 
 const swiper = new Swiper(".mySwiper", {
   spaceBetween: 8,
   slidesPerView: 6,
+  loop: true, // Разрешаем зацикливание
+  loopedSlides: 5, // Ограничиваем количество слайдов до первых пяти
   freeMode: true,
   watchSlidesProgress: true,
   breakpoints: {
@@ -105,13 +97,6 @@ const swiper = new Swiper(".mySwiper", {
     1024: {
       slidesPerView: 6,
     }
-  },
-  on: {
-    slideChange () {
-      if (!allowSlideChange && this.activeIndex > 4) {
-        this.slideTo(4); // Переключаемся обратно к пятому слайду
-      }
-    },
   },
 });
 
@@ -124,12 +109,5 @@ const swiper2 = new Swiper(".mySwiper2", {
   },
   thumbs: {
     swiper,
-  },
-  on: {
-    slideChange () {
-      if (!allowSlideChange && this.activeIndex > 4) {
-        this.slideTo(4); // Переключаемся обратно к пятому слайду
-      }
-    },
   },
 });
