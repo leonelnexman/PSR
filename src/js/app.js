@@ -28,6 +28,8 @@ import "./components/sectionactive"
 
 // document.querySelector('.loader-overlay').classList.remove('is-visible')
 
+
+
 const cookie = document.querySelector('.cookie');
 if (cookie) {
   const button = cookie.querySelector('.js-cookie-approve')

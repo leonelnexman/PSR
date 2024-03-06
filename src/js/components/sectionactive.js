@@ -1,3 +1,8 @@
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.menu-page__link');
 
@@ -39,3 +44,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+

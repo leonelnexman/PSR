@@ -1,5 +1,8 @@
 import lightGallery from 'lightgallery';
-import lgVideo from 'lightgallery/plugins/video'
+import lgVideo from 'lightgallery/plugins/video';
+
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+
 
 const $dynamicGallery = document.querySelectorAll('.js-gallery-videos');
 
@@ -55,3 +58,6 @@ if ($dynamicGallery) {
         dynamicGallery.$container.selector.querySelector('.lg-close').insertAdjacentHTML("beforeend", closeIcon);
     })
 }
+
+
+// lightGallery(document.getElementById('lightgallery'));

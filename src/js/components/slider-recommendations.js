@@ -39,8 +39,8 @@ const initializeSwiperSlideTwo = element => new Swiper(element, {
     sticky: true
   },
   navigation: {
-    nextEl: element.querySelector('.slider-slidetwo__next'),
-    prevEl: element.querySelector('.slider-slidetwo__prev'),
+    nextEl: element.querySelector('.slider-two-slides__next'),
+    prevEl: element.querySelector('.slider-two-slides__prev'),
   },
   breakpoints: {
     200: {
@@ -53,7 +53,7 @@ const initializeSwiperSlideTwo = element => new Swiper(element, {
   }
 });
 
-document.querySelectorAll('.slider-slidetwo').forEach(element => {
+document.querySelectorAll('.slider-two-slides').forEach(element => {
 initializeSwiperSlideTwo(element);
 });
 
@@ -72,12 +72,12 @@ const initializeSwiperSlideOne = element => new Swiper(element, {
     sticky: true
   },
   navigation: {
-    nextEl: element.querySelector('.slider-sliderone__next'),
-    prevEl: element.querySelector('.slider-sliderone__prev'),
+    nextEl: element.querySelector('.slider-one-slide__next'),
+    prevEl: element.querySelector('.slider-one-slide__prev'),
   },
 });
 
-document.querySelectorAll('.slider-sliderone').forEach(element => {
+document.querySelectorAll('.slider-one-slide').forEach(element => {
 initializeSwiperSlideOne(element);
 });
 
