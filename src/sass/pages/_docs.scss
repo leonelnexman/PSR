@@ -2314,6 +2314,9 @@
         opacity: 1 !important;
         height: 4rem;
         @media (max-width: 962px) {
+            height: 7rem;
+        }
+        @media (max-width: 600px) {
             height: 3rem;
         }
     }
@@ -2463,6 +2466,9 @@
 .thumbnailsslider .mySwiper .swiper-slide img{
     height: 4rem;
     @media (max-width: 962px) {
+        height: 7rem;
+    }
+    @media (max-width: 600px) {
         height: 3rem;
     }
 }
