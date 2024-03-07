@@ -82,32 +82,61 @@ initializeSwiperSlideOne(element);
 });
 
 
-const swiper = new Swiper(".mySwiper", {
-  spaceBetween: 8,
-  slidesPerView: 6,
-  loop: true, // Разрешаем зацикливание
-  loopedSlides: 5, // Ограничиваем количество слайдов до первых пяти
-  freeMode: true,
-  watchSlidesProgress: true,
-  breakpoints: {
-    200: {
-      slidesPerView: 4,
-      spaceBetween: 10,
-    },
-    1024: {
-      slidesPerView: 6,
-    }
-  },
-});
+function adjustSlides(swiperElement) {
+  const slidesContainer = swiperElement.querySelector('.swiper-wrapper');
+  if (!slidesContainer) return;
 
-const swiper2 = new Swiper(".mySwiper2", {
-  slidesPerView: 1,
-  spaceBetween: 8,
-  navigation: {
-    nextEl: ".swiperthumbs__next",
-    prevEl: ".swiperthumbs__prev",
-  },
-  thumbs: {
-    swiper,
-  },
-});
+  const slides = Array.from(slidesContainer.children);
+
+  if (window.innerWidth < 962) {
+    const sixthSlide = slides.splice(5, 1)[0];
+    slides.splice(5, 0, sixthSlide);
+  } else {
+    const sixthSlide = slides.splice(3, 1)[0];
+    slides.splice(5, 0, sixthSlide);
+  }
+
+  for (let i = 6; i < slides.length; i++) {
+    slides[i].classList.add('hidden');
+  }
+}
+
+const swiperElement = document.querySelector('.mySwiper');
+if (swiperElement) {
+  const swiper = new Swiper(swiperElement, {
+    spaceBetween: 8,
+    slidesPerView: 6,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      962: {
+        slidesPerView: 6,
+      },
+      200: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      }
+    },
+  });
+
+  window.addEventListener('resize', () => {
+    adjustSlides(swiperElement);
+  });
+
+  adjustSlides(swiperElement);
+}
+
+const swiper2Element = document.querySelector('.mySwiper2');
+if (swiper2Element) {
+  const swiper = new Swiper(swiper2Element, {
+    slidesPerView: 1,
+    spaceBetween: 8,
+    navigation: {
+      nextEl: ".swiperthumbs__next",
+      prevEl: ".swiperthumbs__prev",
+    },
+    thumbs: {
+      swiper: swiperElement || undefined,
+    },
+  });
+}
