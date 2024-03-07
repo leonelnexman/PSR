@@ -2378,11 +2378,15 @@
     }   
 }
 
-// .menu-page-sliders .docs-page__inner{
-//     @media (max-width: 1024px){
-//         flex-direction: column;
-//     } 
-// }
+.menu-page-sliders{
+   .docs-page__block{
+    overflow: hidden;
+   }
+}
+
+.recommendations{
+    overflow: hidden !important;
+}
 
 .docs-sidebar{
     @media only screen and (max-width: 1024px){
