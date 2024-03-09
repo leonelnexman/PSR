@@ -31,3 +31,17 @@ export const closeLangSwitcher = () => {
 // switcherActiveLangTrigger.addEventListener('click', () => {
 //   closeLangSwitcher()
 // })
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const langSwitchers = document.querySelectorAll('.lang-switcher');
+
+  langSwitchers.forEach(langSwitcher => {
+    langSwitcher.addEventListener('click', () => {
+      langSwitchers.forEach(item => {
+        item.classList.remove('is-active');
+      });
+      langSwitcher.classList.add('is-active');
+    });
+  });
+});

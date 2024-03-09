@@ -2352,7 +2352,7 @@
 .page-inblock .docs-page__block-img {
     @media only screen and (max-width: 1024px){
         width: 100%;
-        height: 14rem;
+        height: 23rem;
         margin-bottom: 1.25rem;
     }
 }
@@ -2393,9 +2393,6 @@
 }
 
 .header__button{
-    @media only screen and (max-width: 1024px){
-        display: none;
-    }
     @media only screen and (max-width: 962px){
         display: block;
     }    
@@ -2482,5 +2479,64 @@
     font-weight: 400 !important;
 }
 
+.nav{
+    @media (max-width: 1100px) {
+        font-size: 0.875rem;
+        justify-content: space-between;
+        width: 30rem;
+    }
+    @media (max-width: 1000px) {
+        font-size: 0.875rem;
+        justify-content: space-between;
+        width: 27rem;
+        font-size: 0.875rem;
+    }
+    .nav__item+.nav__item{
+        @media (max-width: 1100px) {
+            margin-left: 0;
+        }
+    }
+}
 
+.header__inner{
+    @media (max-width: 1100px) {
+        padding-left: 1rem;
+    }
+}
+
+.docs-page__block-img{
+    @media (max-width: 1240px) {
+        height: 10rem;
+    }
+}
+
+@media (max-width: 1240px){
+    .thumbnailsslider .mySwiper2 .swiper-slide {
+        height: 21rem;
+    }
+}
+
+@media (max-width: 1100px){
+    .thumbnailsslider .mySwiper2 .swiper-slide {
+        height: 19rem;
+    }
+}
+
+@media (max-width: 1050px){
+    .thumbnailsslider .mySwiper2 .swiper-slide {
+        height: 21rem;
+    }
+}
+
+@media (max-width: 700px){
+    .thumbnailsslider .mySwiper2 .swiper-slide {
+        height: 19rem !important;
+    }
+}
+
+@media (max-width: 600px){
+    .thumbnailsslider .mySwiper2 .swiper-slide {
+        height: 14rem !important;
+    }
+}
 
