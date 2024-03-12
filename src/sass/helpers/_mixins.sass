@@ -306,8 +306,52 @@
     top: 50%
     transform: translateY(-50%)
 
-=scrollbars($thumb-color: $scroll-color, $bg-color: $scroll-bg, $hover: false, $size: 3px, $border-radius: 0)
-  
+=scrollbars($thumb-color: $scroll-color, $bg-color: $scroll-bg, $hover: false, $size: 8px, $border-radius: 0)
+  @if $hover
+    &:hover
+      scrollbar-color: $thumb-color $bg-color !important
+      &
+        scrollbar-face-color: $thumb-color !important
+        scrollbar-track-color: $bg-color !important
+
+      &:not([hide-scrollbar])::-webkit-scrollbar-thumb
+        background: $thumb-color !important
+
+      &::-webkit-scrollbar-track
+        background: $bg-color !important
+
+      &::-webkit-scrollbar-thumb
+        background: $thumb-color !important
+
+    $thumb-color: rgba(0, 0, 0, 0)
+    $bg-color: rgba(0, 0, 0, 0)
+  transition: scrollbar-color .3s ease
+  scrollbar-color: $thumb-color $bg-color !important
+  @if $size == 'none'
+    scrollbar-width: none !important
+  @else
+    scrollbar-width: thin !important
+
+  &:not([hide-scrollbar])::-webkit-scrollbar-thumb
+    background: $thumb-color !important
+    border-radius: $border-radius !important
+
+  &:not([hide-scrollbar])::-webkit-scrollbar
+    @if $size == 'none'
+      display: none
+    width: $size !important
+    height: $size !important
+
+  &::-webkit-scrollbar-track
+    background: $bg-color !important
+
+  &::-webkit-scrollbar-thumb
+    background: $thumb-color !important
+
+  &
+    scrollbar-face-color: $thumb-color !important
+    scrollbar-track-color: $bg-color !important
+
 
 =text-border($color, $border, $ieColor, $width: 1px, $ieWidth: 1px)
   text-shadow: ($ieWidth) ($ieWidth) $border, 0 0 $border, $width ($ieWidth) $border, 0 $width $border
