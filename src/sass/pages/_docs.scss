@@ -1,3 +1,12 @@
+html{
+    @include r(1440) {
+        font-size: calc(100vw / 1920 * 23);
+    }
+    @include r(962) {
+        font-size: inherit;
+    }
+}
+
 .docs-page {
     padding-top: 15px;
     padding-bottom: 50px;
@@ -187,21 +196,10 @@
             top: 20px;
             max-height: calc(100vh - 22px);
 
-            @include scrollbars($thumb-color: $secondary, $size: 3px, $border-radius: 1px);
+            @include scrollbars($thumb-color: $secondary, $size: 0.15rem, $bg-color: #e1e1e1, $border-radius: 1px);
             padding-right: .3rem;
             padding-bottom: 2px;
             overflow: auto;
-        }
-        &::-webkit-scrollbar {
-            width: 0.15rem !important;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: #e1e1e1;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: #5317a6 !important;
         }
     }
 
@@ -2107,8 +2105,9 @@
     border-radius: 50%;
     opacity: 1;
 
-    @media (max-width: 1500px) {
+    @media (max-width: 1800px) {
         right: 3rem;
+        top: 1rem;
     }
 
     @media (max-width: 962px) {
@@ -2536,6 +2535,19 @@
 @media (max-width: 600px){
     .thumbnailsslider .mySwiper2 .swiper-slide {
         height: 14rem !important;
+    }
+}
+
+
+.menu-sidebar__subitem-content{
+    .menu-sidebar__subitem:nth-child(2){
+        padding-left: 0.3rem;
+    }
+}
+
+.menu-sidebar__subitem.open{
+    .menu-sidebar__subitem-content{
+        padding-left: 0.3rem;
     }
 }
 

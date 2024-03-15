@@ -309,7 +309,6 @@
 =scrollbars($thumb-color: $scroll-color, $bg-color: $scroll-bg, $hover: false, $size: 8px, $border-radius: 0)
   @if $hover
     &:hover
-      scrollbar-color: $thumb-color $bg-color !important
       &
         scrollbar-face-color: $thumb-color !important
         scrollbar-track-color: $bg-color !important
@@ -326,11 +325,8 @@
     $thumb-color: rgba(0, 0, 0, 0)
     $bg-color: rgba(0, 0, 0, 0)
   transition: scrollbar-color .3s ease
-  scrollbar-color: $thumb-color $bg-color !important
   @if $size == 'none'
     scrollbar-width: none !important
-  @else
-    scrollbar-width: thin !important
 
   &:not([hide-scrollbar])::-webkit-scrollbar-thumb
     background: $thumb-color !important
