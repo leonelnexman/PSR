@@ -193,3 +193,34 @@ document.addEventListener("scroll", () => {
         ticking = true;
     }
 })
+
+const sidebar = document.querySelector('.docs-page__sidebar');
+const menu = document.querySelector('.menu-page__nav-inner');
+
+let lastScrollTopp = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTopp) {
+        // Скролл вниз
+        sidebar.classList.add('is-hide');
+        menu.classList.add('is-hide');
+        sidebar.classList.remove('is-visible');
+        menu.classList.remove('is-visible');
+    } else {
+        // Скролл вверх
+        sidebar.classList.add('is-visible');
+        menu.classList.add('is-visible');
+        sidebar.classList.remove('is-hide');
+        menu.classList.remove('is-hide');
+        
+        // Доработка: удаляем класс is-visible при остатке прокрутки 400px до верха
+        if (currentScroll <= 200) {
+            sidebar.classList.remove('is-visible');
+            menu.classList.remove('is-visible');
+        }
+    }
+    
+    lastScrollTopp = currentScroll <= 0 ? 0 : currentScroll; // Для кроссбраузерной поддержки
+}, false);

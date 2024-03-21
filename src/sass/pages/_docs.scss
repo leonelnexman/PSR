@@ -687,22 +687,24 @@ html{
             cursor: pointer;
 
             &.open-category {
-                padding-bottom: .5rem !important;
-
+                margin-bottom: .5rem !important;
+                background: linear-gradient(235deg, rgba(170, 135, 219, .4) 0%, #5317a6 100%);
+                border-radius: .25rem;
+                padding-right: 1rem;
+                padding-bottom: 0 !important;
                 @media (max-width: 1024px) {
                     padding-bottom: 0 !important;
                 }
-
+                svg path{
+                    fill: #fff !important;
+                }
                 .menu-sidebar__cetegory-link {
                     display: flex;
                     align-items: center;
                     width: 100%;
-                    height: 1.88rem;
                     margin-right: .25rem;
                     padding-left: .4rem;
                     color: #fff;
-                    background: linear-gradient(235deg, rgba(170, 135, 219, .4) 0%, #5317a6 100%);
-                    border-radius: .25rem;
                 }
 
                 .menu-sidebar__arrows a {
@@ -1923,8 +1925,12 @@ html{
         color: #5317a6;
 
         @media (max-width: 1024px) {
-            margin-bottom: 1.563rem;
-            font-size: 2rem;
+            margin-bottom: 0.938rem;
+            font-size: 1.62rem;
+            padding-bottom: 0;
+            &::before{
+                display: none;
+            }
         }
 
         &:before {
@@ -1978,9 +1984,9 @@ html{
     color: #000;
 }
 
-.menu-sidebar__item-top.nav-open {
+.menu-sidebar__item-top.link-active {
     .menu-sidebar__cetegory-link {
-        color: #5317a6;
+        color: #5317a6 !important;
     }
 }
 
@@ -2290,12 +2296,15 @@ html{
 }
 
 .menu-sidebar__item-top .menu-sidebar__cetegory-link {
-    color: #5317a6;
+    color: #000;
+    font-weight: 500 !important;
+    font-size: 1rem;
 }
 
-.thumbnailsslider .swiper-slide__view{
-
+.menu-sidebar__link-category{
+    display: none !important;
 }
+
 
 .swiper-slide__vieww{
     display: flex;
@@ -2551,3 +2560,200 @@ html{
     }
 }
 
+.menu-sidebar__subitem-top.open-link{
+    background: linear-gradient(235deg, rgba(170, 135, 219, .4) 0%, #5317a6 100%);
+    border-radius: .25rem;
+    padding-bottom: 0 !important;
+    .menu-sidebar__cetegory-link{
+        color: #fff !important;
+        padding-left: 0.3rem;
+    }
+    svg path{
+        fill: #fff !important;
+    }
+}
+
+.menu-sidebar__link-sub.open-link{
+    background: linear-gradient(235deg, rgba(170, 135, 219, .4) 0%, #5317a6 100%);
+    border-radius: .25rem;
+    padding-bottom: 0 !important;
+    color: #fff !important;
+    padding-left: 0.3rem;
+}
+.menu-sidebar__item-top{
+    transition: all 0.3s;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+}
+.menu-sidebar__item-top:hover{
+    background: #f5f5f5;
+    transition: all 0.3s;
+    .menu-sidebar__cetegory-link{
+        color: rgb(104, 0, 240) !important;
+    }
+}
+
+
+.menu-sidebar__item{
+    svg{
+        border-radius: 0.2rem;
+    }
+    svg:hover{
+        background: rgb(104, 0, 240) !important;
+        transition: all 0.3s;
+        path{
+            fill: #fff !important;
+            transition: all 0.3s;
+        }
+    }
+}
+
+.category-page{
+    &__texts{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        position: relative;
+        p{
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 140%;
+            @media (max-width: 962px){
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 962px){
+           gap: 1rem;
+           padding-bottom: 1.25rem;
+           &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: .1rem;
+            background: linear-gradient(270deg, #29d9bb 0%, #3a0ca3 64.06%, #270082 100%);
+        }
+        }
+    }
+    &__information{
+        border: 0.1rem solid #E1E1E1;
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+        margin-top: 3.5rem;
+        @media (max-width: 962px){
+            margin-top: 2.5rem;
+            padding: 0;
+            border: none;
+        }
+    }
+    &__information-title{
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin-bottom: 1.563rem;
+        @media (max-width: 962px){
+            font-size: 1.12rem;
+            margin-bottom: 1.25rem;
+        }
+    }
+    &__information-inner{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        @media (max-width: 962px){
+            gap: 0.62rem;
+        }
+    }
+    &__information-item{
+        width: 14.5rem;
+        padding: 0.938rem;
+        background: #f5f5f5;
+        border-radius: 0.62rem;
+        border: 0.1rem solid transparent;
+        font-size: 1.12rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        @media (max-width: 962px){
+           width: 100%;
+           font-size: 1rem;
+        }
+        &:hover{
+            background: transparent;
+            transition: all 0.3s;
+            border: 0.1rem solid rgb(104, 0, 240);
+            color: rgb(104, 0, 240);
+        }
+    }
+}
+
+.menu-sidebar__subitem-content.default-open{
+    max-height: 100%;
+}
+
+.menu-sidebar__item-top.open-category{
+    .menu-sidebar__cetegory-link{
+        color: #fff !important;
+    }
+    svg path{
+        fill: #fff !important;
+    }
+}
+
+.menu-sidebar__subitem-top.open-link{
+    padding: 0.3rem !important;
+    padding-right: 0.2rem !important;
+    .menu-sidebar__cetegory-link{
+        text-decoration: none !important;
+    }
+    &.sub-open{
+        text-decoration: none !important;
+    }
+}
+
+.docs-page__breackpints-item a{
+    color: #444648;
+    font-weight: 400;
+    font-size: 0.88rem;
+    opacity: 0.7;
+}
+
+.docs-page__breackpints-item:last-child{
+    a{
+        opacity: 1;
+        color: #5317A6;
+    }
+}
+
+.docs-page__breackpints-item:nth-last-child(2){
+    svg path{
+        fill: #5317A6;
+    }
+}
+
+.menu-sidebar__cetegory-link{
+    @media (max-width: 962px) {
+        br{
+            display: none;
+        }
+    }
+}
+
+.docs-page__sidebar{
+    transform: translateY(0rem);
+    transition: all 0.5s;
+    &.is-visible{
+        transform: translateY(4rem);
+        transition: all 0.5s;
+    }
+}
+
+.menu-page__nav-inner{
+    transform: translateY(0rem);
+    transition: all 0.5s;
+    &.is-visible{
+        transform: translateY(4rem);
+        transition: all 0.5s;
+    }
+}
