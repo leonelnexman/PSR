@@ -1,4 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const sidebarHamburger = document.querySelector('.docs-sidebar__hamburger');
+    const sidebar = document.querySelector('.docs-sidebar');
+    const closeMenus = document.querySelectorAll('.close-menus');
+
+    // Функция для закрытия меню
+    function closeSidebar() {
+        sidebar.classList.remove('is-active');
+        sidebarHamburger.classList.remove('is-active');
+    }
+
+    // Обработчик клика по кнопке для открытия/закрытия меню
+    sidebarHamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('is-active');
+        sidebarHamburger.classList.toggle('is-active');
+    });
+
+    // Добавляем обработчик клика для каждого элемента с классом close-menus
+    closeMenus.forEach(closeMenu => {
+        closeMenu.addEventListener('click', closeSidebar);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const itemTops = document.querySelectorAll('.menu-sidebar__item-top');
     const subitemTops = document.querySelectorAll('.menu-sidebar__subitem-top');
     const itemClose = document.querySelectorAll('.menu-sidebar__arrows');
@@ -142,23 +165,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.docs-sidebar__hamburger');
-    const sidebar = document.querySelector('.docs-sidebar');
-    const hamburgerText = document.querySelector('.docs-sidebar-hamburger__text');
-    const closeMenu = document.querySelector('.close-menu');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const hamburger = document.querySelector('.docs-sidebar__hamburger');
+//     const sidebar = document.querySelector('.docs-sidebar');
+//     const hamburgerText = document.querySelector('.docs-sidebar-hamburger__text');
+//     const closeMenu = document.querySelector('.close-menu');
 
-    function toggleMenu() {
-        hamburger.classList.toggle('is-active');
-        sidebar.classList.toggle('is-active');
-        hamburgerText.textContent = hamburger.classList.contains('is-active') ? 'Close' : 'Menu';
-    }
+//     function toggleMenu() {
+//         hamburger.classList.toggle('is-active');
+//         sidebar.classList.toggle('is-active');
+//         hamburgerText.textContent = hamburger.classList.contains('is-active') ? 'Close' : 'Menu';
+//     }
 
-    if (hamburger && sidebar && hamburgerText && closeMenu) {
-        hamburger.addEventListener('click', toggleMenu);
-        closeMenu.addEventListener('click', toggleMenu);
-    }
-});
+//     if (hamburger && sidebar && hamburgerText && closeMenu) {
+//         hamburger.addEventListener('click', toggleMenu);
+//         closeMenu.addEventListener('click', toggleMenu);
+//     }
+// });
 
 // const triggers = document.querySelectorAll('.docs-nav-item--has-child')
 // triggers.forEach(item => {
