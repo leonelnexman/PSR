@@ -15,6 +15,9 @@ const nav = document.querySelector(".header .nav");
 const headerNav = document.querySelector(".header__nav");
 const mobMenuNav = document.querySelector(".mobile-menu__nav");
 
+const sidebar = document.querySelector('.docs-page__sidebar');
+const menu = document.querySelector('.menu-page__nav-inner');
+
 // const tlMobileMenu = gsap.timeline({ paused: true });
 
 // tlMobileMenu
@@ -38,12 +41,20 @@ function runmenu(run) {
         header.classList.add('is-active');
         hamburger.classList.add('is-active');
         mobMenu.classList.add('is-active');
+
+        
+        sidebar.classList.add('is-visible');
+        menu.classList.add('is-visible');
         disableBodyScroll(mobMenu);
     } else {
         // tlMobileMenu.timeScale(1.5).reverse();
         header.classList.remove('is-active');
         hamburger.classList.remove('is-active');
         mobMenu.classList.remove('is-active');
+
+        
+        sidebar.classList.remove('is-visible');
+        menu.classList.remove('is-visible');
         enableBodyScroll(mobMenu);
     }
 }
@@ -125,18 +136,36 @@ const stickyHeader = (scroll) => {
   if (scroll > 0) {
     // header.classList.add('is-active')
     headerWrapper.classList.add('is-hide')
+    sidebar.classList.remove('is-visible');
+    menu.classList.remove('is-visible');
     // headerTrigger.classList.add('is-hide')
   } else {
     // header.classList.remove('is-active')
     headerWrapper.classList.remove('is-hide')
     headerWrapper.classList.remove('is-visible');
+    sidebar.classList.remove('is-visible');
+    menu.classList.remove('is-visible');
     // headerTrigger.classList.remove('is-hide')
   }
 
   if (scroll > lastScrollTop) {
     headerWrapper.classList.remove('is-visible');
+    sidebar.classList.remove('is-visible');
+    menu.classList.remove('is-visible');
   } else if (scroll < lastScrollTop) {
     headerWrapper.classList.add('is-visible');
+
+    const navOffset = document.querySelector('.menu-page__nav').getBoundingClientRect().top + window.pageYOffset;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    console.log(scrollTop, navOffset)
+    if (scrollTop < navOffset) {
+      sidebar.classList.remove('is-visible');
+      menu.classList.remove('is-visible');
+    } else {
+      sidebar.classList.add('is-visible');
+      menu.classList.add('is-visible');
+    }
+    
   } else {
     // headerWrapper.classList.remove('is-visible');
   }
@@ -194,36 +223,7 @@ document.addEventListener("scroll", () => {
     }
 })
 
-const sidebar = document.querySelector('.docs-page__sidebar');
-const menu = document.querySelector('.menu-page__nav-inner');
 
-let lastScrollTopp = 0;
 
-window.addEventListener('scroll', () => {
-    // Проверяем ширину экрана
-    if (window.innerWidth >= 962) {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+const lastScrollTopp = 0;
 
-        if (currentScroll > lastScrollTopp) {
-            // Скролл вниз
-            sidebar.classList.add('is-hide');
-            menu.classList.add('is-hide');
-            sidebar.classList.remove('is-visible');
-            menu.classList.remove('is-visible');
-        } else {
-            // Скролл вверх
-            sidebar.classList.add('is-visible');
-            menu.classList.add('is-visible');
-            sidebar.classList.remove('is-hide');
-            menu.classList.remove('is-hide');
-            
-            // Доработка: удаляем класс is-visible при остатке прокрутки 400px до верха
-            if (currentScroll <= 150) {
-                sidebar.classList.remove('is-visible');
-                menu.classList.remove('is-visible');
-            }
-        }
-        
-        lastScrollTopp = currentScroll <= 0 ? 0 : currentScroll; // Для кроссбраузерной поддержки
-    }
-}, false);

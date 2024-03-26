@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const itemTops = document.querySelectorAll('.menu-sidebar__item-top');
     const subitemTops = document.querySelectorAll('.menu-sidebar__subitem-top');
+    const itemClose = document.querySelectorAll('.menu-sidebar__arrows');
 
     function closeItems() {
         itemTops.forEach((item) => {
@@ -22,18 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleItemClick() {
-        const itemParent = this.closest('.menu-sidebar__item'); // Изменили имя переменной
-        const itemContent = itemParent.querySelector('.menu-sidebar__item-content'); // Изменили имя переменной
-
-        if (itemContent.offsetHeight > 0) {
-            itemContent.style.maxHeight = '0px';
-            this.classList.remove('nav-open');
-            itemContent.classList.remove('subcontent-open'); // Удаление класса при закрытии
-        } else {
+        const itemParent = this.closest('.menu-sidebar__item');
+        const itemContent = itemParent.querySelector('.menu-sidebar__item-content');
+    
+        if (itemContent.offsetHeight === 0) {
             // Добавляем класс subcontent-open ко всем открытым элементам
             itemTops.forEach((item) => {
                 const parentItem = item.closest('.menu-sidebar__item');
-                const content = parentItem.querySelector('.menu-sidebar__item-content'); // Изменили имя переменной
+                const content = parentItem.querySelector('.menu-sidebar__item-content');
                 content.style.maxHeight = '0px';
                 item.classList.remove('nav-open');
                 content.classList.remove('subcontent-open');
@@ -43,6 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
             this.classList.add('nav-open');
             itemContent.classList.add('subcontent-open'); // Добавление класса при открытии
         }
+    }
+
+    function handleCloseClick() {
+        const itemParent = this.closest('.menu-sidebar__item'); // Изменили имя переменной
+        const itemContent = itemParent.querySelector('.menu-sidebar__item-content'); // Изменили имя переменной
+
+        if (itemContent.offsetHeight > 0) {
+            itemContent.style.maxHeight = '0px';
+            this.classList.remove('nav-open');
+            itemContent.classList.remove('subcontent-open'); // Удаление класса при закрытии
+
+            itemParent.querySelector('.menu-sidebar__item-top').classList.remove('nav-open');
+            itemParent.querySelector('.menu-sidebar__item-top').classList.remove('link-active');
+        } 
     }
 
     function handleSubitemClick() {
@@ -94,6 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', handleSubitemClick);
     });
 
+    itemClose.forEach((item) => {
+        item.addEventListener('click', handleCloseClick);
+    });
+
     const screenWidth = window.innerWidth;
     if (screenWidth < 1024) {
         closeItems();
@@ -128,17 +143,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.docs-sidebar__hamburger');
-  const sidebar = document.querySelector('.docs-sidebar');
-  const hamburgerText = document.querySelector('.docs-sidebar-hamburger__text');
+    const hamburger = document.querySelector('.docs-sidebar__hamburger');
+    const sidebar = document.querySelector('.docs-sidebar');
+    const hamburgerText = document.querySelector('.docs-sidebar-hamburger__text');
+    const closeMenu = document.querySelector('.close-menu');
 
-  if (hamburger && sidebar && hamburgerText) {
-      hamburger.addEventListener('click', () => {
-          hamburger.classList.toggle('is-active');
-          sidebar.classList.toggle('is-active');
-          hamburgerText.textContent = hamburger.classList.contains('is-active') ? 'Close' : 'Menu';
-      });
-  }
+    function toggleMenu() {
+        hamburger.classList.toggle('is-active');
+        sidebar.classList.toggle('is-active');
+        hamburgerText.textContent = hamburger.classList.contains('is-active') ? 'Close' : 'Menu';
+    }
+
+    if (hamburger && sidebar && hamburgerText && closeMenu) {
+        hamburger.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+    }
 });
 
 // const triggers = document.querySelectorAll('.docs-nav-item--has-child')
