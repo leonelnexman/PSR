@@ -194,7 +194,7 @@ html{
         @include rmin(1000.1) {
             position: sticky;
             top: 20px;
-            max-height: calc(100vh);
+            max-height: calc(90vh);
 
             @include scrollbars($thumb-color: $secondary, $size: 0.15rem, $bg-color: #e1e1e1, $border-radius: 1px);
             padding-right: .3rem;
@@ -789,7 +789,7 @@ html{
     }
 
     &__subitem-link {
-        color: #000;
+        color: #444648;
     }
 
     &__subitem-top {
@@ -2441,7 +2441,6 @@ html{
 .docs-sidebar__sticky {
     position: sticky;
     top: 20px;
-    max-height: calc(100vh - 5rem);
     padding-right: 0.3rem;
     padding-bottom: 2px;
     overflow: auto;
@@ -2742,13 +2741,20 @@ html{
 }
 
 .docs-page__sidebar{
-    transform: translateY(0rem);
-    transition: all 0.3s;
     &.is-visible{
-        transform: translateY(4rem);
-        transition: all 0.3s;
+        transition: all 1s;
+        .docs-sidebar__sticky{
+            top: 6rem !important;
+            transition: top 0.3s !important;
+        }
     }
 }
+
+.docs-sidebar__sticky{
+    top: 2rem !important;
+    transition: top 0.3s !important;
+}
+
 
 .menu-page__nav-inner{
     transform: translateY(0rem);
@@ -2888,6 +2894,38 @@ html{
     .menu-sidebar__cetegory-link{
         color: #fff !important;
     }
+}
+
+.category-none__links{
+    .menu-page__nav{
+        display: none;
+    }
+}
+
+.menu-sidebar__item-top.open-category{
+    @media (max-width: 962px) {
+        svg{
+            margin-right: 0.5rem !important;
+        }
+    }
+}
+
+.menu-sidebar__item-top.link-active{
+    @media (max-width: 962px) {
+        svg{
+            margin-right: 0.37rem !important;
+        }
+    }
+}
+.menu-page .menu-sidebar__subitem-top{
+    @media (max-width: 962px) {
+        svg{
+            margin-right: 0.47rem !important;
+        }
+    }
+}
+.menu-sidebar__subitem-content.subcontent-open{
+    padding-left: 0.7rem !important;
 }
 
 

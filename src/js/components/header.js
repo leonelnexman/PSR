@@ -42,20 +42,22 @@ function runmenu(run) {
         hamburger.classList.add('is-active');
         mobMenu.classList.add('is-active');
 
-        
-        sidebar.classList.add('is-visible');
-        menu.classList.add('is-visible');
-        disableBodyScroll(mobMenu);
+        if (sidebar && menu) {
+            sidebar.classList.add('is-visible');
+            menu.classList.add('is-visible');
+            disableBodyScroll(mobMenu);
+        }
     } else {
         // tlMobileMenu.timeScale(1.5).reverse();
         header.classList.remove('is-active');
         hamburger.classList.remove('is-active');
         mobMenu.classList.remove('is-active');
 
-        
-        sidebar.classList.remove('is-visible');
-        menu.classList.remove('is-visible');
-        enableBodyScroll(mobMenu);
+        if (sidebar && menu) {
+            sidebar.classList.remove('is-visible');
+            menu.classList.remove('is-visible');
+            enableBodyScroll(mobMenu);
+        }
     }
 }
 
@@ -83,94 +85,96 @@ headerLandingMenuNavItems.forEach(item => {
 const navHasChild = document.querySelectorAll('.nav__item.has-child');
 
 navHasChild.forEach(item => {
-  const closeIfClickedOutside = (event) => {
-    if (
-      !event.target.closest(".nav__item.has-child")
-    ) {
-      item.classList.remove('is-active')
-      document.removeEventListener("click", closeIfClickedOutside);
+    const closeIfClickedOutside = (event) => {
+        if (
+            !event.target.closest(".nav__item.has-child")
+        ) {
+            item.classList.remove('is-active')
+            document.removeEventListener("click", closeIfClickedOutside);
+        }
+    };
+
+    const openNavChild = (open) => {
+        document.querySelector('.nav__item.has-child.is-active')?.classList.remove('is-active')
+
+        if (!open) {
+            item.classList.add('is-active')
+            document.addEventListener("click", closeIfClickedOutside);
+        } else {
+            item.classList.remove('is-active')
+            document.removeEventListener("click", closeIfClickedOutside);
+        }
     }
-  };
 
-  const openNavChild = (open) => {
-    document.querySelector('.nav__item.has-child.is-active')?.classList.remove('is-active')
+    item.addEventListener("click", () => {
+        if (window.innerWidth > 899) return;
 
-    if (!open) {
-      item.classList.add('is-active')
-      document.addEventListener("click", closeIfClickedOutside);
-    } else {
-      item.classList.remove('is-active')
-      document.removeEventListener("click", closeIfClickedOutside);
-    }
-  }
+        openNavChild(item.classList.contains('is-active'))
+    });
 
-  item.addEventListener("click", () => {
-    if (window.innerWidth > 899) return;
+    item.addEventListener("mouseenter", () => {
+        if (window.innerWidth < 899) return;
 
-    openNavChild(item.classList.contains('is-active'))
-  });
+        openNavChild(false)
+    });
 
-  item.addEventListener("mouseenter", () => {
-    if (window.innerWidth < 899) return;
+    headerWrapper.addEventListener("mouseleave", () => {
+        if (window.innerWidth < 899) return;
 
-    openNavChild(false)
-  });
-
-  headerWrapper.addEventListener("mouseleave", () => {
-    if (window.innerWidth < 899) return;
-
-    openNavChild(true)
-  });
+        openNavChild(true)
+    });
 })
 
 let lastScrollTop = 0;
 let ticking = false;
 
 const stickyHeader = (scroll) => {
-  if (header.classList.contains('is-animations')) {
-    return
-  }
-
-  // const { top } = headerTrigger.getBoundingClientRect()
-
-  if (scroll > 0) {
-    // header.classList.add('is-active')
-    headerWrapper.classList.add('is-hide')
-    sidebar.classList.remove('is-visible');
-    menu.classList.remove('is-visible');
-    // headerTrigger.classList.add('is-hide')
-  } else {
-    // header.classList.remove('is-active')
-    headerWrapper.classList.remove('is-hide')
-    headerWrapper.classList.remove('is-visible');
-    sidebar.classList.remove('is-visible');
-    menu.classList.remove('is-visible');
-    // headerTrigger.classList.remove('is-hide')
-  }
-
-  if (scroll > lastScrollTop) {
-    headerWrapper.classList.remove('is-visible');
-    sidebar.classList.remove('is-visible');
-    menu.classList.remove('is-visible');
-  } else if (scroll < lastScrollTop) {
-    headerWrapper.classList.add('is-visible');
-
-    const navOffset = document.querySelector('.menu-page__nav').getBoundingClientRect().top + window.pageYOffset;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    console.log(scrollTop, navOffset)
-    if (scrollTop < navOffset) {
-      sidebar.classList.remove('is-visible');
-      menu.classList.remove('is-visible');
-    } else {
-      sidebar.classList.add('is-visible');
-      menu.classList.add('is-visible');
+    if (header.classList.contains('is-animations')) {
+        return
     }
-    
-  } else {
-    // headerWrapper.classList.remove('is-visible');
-  }
 
-  lastScrollTop = scroll;
+    if (scroll > 0) {
+        headerWrapper.classList.add('is-hide');
+        if (sidebar && menu) {
+            sidebar.classList.remove('is-visible');
+            menu.classList.remove('is-visible');
+        }
+    } else {
+        headerWrapper.classList.remove('is-hide');
+        headerWrapper.classList.remove('is-visible');
+        if (sidebar && menu) {
+            sidebar.classList.remove('is-visible');
+            menu.classList.remove('is-visible');
+        }
+    }
+
+    if (scroll > lastScrollTop) {
+        headerWrapper.classList.remove('is-visible');
+        if (sidebar && menu) {
+            sidebar.classList.remove('is-visible');
+            menu.classList.remove('is-visible');
+        }
+    } else if (scroll < lastScrollTop) {
+        headerWrapper.classList.add('is-visible');
+
+        const menuPageNav = document.querySelector('.menu-page__nav');
+        const navOffset = menuPageNav ? menuPageNav.getBoundingClientRect().top + window.pageYOffset : 0;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (navOffset) {
+            if (scrollTop < navOffset) {
+                if (sidebar && menu) {
+                    sidebar.classList.remove('is-visible');
+                    menu.classList.remove('is-visible');
+                }
+            } else if (sidebar && menu) {
+                    sidebar.classList.add('is-visible');
+                    menu.classList.add('is-visible');
+                }
+        }
+    }
+
+    lastScrollTop = scroll;
 }
 
 const sections = document.querySelectorAll('section[id]')
@@ -183,20 +187,20 @@ const sections = document.querySelectorAll('section[id]')
 // })
 const setActiveMenuItem = (scroll) => {
 
-  sections.forEach(section => {
-    const offset = section.offsetTop - 160;
-    const height = section.offsetHeight;
-    const id = section.getAttribute('id');
-    const target = document.querySelector(`.header-landing .nav__item[href='#${id}']`);
+    sections.forEach(section => {
+        const offset = section.offsetTop - 160;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        const target = document.querySelector(`.header-landing .nav__item[href='#${id}']`);
 
-    if (scroll >= offset && scroll < offset + height) {
-      // const old = document.querySelectorAll(`.header-landing .nav__item.is-active`)
-      // old.forEach(item => item.classList.remove('is-active'))
-      target?.classList.add('is-active')
-    } else {
-      target?.classList.remove('is-active')
-    }
-  })
+        if (scroll >= offset && scroll < offset + height) {
+            // const old = document.querySelectorAll(`.header-landing .nav__item.is-active`)
+            // old.forEach(item => item.classList.remove('is-active'))
+            target?.classList.add('is-active')
+        } else {
+            target?.classList.remove('is-active')
+        }
+    })
 }
 
 document.addEventListener("scroll", () => {
@@ -223,7 +227,4 @@ document.addEventListener("scroll", () => {
     }
 })
 
-
-
 const lastScrollTopp = 0;
-
