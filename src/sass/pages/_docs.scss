@@ -2927,6 +2927,19 @@ html{
 .menu-sidebar__subitem-content.subcontent-open{
     padding-left: 0.7rem !important;
 }
+.menu-sidebar__arrows{
+    padding: 1rem 2rem;
+    margin-right: -2rem;
+    &:hover{
+        svg{
+            background: #6800f0 !important;
+            transition: all .3s;
+            path{
+                fill: #fff !important;
+            }
+        }
+    }
+}
 
 
 
