@@ -1,7 +1,8 @@
 import lightGallery from 'lightgallery';
 import lgVideo from 'lightgallery/plugins/video';
 
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+
 
 
 const $dynamicGallery = document.querySelectorAll('.js-gallery-videos');
@@ -59,25 +60,22 @@ if ($dynamicGallery) {
     })
 }
 
+const galleryElements = document.querySelectorAll('.lightgallery');
 
-// const $galleries = document.querySelectorAll('.lightgallery');
-
-// if ($galleries) {
-//     $galleries.forEach(gallery => {
-//         const lightGalleryInstance = lightGallery(gallery, {
-//             pager: false,
-//             addClass: "lg-common",
-//             zoomFromOrigin: false,
-//             mobileSettings: {
-//                 controls: true,
-//                 showCloseIcon: true,
-//                 rotate: false
-//             },
-//             download: false,
-//             counter: false,
-//         });
-//     });
-// }
-
+galleryElements.forEach((element) => {
+  lightGallery(element, {
+    mode: 'lg-fade',
+    pager: false,
+    plugins: [lgThumbnail],
+    thumbnail: true,
+    download: false,
+    counter: false,
+    animateThumb: false,
+    allowMediaOverlap: true,
+    toggleThumb: true,
+    closeButton: true,
+    swipe: false,
+  });
+});
 
 

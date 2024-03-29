@@ -12,11 +12,17 @@ title: Row Grouping
   
   <script>hljs.highlightAll();</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnails.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+
+  <script src=""></script>
 
 
-  <script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/> -->
+
+
+  <!-- <script>
 
 Fancybox.bind("[data-fancybox]", {
   transitionEffect: 'fade',
@@ -33,6 +39,12 @@ document.addEventListener("click", function(event) {
   }
 });
 
+  </script> -->
+
+  <script>
+    lightGallery(document.getElementById('lightgallery'), {
+      thumbnail: true,
+    });
   </script>
 
 
@@ -275,36 +287,36 @@ document.addEventListener("click", function(event) {
                         </div>
                         <div class="slider-component thumbnailsslider">
                           <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                            <div class="swiper-wrapper">
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                            <div class="swiper-wrapper lightgallery">
+                              <a href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
+                              </a>
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
-                              </div>
-                              <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                                <img src="./img/imagetext.jpg" />
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg"/>
                               </div>
                             </div>
                             <div class="slider-arrows">
@@ -321,40 +333,44 @@ document.addEventListener("click", function(event) {
                             </div>
                           </div>
                           <div thumbsSlider="" class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
+                            <div class="swiper-wrapper lightgallery">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
-                              <div class="swiper-slide">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
-                              <div class="swiper-slide">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
-                              <div class="swiper-slide">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
-                              <div class="swiper-slide">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
-                              <div class="swiper-slide">
-                                <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide__vieww">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <div href="./img/imagetext.jpg" class="swiper-slide__vieww">
                                   5+
+                                  <img src="./img/imagetext.jpg" />
                                </div>
                               </div>
-                              <div class="swiper-slide">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
-                              <div class="swiper-slide">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
-                              <div class="swiper-slide">
-                                <img src="./img/imagetext.jpgg" />
-                              </div>
-                              <div class="swiper-slide">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
-                              <div class="swiper-slide">
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg" />
+                              </div>
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
+                                <img src="./img/imagetext.jpg" />
+                              </div>
+                              <div href="./img/imagetext.jpg" class="swiper-slide">
                                 <img src="./img/imagetext.jpg" />
                               </div>
                             </div>
