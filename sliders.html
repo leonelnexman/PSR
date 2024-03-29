@@ -20,24 +20,33 @@
         hljs.highlightAll();
 
       </script>
-      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnails.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+      <script src=""></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/> -->
+      <!-- <script>
+
+Fancybox.bind("[data-fancybox]", {
+  transitionEffect: 'fade',
+  Thumbs: {
+    type: "classic", 
+  },
+  mobile: true 
+});
+
+
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains("fancybox__backdrop")) {
+    Fancybox.close();
+  }
+});
+
+  </script> -->
       <script>
-        Fancybox.bind("[data-fancybox]",
+        lightGallery(document.getElementById('lightgallery'),
         {
-          transitionEffect: 'fade',
-          Thumbs:
-          {
-            type: "classic",
-          },
-          mobile: true
-        });
-        document.addEventListener("click", function(event)
-        {
-          if (event.target.classList.contains("fancybox__backdrop"))
-          {
-            Fancybox.close();
-          }
+          thumbnail: true,
         });
 
       </script>
@@ -1429,56 +1438,36 @@
                     </div>
                     <div class="slider-component thumbnailsslider">
                       <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                        <div class="swiper-wrapper">
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                        <div class="swiper-wrapper lightgallery">
+                          <a href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
+                          </a>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
-                          </div>
-                          <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
-                            </picture>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <img src="./img/imagetext.jpg" />
                           </div>
                         </div>
                         <div class="slider-arrows">
@@ -1495,56 +1484,64 @@
                         </div>
                       </div>
                       <div thumbsSlider="" class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
+                        <div class="swiper-wrapper lightgallery">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
                           </div>
-                          <div class="swiper-slide">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
                           </div>
-                          <div class="swiper-slide">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
                           </div>
-                          <div class="swiper-slide">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
                           </div>
-                          <div class="swiper-slide">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
                           </div>
-                          <div class="swiper-slide">
-                            <div href="./img/imagetext.jpg" data-fancybox="gallery" class="swiper-slide__vieww"> 5+ </div>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <div href="./img/imagetext.jpg" class="swiper-slide__vieww"> 5+ <picture>
+                                <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
+                              </picture>
+                            </div>
                           </div>
-                          <div class="swiper-slide">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
                           </div>
-                          <div class="swiper-slide">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
                           </div>
-                          <div class="swiper-slide">
-                            <picture>
-                              <source srcset="./img/imagetext.webpg" type="image/webp"><img src="./img/imagetext.jpgg" />
-                            </picture>
-                          </div>
-                          <div class="swiper-slide">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
                           </div>
-                          <div class="swiper-slide">
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <picture>
+                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
+                            </picture>
+                          </div>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
+                            <picture>
+                              <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
+                            </picture>
+                          </div>
+                          <div href="./img/imagetext.jpg" class="swiper-slide">
                             <picture>
                               <source srcset="./img/imagetext.webp" type="image/webp"><img src="./img/imagetext.jpg" />
                             </picture>
