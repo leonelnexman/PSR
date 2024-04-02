@@ -1058,6 +1058,25 @@ html{
     width: 90%;
 }
 
+.menu-nav--delete{
+    .thumbnailsslider .mySwiper .swiper-slide img{
+        height: auto;
+    }
+    .thumbnailsslider .mySwiper .swiper-slide:nth-child(6){
+        height: auto;
+    }
+    .thumbnailsslider .mySwiper2 .swiper-slide{
+        height: 35rem;
+    }
+    .cols__block{
+        width: auto;
+        max-width: 100%;
+    }
+    .docs-page__block-content {
+        width: 60%;
+    }
+}
+
 .menu-page--none {
     .docs-page__content {
         width: 100%;
