@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Blog</title>
+    <title>Row Grouping</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -14,6 +14,12 @@
   <body>
     <!-- Content -->
     <div class="out">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/github.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>
+        hljs.highlightAll();
+
+      </script>
       <div class="header-wrapper-sticky">
         <header class="header header-main header--grey ">
           <div class="container">
@@ -763,183 +769,74 @@
         </div>
       </div>
       <div class="main">
-        <section class="section section-blog-hero">
+        <div class="section-plugin .menu-page--none">
           <div class="container">
-            <div class="section-blog-hero__header">
-              <h1 class="section-title h2-title section-blog-hero__title">Blog</h1>
-              <div class="section-blog-hero__buttons">
-                <div class="button-tumbler">
-                  <div class="button-tumbler__item is-active">All</div>
-                  <div class="button-tumbler__item">Business</div>
-                  <div class="button-tumbler__item">Analytics</div>
-                  <div class="button-tumbler__item">Developers</div>
+            <div class="plugin">
+              <div class="plugin__wrapper">
+                <div class="plugin__img">
+                  <picture>
+                    <source srcset="./img/plugin.webp" type="image/webp"><img src="./img/plugin.jpg" alt="">
+                  </picture>
                 </div>
-              </div>
-            </div>
-            <div class="section-blog-hero__wrapper">
-              <div class="section-blog-hero__feed">
-                <div class="section-blog-hero__grid">
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=15" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
-                    </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
+                <div class="plugin__content">
+                  <h1 class="plugin__title">The plugin</h1>
+                  <div class="plugin__text"> The plugin is required to sign invoices before sending them to ETA. </div>
+                  <div class="plugin__text"> For more details <a href=""><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1339_1570)">
+                          <path d="M8.07373 10.3689L5.77866 12.664L5.7786 12.664L5.77855 12.6641C4.82947 13.6132 3.2851 13.6133 2.33591 12.6641C1.87609 12.2043 1.62291 11.5929 1.62291 10.9427C1.62291 10.2926 1.87609 9.68134 2.33575 9.22152L2.33591 9.22136L4.63099 6.92623C4.94783 6.60933 4.94783 6.09552 4.63093 5.77867C4.31408 5.46182 3.80027 5.46182 3.48337 5.77867L1.1883 8.07379L1.18781 8.07434C0.421849 8.84057 0 9.85927 0 10.9427C0 12.0265 0.422012 13.0453 1.18835 13.8117C1.97936 14.6026 3.0183 14.9981 4.05729 14.9981C5.09627 14.9981 6.13526 14.6026 6.92616 13.8117L6.92622 13.8116L9.22129 11.5164C9.53814 11.1996 9.53814 10.6858 9.22124 10.3689C8.90444 10.052 8.39068 10.052 8.07373 10.3689ZM15 4.0573C15 2.97357 14.5779 1.9547 13.8116 1.18836C12.2296 -0.393544 9.65564 -0.39349 8.07378 1.18836L8.07357 1.18863L5.77855 3.4836C5.46165 3.80044 5.46165 4.31431 5.77855 4.63116C5.85381 4.70663 5.94325 4.76649 6.04173 4.80728C6.1402 4.84808 6.24577 4.869 6.35236 4.86886C6.55998 4.86886 6.76771 4.78961 6.92611 4.63116L9.22113 2.3362L9.2214 2.33593C10.1705 1.38685 11.7148 1.38679 12.664 2.33593C13.1238 2.79575 13.3771 3.4071 13.3771 4.0573C13.3771 4.70744 13.1239 5.31868 12.6642 5.77851L12.664 5.77867L10.369 8.07379C10.0521 8.39064 10.0521 8.90446 10.369 9.22136C10.4443 9.29682 10.5337 9.35667 10.6322 9.39746C10.7306 9.43825 10.8362 9.45919 10.9428 9.45906C11.1504 9.45906 11.3581 9.37981 11.5166 9.22136L13.8116 6.92623L13.8121 6.92569C14.5781 6.15946 15 5.14076 15 4.0573Z" fill="#00AAAB" />
+                          <path d="M4.63025 10.3689C4.70552 10.4443 4.79495 10.5042 4.89341 10.545C4.99188 10.5858 5.09743 10.6067 5.20401 10.6066C5.41169 10.6066 5.61937 10.5273 5.77782 10.3689L10.3681 5.77863C10.685 5.46178 10.685 4.94797 10.3681 4.63107C10.0512 4.31422 9.53741 4.31422 9.2205 4.63107L4.63025 9.22126C4.31335 9.53822 4.31335 10.052 4.63025 10.3689Z" fill="#00AAAB" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_1339_1570">
+                            <rect width="15" height="15" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>about sending data to ETA.</a>
                   </div>
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=47" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
+                  <div class="plugin__block">
+                    <div class="plugin__block-title">To send invoices to ETA, you will need:</div>
+                    <div class="plugin__block-wrapper">
+                      <div class="plugin__block-item"> A digital signature. For more details <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_1339_1570)">
+                            <path d="M8.07373 10.3689L5.77866 12.664L5.7786 12.664L5.77855 12.6641C4.82947 13.6132 3.2851 13.6133 2.33591 12.6641C1.87609 12.2043 1.62291 11.5929 1.62291 10.9427C1.62291 10.2926 1.87609 9.68134 2.33575 9.22152L2.33591 9.22136L4.63099 6.92623C4.94783 6.60933 4.94783 6.09552 4.63093 5.77867C4.31408 5.46182 3.80027 5.46182 3.48337 5.77867L1.1883 8.07379L1.18781 8.07434C0.421849 8.84057 0 9.85927 0 10.9427C0 12.0265 0.422012 13.0453 1.18835 13.8117C1.97936 14.6026 3.0183 14.9981 4.05729 14.9981C5.09627 14.9981 6.13526 14.6026 6.92616 13.8117L6.92622 13.8116L9.22129 11.5164C9.53814 11.1996 9.53814 10.6858 9.22124 10.3689C8.90444 10.052 8.39068 10.052 8.07373 10.3689ZM15 4.0573C15 2.97357 14.5779 1.9547 13.8116 1.18836C12.2296 -0.393544 9.65564 -0.39349 8.07378 1.18836L8.07357 1.18863L5.77855 3.4836C5.46165 3.80044 5.46165 4.31431 5.77855 4.63116C5.85381 4.70663 5.94325 4.76649 6.04173 4.80728C6.1402 4.84808 6.24577 4.869 6.35236 4.86886C6.55998 4.86886 6.76771 4.78961 6.92611 4.63116L9.22113 2.3362L9.2214 2.33593C10.1705 1.38685 11.7148 1.38679 12.664 2.33593C13.1238 2.79575 13.3771 3.4071 13.3771 4.0573C13.3771 4.70744 13.1239 5.31868 12.6642 5.77851L12.664 5.77867L10.369 8.07379C10.0521 8.39064 10.0521 8.90446 10.369 9.22136C10.4443 9.29682 10.5337 9.35667 10.6322 9.39746C10.7306 9.43825 10.8362 9.45919 10.9428 9.45906C11.1504 9.45906 11.3581 9.37981 11.5166 9.22136L13.8116 6.92623L13.8121 6.92569C14.5781 6.15946 15 5.14076 15 4.0573Z" fill="#00AAAB" />
+                            <path d="M4.63025 10.3689C4.70552 10.4443 4.79495 10.5042 4.89341 10.545C4.99188 10.5858 5.09743 10.6067 5.20401 10.6066C5.41169 10.6066 5.61937 10.5273 5.77782 10.3689L10.3681 5.77863C10.685 5.46178 10.685 4.94797 10.3681 4.63107C10.0512 4.31422 9.53741 4.31422 9.2205 4.63107L4.63025 9.22126C4.31335 9.53822 4.31335 10.052 4.63025 10.3689Z" fill="#00AAAB" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_1339_1570">
+                              <rect width="15" height="15" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg> <a href="">about the signature.</a>
+                      </div>
+                      <div class="plugin__block-item"> A plugin <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_1339_1570)">
+                            <path d="M8.07373 10.3689L5.77866 12.664L5.7786 12.664L5.77855 12.6641C4.82947 13.6132 3.2851 13.6133 2.33591 12.6641C1.87609 12.2043 1.62291 11.5929 1.62291 10.9427C1.62291 10.2926 1.87609 9.68134 2.33575 9.22152L2.33591 9.22136L4.63099 6.92623C4.94783 6.60933 4.94783 6.09552 4.63093 5.77867C4.31408 5.46182 3.80027 5.46182 3.48337 5.77867L1.1883 8.07379L1.18781 8.07434C0.421849 8.84057 0 9.85927 0 10.9427C0 12.0265 0.422012 13.0453 1.18835 13.8117C1.97936 14.6026 3.0183 14.9981 4.05729 14.9981C5.09627 14.9981 6.13526 14.6026 6.92616 13.8117L6.92622 13.8116L9.22129 11.5164C9.53814 11.1996 9.53814 10.6858 9.22124 10.3689C8.90444 10.052 8.39068 10.052 8.07373 10.3689ZM15 4.0573C15 2.97357 14.5779 1.9547 13.8116 1.18836C12.2296 -0.393544 9.65564 -0.39349 8.07378 1.18836L8.07357 1.18863L5.77855 3.4836C5.46165 3.80044 5.46165 4.31431 5.77855 4.63116C5.85381 4.70663 5.94325 4.76649 6.04173 4.80728C6.1402 4.84808 6.24577 4.869 6.35236 4.86886C6.55998 4.86886 6.76771 4.78961 6.92611 4.63116L9.22113 2.3362L9.2214 2.33593C10.1705 1.38685 11.7148 1.38679 12.664 2.33593C13.1238 2.79575 13.3771 3.4071 13.3771 4.0573C13.3771 4.70744 13.1239 5.31868 12.6642 5.77851L12.664 5.77867L10.369 8.07379C10.0521 8.39064 10.0521 8.90446 10.369 9.22136C10.4443 9.29682 10.5337 9.35667 10.6322 9.39746C10.7306 9.43825 10.8362 9.45919 10.9428 9.45906C11.1504 9.45906 11.3581 9.37981 11.5166 9.22136L13.8116 6.92623L13.8121 6.92569C14.5781 6.15946 15 5.14076 15 4.0573Z" fill="#00AAAB" />
+                            <path d="M4.63025 10.3689C4.70552 10.4443 4.79495 10.5042 4.89341 10.545C4.99188 10.5858 5.09743 10.6067 5.20401 10.6066C5.41169 10.6066 5.61937 10.5273 5.77782 10.3689L10.3681 5.77863C10.685 5.46178 10.685 4.94797 10.3681 4.63107C10.0512 4.31422 9.53741 4.31422 9.2205 4.63107L4.63025 9.22126C4.31335 9.53822 4.31335 10.052 4.63025 10.3689Z" fill="#00AAAB" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_1339_1570">
+                              <rect width="15" height="15" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg> <a href="">The instructions</a> for learning how to install a plugin. </div>
                     </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
-                  </div>
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=12" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
-                    </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
-                  </div>
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=46" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
-                    </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
-                  </div>
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=30" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
-                    </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
-                  </div>
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=35" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
-                    </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
-                  </div>
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=26" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
-                    </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
-                  </div>
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=48" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
-                    </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
-                  </div>
-                  <div class="entry-card">
-                    <div class="entry-card__image">
-                      <img src="https://loremflickr.com/500/500/abstract?lock=45" loading="lazy" width="300" height="300" alt="" aria-hidden="true">
-                    </div>
-                    <div class="entry-card__category">Business</div>
-                    <div class="entry-card__date">20.08.2023</div>
-                    <div class="entry-card__title h4-title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                    <a href="#" class="entry-card__link"></a>
-                  </div>
-                </div>
-                <div class="section-blog-hero__pagination">
-                  <div class="pagination">
-                    <div class="pagination__item pagination__prev">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                        <path d="M8.02655 7.99988L10.3865 5.63988C10.5107 5.51498 10.5804 5.34601 10.5804 5.16988C10.5804 4.99376 10.5107 4.82479 10.3865 4.69988C10.3246 4.6374 10.2508 4.5878 10.1696 4.55396C10.0884 4.52011 10.0012 4.50269 9.91321 4.50269C9.82521 4.50269 9.73807 4.52011 9.65683 4.55396C9.57559 4.5878 9.50186 4.6374 9.43988 4.69988L6.61321 7.52655C6.55073 7.58853 6.50113 7.66226 6.46729 7.7435C6.43344 7.82474 6.41602 7.91188 6.41602 7.99988C6.41602 8.08789 6.43344 8.17503 6.46729 8.25627C6.50113 8.33751 6.55073 8.41124 6.61321 8.47322L9.43988 11.3332C9.50217 11.395 9.57605 11.4439 9.65728 11.4771C9.7385 11.5102 9.82548 11.5271 9.91321 11.5266C10.001 11.5271 10.0879 11.5102 10.1692 11.4771C10.2504 11.4439 10.3243 11.395 10.3865 11.3332C10.5107 11.2083 10.5804 11.0393 10.5804 10.8632C10.5804 10.6871 10.5107 10.5181 10.3865 10.3932L8.02655 7.99988Z" />
-                      </svg>
-                    </div>
-                    <div class="pagination__item pagination__page">1</div>
-                    <div class="pagination__item pagination__page is-active">2</div>
-                    <div class="pagination__item pagination__page">3</div>
-                    <div class="pagination__item pagination__page">4</div>
-                    <div class="pagination__item pagination__page">5</div>
-                    <div class="pagination__item pagination__next">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                        <path d="M8.97345 8.00012L6.61345 10.3601C6.48928 10.485 6.41959 10.654 6.41959 10.8301C6.41959 11.0062 6.48928 11.1752 6.61345 11.3001C6.67543 11.3626 6.74916 11.4122 6.8304 11.446C6.91164 11.4799 6.99878 11.4973 7.08679 11.4973C7.17479 11.4973 7.26193 11.4799 7.34317 11.446C7.42441 11.4122 7.49814 11.3626 7.56012 11.3001L10.3868 8.47345C10.4493 8.41147 10.4989 8.33774 10.5327 8.2565C10.5666 8.17526 10.584 8.08812 10.584 8.00012C10.584 7.91211 10.5666 7.82497 10.5327 7.74373C10.4989 7.66249 10.4493 7.58876 10.3868 7.52678L7.56012 4.66678C7.49783 4.605 7.42395 4.55611 7.34272 4.52294C7.2615 4.48976 7.17452 4.47294 7.08678 4.47345C6.99905 4.47294 6.91207 4.48976 6.83085 4.52294C6.74962 4.55611 6.67574 4.605 6.61345 4.66678C6.48928 4.79169 6.41959 4.96066 6.41959 5.13678C6.41959 5.31291 6.48928 5.48187 6.61345 5.60678L8.97345 8.00012Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-blog-hero__load-more">
-                  <button class="button button--fill js-feed-load-more" data-products-group=&quot;top-free&quot;>
-                    <span class="button__bg" data-text="Load more"></span>
-                    <span class="button__text">Load more</span>
-                  </button>
-                </div>
-              </div>
-              <div class="section-blog-hero__sidebar">
-                <div class="entry-sidebar">
-                  <div class="entry-sidebar-group">
-                    <div class="entry-sidebar-group__title h4-title">Recent</div>
-                    <div class="entry-sidebar-group__list">
-                      <a href="#" class="entry-sidebar-card">
-                        <div class="entry-sidebar-card__image">
-                          <img src="https://loremflickr.com/200/200/abstract?lock=1" loading="lazy" width="60" height="60" alt="" aria-hidden="true">
-                        </div>
-                        <div class="entry-sidebar-card__content">
-                          <div class="entry-sidebar-card__date">20.08.2023</div>
-                          <div class="entry-sidebar-card__title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                        </div>
-                      </a>
-                      <a href="#" class="entry-sidebar-card">
-                        <div class="entry-sidebar-card__image">
-                          <img src="https://loremflickr.com/200/200/abstract?lock=2" loading="lazy" width="60" height="60" alt="" aria-hidden="true">
-                        </div>
-                        <div class="entry-sidebar-card__content">
-                          <div class="entry-sidebar-card__date">20.08.2023</div>
-                          <div class="entry-sidebar-card__title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="entry-sidebar-group">
-                    <div class="entry-sidebar-group__title h4-title">News</div>
-                    <div class="entry-sidebar-group__list">
-                      <a href="#" class="entry-sidebar-card">
-                        <div class="entry-sidebar-card__image">
-                          <img src="https://loremflickr.com/200/200/abstract?lock=3" loading="lazy" width="60" height="60" alt="" aria-hidden="true">
-                        </div>
-                        <div class="entry-sidebar-card__content">
-                          <div class="entry-sidebar-card__date">20.08.2023</div>
-                          <div class="entry-sidebar-card__title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                        </div>
-                      </a>
-                      <a href="#" class="entry-sidebar-card">
-                        <div class="entry-sidebar-card__image">
-                          <img src="https://loremflickr.com/200/200/abstract?lock=4" loading="lazy" width="60" height="60" alt="" aria-hidden="true">
-                        </div>
-                        <div class="entry-sidebar-card__content">
-                          <div class="entry-sidebar-card__date">20.08.2023</div>
-                          <div class="entry-sidebar-card__title"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
-                        </div>
-                      </a>
+                    <div class="plugin__download">
+                      <button class="button button--fill">
+                        <span class="button__bg" data-text="Download plugin"></span>
+                        <span class="button__text">Download plugin</span>
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+        <button class=" button button--fill button--round back-to-top js-back-to-top">
+          <svg class="icon icon-arrow-up">
+            <use xlink:href="img/sprite.svg#icon-arrow-up"></use>
+          </svg>
+        </button>
       </div>
       <div id="modal-request" class="modal-container">
         <div class="modal-container__overlay js-modal-close"></div>
