@@ -53,10 +53,6 @@
         }
     }
 
-    a.hero__button{
-        color: #fff !important;
-    }
-
     .hero__buttons {
         @include r(599) {
             flex-wrap: nowrap;
